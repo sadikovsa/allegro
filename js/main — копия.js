@@ -3,7 +3,6 @@
     document.addEventListener("DOMContentLoaded", function (event) {
         const button = document.querySelector('.scroll-down');
         const mainSlider = document.querySelector('.main-section__slider');
-        const mainSliderImg = mainSlider.querySelectorAll('.main-slider__img');
         const mainNewsWrapper = document.querySelector('.main-news__wrapper');
         const bridges = document.querySelector('.bridges');
         const bridgeOne = document.querySelector('.bridges-one');
@@ -13,7 +12,7 @@
 
         const bridgeOneImg = bridgeOne.querySelector('.bridges-img');
         const bridgeOneTitle = bridgeOne.querySelector('.title');
-
+        bridgeOneTitle.querySelector('.title-text').innerHTML = bridgeOneTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
         const bridgeOneTitleBefore = bridgeOneTitle.querySelector('.title-before');
         const bridgeOneTitleText = bridgeOneTitle.querySelectorAll('.letter');
 
@@ -33,28 +32,9 @@
         const bridgeFourTitle = bridgeFour.querySelector('.title');
         const bridgeFourText = bridgeFour.querySelector('.text');
         const bridgeFourBtn = bridgeFour.querySelector('.btn');
-        let activeSlide = 0;
-        const mainSliderStart = (curSlide = 0) => {
-            mainSliderImg.forEach(item => {
-                item.style.opacity = 0;
-            })
-
-            
-            gsap.to(mainSliderImg[curSlide], {
-                autoAlpha: 1,
-                zIndex: 2
-            })
-        }
-
-        setInterval(() => {
-            if (activeSlide >= mainSliderImg.length) {
-                activeSlide = 0;
-            }
-            mainSliderStart(activeSlide);
-            activeSlide++;
-        }, 3000)
-
-
+        let tl = gsap.timeline({
+            delay: 0.5
+        });
 
 
         gsap.set(bridgeTwo, {
@@ -77,22 +57,17 @@
                     })
 
                     .to(mainSlider, 3, {
-                        scale: 3,
+                        scale: 2.5,
                         rotation: -60,
                         transformOrigin: "50% 70%",
+                        autoAlpha: 0,
                         scrollTrigger: {
-                            trigger: '.main-section',
-                            start: "top left",
+                            trigger: bridgeOne,
+                            start: "top right",
+                            end: "top 0px",
                             scrub: true,
-                            id: "mainSlider",
-                            pin: true,
+                            id: "mainSlider"
                         },
-                        onComplete: function () {
-                            gsap.to(window, {
-                                duration: 1,
-                                scrollTo: bridgeOne
-                            });
-                        }
                     }).to(button, {
                         scale: 1.4,
                         autoAlpha: 0,
@@ -125,19 +100,9 @@
                             resolve();
                         },
                     })
-                    .from(bridgeOne, {
-                        autoAlpha: 0,
-                        scrollTrigger: {
-                            trigger: bridgeOne,
-                            start: "top right",
-                            end: "bottom right",
-                            scrub: true,
-                        },
-                    })
                     .from(bridgeOneImg, {
                         duration: 1,
                         autoAlpha: 0,
-                        delay: 0.5,
                         x: 2000,
                         ease: "Power3.inOut",
                         scrollTrigger: {
@@ -160,10 +125,12 @@
                             scrub: true,
                         },
                     })
-                    .from('.title-text', {
+                bridgeOneTitleText.forEach((item, index) => {
+                    gsap.from(item, {
+                        duration: 1,
+                        delay: 1 + index / 20,
                         autoAlpha: 0,
-                        translateX: -100,
-                        delay: 1,
+                        clearProps: 'all',
                         scrollTrigger: {
                             trigger: bridgeOne,
                             start: "top center",
@@ -171,6 +138,8 @@
                             scrub: true,
                         },
                     })
+                })
+
             });
         }
 
@@ -373,7 +342,7 @@
                     .fromTo(bridgeFour, {
                         duration: 1,
                         autoAlpha: 1,
-                        y: "-=100%",
+                    y: "-=100%",
                     }, {
                         y: 0,
                         autoAlpha: 1,
@@ -437,6 +406,10 @@
 
         mainBlockAnimation();
         bridgesOneAnimation();
+        bridgesTwoAnimation();
+        bridgesThreeAnimation();
+        bridgesFourAnimation();
+
 
 
 

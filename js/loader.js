@@ -18,6 +18,7 @@ paceOptions = {
     }
 };
 Pace.on('done', function () {
+    window.scrollTo(0, 0);
     gsap.to(preloaderImg, {
         duration: 1,
         css: {
