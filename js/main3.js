@@ -3,7 +3,6 @@
     document.addEventListener("DOMContentLoaded", function (event) {
         const button = document.querySelector('.scroll-down');
         const mainSection = document.querySelector('.main-section');
-        const mainSectionContent = mainSection.querySelector('.main-section__content');
         const mainSlider = document.querySelector('.main-section__slider');
         const mainSliderImg = mainSlider.querySelectorAll('.main-slider__img');
         const mainNewsWrapper = document.querySelector('.main-news__wrapper');
@@ -15,7 +14,7 @@
 
         const bridgeOneImg = bridgeOne.querySelector('.bridges-img');
         const bridgeOneTitle = bridgeOne.querySelector('.title');
-        bridgeOneTitle.querySelector('.title-text').innerHTML = bridgeOneTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
         const bridgeOneTitleBefore = bridgeOneTitle.querySelector('.title-before');
         const bridgeOneTitleText = bridgeOneTitle.querySelectorAll('.letter');
 
@@ -71,79 +70,94 @@
 
         const mainBlockAnimation = () => {
             return new Promise((resolve) => {
-                const tl = gsap.timeline({
+                new TimelineMax({
+                        onStart() {},
+                        onComplete() {
+                            resolve();
+                        },
+                    })
+
+                    .to(mainSlider, 3, {
+                        scale: 4,
+                        rotation: -60,
+                        transformOrigin: "50% 60%",
                         scrollTrigger: {
-                            trigger: mainSection,
+                            trigger: '.main-section',
                             start: "top left",
-                            markers: true,
                             scrub: true,
+                            id: "mainSlider",
                             pin: true,
-                            onEnter: function () {
-
-
-                            }
+                        },
+                        onComplete: function () {
+                            gsap.to(mainSection, {duration: 0.5, autoAlpha: 0})
+                            bridgesOneAnimation();
+                            
                         }
                     }).to(button, {
                         scale: 1.4,
                         autoAlpha: 0,
-                    })
-                    .to(mainSection, {
-                        background: '#060B21'
-                    })
-                    .to(mainSectionContent, {
-                        autoAlpha: 0,
-                    })
-                    .to(mainSlider, {
-                        scale: 4,
-                        rotation: -45,
-                        autoAlpha: 0,
-                        transformOrigin: "50% 60%",
-                        onComplete: () => {
-//                            gsap.to(window, {
-//                                duration: 1,
-//                                scrollTo: '.bridges-one'
-//                            });
-                        }
+                        scrollTrigger: {
+                            trigger: bridgeOne,
+                            start: "top right",
+                            end: "top 0px",
+                            scrub: true,
+                            id: "mainSlider"
+                        },
                     })
             });
         }
 
 
         const bridgesOneAnimation = () => {
-
             return new Promise((resolve) => {
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: bridgeOne,
-                        start: "top left",
-                        end: 'bottom 0',
-                        scrub: true,
-                        markers: true,
-                        
+                new TimelineMax({
+                        onStart() {
+                            gsap.set(bridges, {
+                                css: {
+                                    backgroundColor: '#011F42'
+                                }
+                            })
+                        },
+                        onComplete() {
+                            resolve();
+                        },
+                    })
+                    .from(bridgeOne, {
+                        autoAlpha: 0,
+                    })
+                    .from(bridgeOneImg, {
+                        autoAlpha: 0,
+                        x: 2000,
+                        ease: "Power3.inOut",
+                        scrollTrigger: {
+                            trigger: bridgeOne,
+                            start: "top center",
+                            end: "top left",
+                            scrub: true,
+                        },
+                    })
 
-                    }
-                })
-
-                tl.from(bridgeOne, {
-                    duration: 1,
-                    autoAlpha: 0,
-                })
-                tl.from(bridgeOneImg, {
-                    delay: 0.3,
-                    autoAlpha: 0,
-                    x: 2000,
-                    ease: "Power3.inOut",
-                })
-
-                tl.from(bridgeOneTitleBefore, {
-                    delay: 0.5,
-                    autoAlpha: 0,
-                    top: "100%",
-                })
-                tl.from(bridgeOneTitleText, {
-                    autoAlpha: 0,
-                    stagger: 0.1,
-                })
+                    .from(bridgeOneTitleBefore, {
+                        autoAlpha: 0,
+                        top: "100%",
+                        scrollTrigger: {
+                            trigger: bridgeOne,
+                            start: "top center",
+                            end: "top left",
+                            scrub: true,
+                        },
+                    })
+                    .from('.title-text', {
+                        autoAlpha: 0,
+                        translateX: -100,
+                        delay: 1,
+                        scrollTrigger: {
+                            trigger: bridgeOne,
+                            start: "top center",
+                            end: "top left",
+                            scrub: true,
+                        },
+                    })
             });
         }
 
@@ -407,9 +421,9 @@
             })
         }
 
-        bridgesOneAnimation();
-        mainBlockAnimation();
 
+        mainBlockAnimation();
+       
 
 
 
