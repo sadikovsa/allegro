@@ -1,24 +1,30 @@
 const headerLogo = document.querySelector('.header-logo');
 const preloaderImg = document.querySelector('.preloader-logo');
-gsap.set(preloaderImg, {
-    css: {
-        translateY: '50%',
-        scale: 4,
-        top: '50%',
-        left: '30%'
-    }
-})
-gsap.set(headerLogo, {
-    autoAlpha: 0
-})
 
 paceOptions = {
     elements: {
         selectors: ['.preloader-logo']
     }
 };
+Pace.on('start', function () {
+    document.querySelector('html').style.overflow = 'hidden';
+    gsap.set(preloaderImg, {
+        css: {
+            translateY: '50%',
+            scale: 4,
+            top: '50%',
+            left: '30%',
+            opacity: 1
+        }
+    })
+    gsap.set(headerLogo, {
+        autoAlpha: 0
+    })
+});
+
 Pace.on('done', function () {
     window.scrollTo(0, 0);
+    document.querySelector('html').style.overflow = 'inherit';
     gsap.to(preloaderImg, {
         duration: 1,
         css: {
@@ -36,4 +42,4 @@ Pace.on('done', function () {
             })
         }
     })
-})
+});
