@@ -1,6 +1,76 @@
 (function () {
     'use strict';
+
+    // preloader
+
+    const headerLogo = document.querySelector('.header-logo');
+    const preloaderImg = document.querySelector('.preloader-logo');
+    const preloader = document.querySelector('.preloader');
+    const preloaderOverlay = preloader.querySelector('.preloader-overlay');
+
+    const el = document.querySelector('.preloader-counter .counter');
+    document.querySelector('html').style.overflow = 'hidden';
+    gsap.set(preloaderImg, {
+        css: {
+            translateY: '50%',
+            scale: 4,
+            top: '50%',
+            left: '30%',
+            opacity: 1
+        }
+    })
+    gsap.set(headerLogo, {
+        autoAlpha: 0
+    })
+    window.odometerOptions = {
+        auto: false
+    };
+    let v = 0;
+    let t = 100;
+    let o = new Odometer({
+        el: el,
+        value: 0,
+        theme: 'default'
+    });
+    o.render();
+    const timer = setInterval(function () {
+        if (v <= 100) {
+            o.update(v++);
+            t--;
+            preloaderOverlay.style.transform = 'translateY(' + t + '%)';
+        } else {
+            clearInterval(timer);
+            window.scrollTo(0, 0);
+            document.querySelector('html').style.overflow = 'inherit';
+            gsap.to(preloaderImg, {
+                duration: 1,
+                css: {
+                    top: headerLogo.offsetTop,
+                    left: headerLogo.offsetLeft,
+                    maxWidth: '200px',
+                    scale: 1,
+                    translateY: 0,
+                    opacity: 0
+                },
+                onStart: function () {
+                    gsap.to(preloader, {
+                        delay: 0.3,
+                        autoAlpha: 0
+                    })
+                    gsap.to(headerLogo, {
+                        delay: 0.5,
+                        autoAlpha: 1
+                    })
+                }
+            })
+        }
+
+    }, 50);
+
+
+
     document.addEventListener("DOMContentLoaded", function (event) {
+        // 
         function pageTransition() {
             var t1 = gsap.timeline();
             t1.to('ul.transition li', {
@@ -18,7 +88,6 @@
             })
         }
 
-        // Detect if a link's href goes to the current page
         function getSamePageAnchor(link) {
             if (
                 link.protocol !== window.location.protocol ||
@@ -32,7 +101,6 @@
             return link.hash;
         }
 
-        // Scroll to a given hash, preventing the event given if there is one
         function scrollToHash(hash, e) {
             const elem = hash ? document.querySelector(hash) : false;
             if (elem) {
@@ -61,6 +129,7 @@
         // Scroll to the element in the URL's hash on load
         scrollToHash(window.location.hash);
 
+        // main page animation
         const button = document.querySelector('.scroll-down');
         const mainSection = document.querySelector('.main-section');
         const mainSectionContent = mainSection.querySelector('.main-section__content');
@@ -203,7 +272,7 @@
         const mainNewsListItem = mainNewsList.querySelectorAll('.main-news__item');
 
 
-
+        // main screen slider
         let activeSlide = 0;
 
         const mainSliderStart = (curSlide = 0) => {
@@ -231,22 +300,21 @@
                         duration: 4,
                         scrollTrigger: {
                             trigger: mainSection,
-                            start: "top 0",
-                            end: "bottom 0",
+                            start: "-95px top",
+                            end: "bottom center",
                             scrub: true,
                             pin: true,
-                            onEnter: function () {
-
-
-                            }
                         },
                         onComplete: () => {
                             resolve();
                         }
                     })
-                    .to(mainSection, {
-                        y: 0,
-                        autoAlpha: 1,
+                    .to(mainSlider, {
+                        delay: 2,
+                        scale: 4,
+                        rotation: -45,
+                        autoAlpha: 0,
+                        transformOrigin: "50% 60%",
                     })
                     .to(button, {
                         delay: 1.2,
@@ -257,14 +325,6 @@
                     .to(mainSectionContent, {
                         delay: 1.4,
                         autoAlpha: 0,
-                    })
-
-                    .to(mainSlider, {
-                        delay: 2,
-                        scale: 4,
-                        rotation: -45,
-                        autoAlpha: 0,
-                        transformOrigin: "50% 60%",
                     })
                     .to(mainSection, {
                         delay: 3,
@@ -570,12 +630,12 @@
                         stagger: 0.3,
                     })
                     .to(mainFeaturesTitle, {
-                        delay: 1.2,
+                        delay: 1.4,
                         y: -200,
                         autoAlpha: 0
                     })
                     .to(mainFeaturesListItem, {
-                        delay: 1.6,
+                        delay: 2,
                         y: -100,
                         autoAlpha: 0,
                         stagger: 0.3,
@@ -593,7 +653,7 @@
                         scrollTrigger: {
                             trigger: mainProjectsFirst,
                             start: "top 0",
-                            end: '30% 0',
+                            end: '25% 0',
                             scrub: true,
                             pin: true,
                             onLeave: () => {
@@ -614,12 +674,12 @@
                         x: -400
                     })
                     .from(mainProjectsFirstLine1, {
-                        delay: 0.3,
+                        delay: 1.4,
                         x: -1000,
                         autoAlpha: 0,
                     })
                     .from(mainProjectsFirstLine2, {
-                        delay: 0.4,
+                        delay: 2,
                         x: 1000,
                         autoAlpha: 0,
                     })
@@ -654,35 +714,38 @@
                         y: 400
                     })
                     .from(mainProjectsSecondIpad, {
-                        delay: 1.8,
+                        delay: 2,
                         x: 1000,
                         autoAlpha: 0,
                     })
+
+
                     .to(mainProjectsSecondContent1, {
-                        delay: 2,
+                        delay: 4,
                         autoAlpha: 0,
                         y: -400,
                     })
                     .from(mainProjectsSecondIpadImgs[1], {
-                        delay: 2.2,
+                        delay: 4,
                         autoAlpha: 0,
                         zIndex: 10
                     })
                     .from(mainProjectsSecondContent2, {
-                        delay: 2.4,
+                        delay: 5,
                         autoAlpha: 0,
                         y: 400
                     })
-                    .to(mainProjectsSecondIpad, {
-                        delay: 2.6,
-                        x: 1000,
-                        autoAlpha: 0,
-                    })
                     .to(mainProjectsSecondContent2, {
-                        delay: 3,
+                        delay: 6,
                         autoAlpha: 0,
                         y: -400
                     })
+                    .to(mainProjectsSecondIpad, {
+                        delay: 7,
+                        x: 1000,
+                        autoAlpha: 0,
+                    })
+
             })
         }
         const mainServicesAnimation = () => {
@@ -693,7 +756,7 @@
                         scrollTrigger: {
                             trigger: mainServicesFirst,
                             start: "top 0",
-                            end: '50% 0',
+                            end: 'bottom 0',
                             scrub: true,
                             pin: true,
                             onLeave: () => {}
@@ -711,36 +774,36 @@
                         x: -200
                     })
                     .from(mainServicesFirstLine1, {
-                        delay: 1.4,
+                        delay: 1.6,
                         y: -200,
                         autoAlpha: 0,
                     })
                     .from(mainServicesFirstLine2, {
-                        delay: 1.4,
+                        delay: 1.8,
                         y: 200,
                         autoAlpha: 0,
                     })
                     .from(mainServicesFirstTitleOuter, {
-                        delay: 1.8,
+                        delay: 2,
                         autoAlpha: 0,
                     })
                     .to(mainServicesFirstTitle, {
-                        delay: 2.2,
+                        delay: 2.4,
                         autoAlpha: 0,
                         x: -200
                     })
                     .to(mainServicesFirstLine1, {
-                        delay: 2.4,
+                        delay: 2.6,
                         y: -200,
                         autoAlpha: 0,
                     })
                     .to(mainServicesFirstLine2, {
-                        delay: 2.6,
+                        delay: 3,
                         y: 200,
                         autoAlpha: 0,
                     })
                     .to(mainServicesFirstTitleOuter, {
-                        delay: 2.8,
+                        delay: 4,
                         autoAlpha: 0,
                     })
             })
@@ -795,7 +858,7 @@
                         scrollTrigger: {
                             trigger: mainServicesOneContent1,
                             start: "bottom 100px",
-                            end: "bottom -=60",
+                            end: "bottom 200",
                             scrub: true,
                         },
                     })
@@ -806,7 +869,7 @@
                         scrollTrigger: {
                             trigger: mainServicesOneContent1,
                             start: "bottom 120px",
-                            end: "bottom -=140",
+                            end: "bottom 220",
                             scrub: true,
                         },
                     })
@@ -817,7 +880,7 @@
                         scrollTrigger: {
                             trigger: mainServicesOneContent1,
                             start: "bottom 140px",
-                            end: "bottom -=160",
+                            end: "bottom 240",
                             scrub: true,
                         },
                     })
@@ -886,7 +949,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesTwoContent2,
-                            start: "top 130px",
+                            start: "top 150px",
                             end: 'bottom right',
                             scrub: true,
 
@@ -898,7 +961,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesTwoContent2,
-                            start: "top 120px",
+                            start: "top 130px",
                             end: 'bottom right',
                             scrub: true,
                         },
@@ -931,7 +994,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesThreeContent1,
-                            start: "top 320px",
+                            start: "top 350px",
                             end: 'bottom bottom',
                             scrub: true,
 
@@ -943,7 +1006,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesThreeContent1,
-                            start: "top 300px",
+                            start: "top 320px",
                             end: 'bottom bottom',
                             scrub: true,
                         },
@@ -965,7 +1028,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesThreeContent2,
-                            start: "top 120px",
+                            start: "top 150px",
                             end: 'bottom right',
                             scrub: true,
 
@@ -977,7 +1040,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesThreeContent2,
-                            start: "top 100px",
+                            start: "top 120px",
                             end: 'bottom right',
                             scrub: true,
                         },
@@ -1011,7 +1074,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesFourContent1,
-                            start: "top 320px",
+                            start: "top 350px",
                             end: 'bottom bottom',
                             scrub: true,
 
@@ -1023,7 +1086,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesFourContent1,
-                            start: "top 300px",
+                            start: "top 320px",
                             end: 'bottom bottom',
                             scrub: true,
                         },
@@ -1035,7 +1098,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesFourContent2,
-                            start: "top 120px",
+                            start: "top 150px",
                             end: 'bottom right',
                             scrub: true,
 
@@ -1058,7 +1121,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesFourContent2,
-                            start: "top 100px",
+                            start: "top 120px",
                             end: 'bottom right',
                             scrub: true,
                         },
@@ -1069,7 +1132,7 @@
                         stagger: 0.1,
                         scrollTrigger: {
                             trigger: mainServicesFourContent3,
-                            start: "top 120px",
+                            start: "top 150px",
                             end: 'bottom right',
                             scrub: true,
                         },
@@ -1092,7 +1155,7 @@
                         autoAlpha: 0,
                         scrollTrigger: {
                             trigger: mainServicesFourContent3,
-                            start: "top 100px",
+                            start: "top 120px",
                             end: 'bottom right',
                             scrub: true,
                         },
@@ -1110,10 +1173,12 @@
                         duration: 2,
                         scrollTrigger: {
                             trigger: partners,
-                            start: "top 0",
-                            end: 'bottom top',
+                            start: "top left",
+                            end: 'bottom 0',
                             scrub: true,
                             pin: true,
+                            markers: true,
+                            id: 'partners',
                             onLeave: () => {
 
                             }

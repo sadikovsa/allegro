@@ -11,14 +11,11 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.min.css">
 
-    <script src="js/libs.min.js"></script>
-    <script src="js/pace.min.js" defer></script>
-
-    <script src="js/loader.js" defer></script>
+   
 </head>
 
 <body data-barba="wrapper">
-    <img src="img/logo.svg" alt="" class="preloader-logo">
+    
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -445,10 +442,14 @@
         <li></li>
         <li></li>
     </ul>
-
-
-
-    <script src="https://unpkg.com/@barba/core"></script>
+    <div class="preloader">
+       <img src="img/logo.svg" alt="" class="preloader-logo">
+        <div class="preloader-overlay">
+            <div class="preloader-counter"><span class="counter">0</span>%</div>
+        </div>
+    </div>
+    
+    <script src="js/libs.min.js"></script>
     <script src="js/main.js"></script>
 
 </body>
