@@ -45,44 +45,43 @@
         </header>
         <main class="main" data-barba="container" data-barba-namespace="about">
 
-            <section class="breadcrums">
+            <section class="breadcrums static pink">
                 <div class="container">
                     <ul class="breadcrum">
                         <li><a href="index.html">Главная страница</a></li>
-                        <li>О нас</li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li>Строительство и благоустройство местных автомобильных дорог в рамках проекта строительство трех-уровневого моста</li>
                     </ul>
                 </div>
             </section>
-            <section class="about">
-                <video preload loop autoplay muted>
-                    <source src="about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                </video>
+            <section class="projects-one">
+                <img src="img/projects/projects-6.jpg" alt="projects">
                 <div class="container">
-                    <h1 class="about-title">Allegro Develop Plast</h1>
-                    <p class="text">Несмотря на то что компания «Allegro Develop Plast» была сформирована в 2019 году она уже успела
-                        занять лидерские позиции в Республике по проектированию транспортных сооружений.
-                        Компания обладает выдающимися специалистами и техническими ресурсами, также на постоянной
-                        основе сотрудничает с иностранными проектными компаниями. Наша основная цель внедрить в проекты
-                        новейшие стандарты проектирования, которые используются в развитых странах мира. Оказывая услуги
-                        в таких областях как инжиниринг, проектирование, строительный надзор и инженерные изыскания мы
-                        стремимся обеспечить качественную работу для наших клиентов</p>
+                    <h2 class="title-small">Строительство и благоустройство местных автомобильных дорог в рамках проекта строительство трех-уровневого моста</h2>
+                    <p class="text-big">Сейчас в университете большое количество студенческих объединений. Стоит отметить, что количество участников в каждом из них очень сильно отличается, и поэтому сообщества, где больше участников имеют большую медийность и как следствие большее количество участников на своих мероприятиях. Соответственно для людей с более узкими интересами становится намного сложнее найти те активности, которые им будут интересны. А также важно заметить, что есть люди, которые сами хотят организовать своё небольшое "мероприятие" (будь то вечер настольных игр на 4-х человек или коллективный поход в кино), но у таких людей может совсем не быть медийного ресурса, а значит для них является большой проблемой найти себе компанию для этих активностей. И из этого вытекает следующая проблема...</p>
                 </div>
             </section>
-            <section class="about-mission">
+            <section class="projects-one__gallary">
                 <div class="container">
-                    <h2 class="title">Наша Миссия</h2>
-                    <p class="text">Авторский надзор позволяет заказчику экономить свое время и нервы, но при этом оставаться уверенным ,что реализация проекта идет по плану и согласно проектной документации</p>
-                </div>
-            </section>
-            <section class="about-licence">
-                <div class="container">
-                    <h2 class="title">Лицензия на строительство</h2>
-                    <ol>
-                        <li>Проектирование автомобильных дорог общего пользования</li>
-                        <li>Проектирование городских дорог</li>
-                        <li>Проектирование переноса инженерных коммуникаций От Кабинета министров РУз:</li>
-                        <li>Проектирование мостов</li>
-                    </ol>
+                    <h2 class="title-small">Галерея проекта</h2>
+                    <div class="projects-gallary">
+                        <p class="projects-gallary__item">
+                            <img src="img/projects/projects-7.jpg" alt="projects">
+                        </p>
+                        <p class="projects-gallary__item">
+                            <img src="img/projects/projects-8.jpg" alt="projects">
+                        </p>
+                        <div class="projects-gallary__controls">
+                            <button class="projects-gallary__control prev">
+                                <span>Предыдущая</span>
+                                <img src="img/icons/arrow-left.svg" alt="preview">
+                            </button>
+                            <button class="projects-gallary__control next">
+                                <img src="img/icons/arrow-right.svg" alt="next">
+                                <span>Следующая</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -176,7 +175,7 @@
         </footer>
     </div>
     <div class="preloader">
-       <img src="img/logo.svg" alt="" class="preloader-logo">
+        <img src="img/logo.svg" alt="" class="preloader-logo">
         <div class="preloader-overlay">
             <div class="preloader-counter"><span class="counter">0</span>%</div>
         </div>
@@ -188,8 +187,8 @@
         <li></li>
         <li></li>
     </ul>
-    
-    <script src="js/libs.min.js"></script>
+
+    <script src="./js/libs.min.js"></script>
     <script src="./js/bundle.js"></script>
 </body>
 

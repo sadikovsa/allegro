@@ -16,13 +16,14 @@ import servicesThreeAnim from './parts/servicesThreeAnim.js';
 import servicesFourAnim from './parts/servicesFourAnim.js';
 import partnersAnim from './parts/partnersAnim.js';
 import newsAnim from './parts/newsAnim.js';
+import projectOneAnim from './parts/projectOneAnim.js';
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
     'use strict';
-    const url = window.location.pathname.split(".html")[0];
-    
-    if (url === '/') {
+    let url = window.location.pathname.split('/');
+        url = url[url.length-1].split(".html")[0];
+    if (url === '' || url === 'index') {
         mainSectionAnim();
         bridgesOneAnim();
         bridgesTwoAnim();
@@ -40,7 +41,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         newsAnim();
         pageTransition();
         scrollToBlock();
+    }else if (url === 'projects_item') {
+        projectOneAnim();
     }
+    
     
     preloaderAnim();
     

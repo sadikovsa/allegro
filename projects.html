@@ -49,40 +49,63 @@
                 <div class="container">
                     <ul class="breadcrum">
                         <li><a href="index.html">Главная страница</a></li>
-                        <li>О нас</li>
+                        <li>Проекты</li>
                     </ul>
                 </div>
             </section>
-            <section class="about">
-                <video preload loop autoplay muted>
-                    <source src="about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                </video>
+            <section class="projects">
                 <div class="container">
-                    <h1 class="about-title">Allegro Develop Plast</h1>
-                    <p class="text">Несмотря на то что компания «Allegro Develop Plast» была сформирована в 2019 году она уже успела
-                        занять лидерские позиции в Республике по проектированию транспортных сооружений.
-                        Компания обладает выдающимися специалистами и техническими ресурсами, также на постоянной
-                        основе сотрудничает с иностранными проектными компаниями. Наша основная цель внедрить в проекты
-                        новейшие стандарты проектирования, которые используются в развитых странах мира. Оказывая услуги
-                        в таких областях как инжиниринг, проектирование, строительный надзор и инженерные изыскания мы
-                        стремимся обеспечить качественную работу для наших клиентов</p>
+                    <div class="projects-item">
+                        <div class="projects-item__left">
+                            <h2 class="title-small">Строительство и благоустройство местных автомобильных дорог в рамках проекта строительство трех-уровневого моста</h2>
+                            <a href="projects_item.html" class="btn"><span class="cover"></span><span class="btn-text">Подробнее</span></a>
+                        </div>
+                        <div class="projects-item__right">
+                            <img src="img/projects/projects-1.jpg" alt="projects">
+                        </div>
+                    </div>
+                    <div class="projects-item column">
+                        <img src="img/projects/projects-2.jpg" alt="projects">
+                        <h2 class="title-small">Обустройства и озеленение в рамках концепции комплекса "Галаба боги" на Алмазарском р-н, г. Ташкент</h2>
+                        <a href="prjects_item.html" class="btn"><span class="cover"></span><span class="btn-text">Подробнее</span></a>
+                    </div>
+                    <div class="projects-item">
+                        <div class="projects-item__left">
+                            <img src="img/projects/projects-3.jpg" alt="projects">
+
+                        </div>
+                        <div class="projects-item__right">
+                            <h2 class="title-small">Строительство шести полосной автомобильной дороги и трех путепроводов</h2>
+                            <a href="prjects_item.html" class="btn"><span class="cover"></span><span class="btn-text">Подробнее</span></a>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section class="about-mission">
+            <section class="projects-inprogress">
                 <div class="container">
-                    <h2 class="title">Наша Миссия</h2>
-                    <p class="text">Авторский надзор позволяет заказчику экономить свое время и нервы, но при этом оставаться уверенным ,что реализация проекта идет по плану и согласно проектной документации</p>
-                </div>
-            </section>
-            <section class="about-licence">
-                <div class="container">
-                    <h2 class="title">Лицензия на строительство</h2>
-                    <ol>
-                        <li>Проектирование автомобильных дорог общего пользования</li>
-                        <li>Проектирование городских дорог</li>
-                        <li>Проектирование переноса инженерных коммуникаций От Кабинета министров РУз:</li>
-                        <li>Проектирование мостов</li>
-                    </ol>
+                    <h2 class="title-big">Проекты в разработке</h2>
+                    <div class="projects-inprogress__wrapper">
+                        <div class="projects-inprogress__item">
+                            <div class="projects-inprogress__left">
+                                <h2 class="title-small">Путепровод и тоннель на пересечении улиц Сагбан и МКАД в городе Ташкент</h2>
+                                <p class="text-big">Проект разрабатывается специально для вело любителей столицы. В проекте предусмотрена велодорожка, тротуар для пешеходов, специальная дорожка для незрячих и зеленая зона. Все части дороги разрабатываются по современным стандартам</p>
+                                    
+                            </div>
+                            <div class="projects-inprogress__right">
+                                <img src="img/projects/projects-4.jpg" alt="projects">
+                            </div>
+                        </div>
+                        <div class="projects-inprogress__item">
+                            <div class="projects-inprogress__left">
+                                <h2 class="title-small">Велодорожки в центре города</h2>
+                                <p class="text-big">Проект разрабатывается специально для вело любителей столицы. В проекте предусмотрена велодорожка, тротуар для пешеходов, специальная дорожка для незрячих и зеленая зона. Все части дороги разрабатываются по современным стандартам</p>
+                                   
+                            </div>
+                            <div class="projects-inprogress__right">
+                                <img src="img/projects/projects-5.jpg" alt="projects">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -176,7 +199,7 @@
         </footer>
     </div>
     <div class="preloader">
-       <img src="img/logo.svg" alt="" class="preloader-logo">
+        <img src="img/logo.svg" alt="" class="preloader-logo">
         <div class="preloader-overlay">
             <div class="preloader-counter"><span class="counter">0</span>%</div>
         </div>
@@ -188,8 +211,8 @@
         <li></li>
         <li></li>
     </ul>
-    
-    <script src="js/libs.min.js"></script>
+
+    <script src="./js/libs.min.js"></script>
     <script src="./js/bundle.js"></script>
 </body>
 
