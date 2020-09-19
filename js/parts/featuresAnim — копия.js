@@ -47,7 +47,32 @@ export default function featuresAnim() {
                 autoAlpha: 0,
                 stagger: 0.3,
             })
-       
+        const tl2 = gsap.timeline({
+                repeat: -1,
+                repeatDelay: 0.1,
+                yoyo: true,
+                defaults: {
+                    duration: 1
+                }
+            })
+            .to(wave, {
+                morphSVG: "#wave2"
+            }, "+=0.1")
+            .to(wave, {
+                morphSVG: "#wave3"
+            }, "+=0.1")
+            .to(wave, {
+                morphSVG: "#wave4"
+            }, "+=0.1")
+            .to(wave, {
+                morphSVG: "#wave5"
+            }, "+=0.1")
+            .to(wave, {
+                morphSVG: "#wave6"
+            }, "+=0.1")
+            .to(wave, {
+                morphSVG: wave
+            }, "+=0.1")
 
     })
 

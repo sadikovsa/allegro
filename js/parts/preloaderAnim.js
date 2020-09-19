@@ -23,17 +23,22 @@ export default function preloaderAnim() {
     };
     let v = 0;
     let t = 100;
+    let speed = 1000;
     let o = new Odometer({
         el: preloaderCounter,
         value: 0,
         theme: 'default'
     });
     o.render();
-    const timer = setInterval(function () {
+
+
+    function callback() {
         if (v <= 100) {
             o.update(v++);
             t--;
             preloaderOverlay.style.transform = 'translateY(' + t + '%)';
+            speed -= 30; // actually this will kill your browser when goes to 0, but shows the idea 
+            setTimeout(callback, speed);
         } else {
             clearInterval(timer);
             window.scrollTo(0, 0);
@@ -59,7 +64,11 @@ export default function preloaderAnim() {
                     })
                 }
             })
+
         }
 
-    }, 50);
+    }
+
+    let timer = setTimeout(callback, speed);
+
 };

@@ -378,6 +378,7 @@ function featuresAnim() {
   let mainFeaturesTitle = mainFeatures.querySelector('.title');
   let mainFeaturesList = mainFeatures.querySelector('.features-list');
   let mainFeaturesListItem = mainFeaturesList.querySelectorAll('li');
+  let wave = document.querySelector('#wave1');
   return new Promise(resolve => {
     const tl = gsap.timeline({
       delay: 2,
@@ -413,6 +414,26 @@ function featuresAnim() {
       autoAlpha: 0,
       stagger: 0.3
     });
+    const tl2 = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 0.1,
+      yoyo: true,
+      defaults: {
+        duration: 1
+      }
+    }).to(wave, {
+      morphSVG: "#wave2"
+    }, "+=0.1").to(wave, {
+      morphSVG: "#wave3"
+    }, "+=0.1").to(wave, {
+      morphSVG: "#wave4"
+    }, "+=0.1").to(wave, {
+      morphSVG: "#wave5"
+    }, "+=0.1").to(wave, {
+      morphSVG: "#wave6"
+    }, "+=0.1").to(wave, {
+      morphSVG: wave
+    }, "+=0.1");
   });
 }
 
@@ -661,17 +682,22 @@ function preloaderAnim() {
   };
   let v = 0;
   let t = 100;
+  let speed = 1000;
   let o = new Odometer({
     el: preloaderCounter,
     value: 0,
     theme: 'default'
   });
   o.render();
-  const timer = setInterval(function () {
+
+  function callback() {
     if (v <= 100) {
       o.update(v++);
       t--;
       preloaderOverlay.style.transform = 'translateY(' + t + '%)';
+      speed -= 30; // actually this will kill your browser when goes to 0, but shows the idea 
+
+      setTimeout(callback, speed);
     } else {
       clearInterval(timer);
       window.scrollTo(0, 0);
@@ -698,7 +724,9 @@ function preloaderAnim() {
         }
       });
     }
-  }, 50);
+  }
+
+  let timer = setTimeout(callback, speed);
 }
 
 ;

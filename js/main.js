@@ -20,7 +20,9 @@ import projectOneAnim from './parts/projectOneAnim.js';
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    
     'use strict';
+    
     let url = window.location.pathname.split('/');
         url = url[url.length-1].split(".html")[0];
     if (url === '' || url === 'index') {
