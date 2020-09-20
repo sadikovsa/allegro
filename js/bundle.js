@@ -657,7 +657,16 @@ function preloaderAnim() {
     autoAlpha: 0
   });
   window.odometerOptions = {
-    auto: false
+    auto: false,
+    // Don't automatically initialize everything with class 'odometer'
+    selector: preloaderCounter,
+    // Change the selector used to automatically find things to be animated
+    format: 'd',
+    // Change how digit groups are formatted, and how many digits are shown after the decimal point
+    duration: 10000,
+    // Change how long the javascript expects the CSS animation to take
+    theme: 'default' // Specify the theme (if you have more than one theme css file on the page)
+
   };
   let v = 0;
   let t = 100;
@@ -665,18 +674,18 @@ function preloaderAnim() {
   let o = new Odometer({
     el: preloaderCounter,
     value: 0,
-    theme: 'default'
+    duration: 10000,
+    format: 'd',
+    theme: 'default',
+    minIntegerLen: 1,
+    maxIntegerLen: 1
   });
   o.render();
-
-  function callback() {
-    if (v <= 100) {
-      o.update(v++);
+  o.update(99);
+  let timer = setInterval(() => {
+    if (t > 0) {
       t--;
       preloaderOverlay.style.transform = 'translateY(' + t + '%)';
-      speed -= 30; // actually this will kill your browser when goes to 0, but shows the idea 
-
-      setTimeout(callback, speed);
     } else {
       clearInterval(timer);
       window.scrollTo(0, 0);
@@ -703,9 +712,7 @@ function preloaderAnim() {
         }
       });
     }
-  }
-
-  let timer = setTimeout(callback, speed);
+  }, 90);
 }
 
 ;
