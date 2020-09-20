@@ -13,7 +13,7 @@ export default function partnersAnim() {
                 scrollTrigger: {
                     trigger: partners,
                     start: "top 0",
-                    end: 'bottom 0',
+                    end: '110% 0',
                     pin: true,
                     scrub: true,
                 },

@@ -14,7 +14,7 @@ export default function bridgesThreeAnim() {
                 scrollTrigger: {
                     trigger: bridgeThree,
                     start: "top 50%",
-                    end: 'bottom 0',
+                    end: '110% 0',
                     scrub: true,
                     pin: true,
                     onEnterBack: () => {
@@ -60,13 +60,8 @@ export default function bridgesThreeAnim() {
                 autoAlpha: 0,
                 x: -1000,
             })
-            .to(bridgeThreeTitle.querySelector('.title-text'), {
+            .to(bridgeThreeTitle, {
                 delay: 2,
-                autoAlpha: 0,
-                y: -400
-            })
-            .to(bridgeThreeTitleBefore, {
-                delay: 2.2,
                 autoAlpha: 0,
                 y: -400
             })

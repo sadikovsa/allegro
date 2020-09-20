@@ -95,7 +95,7 @@ function bridgesFourAnim() {
       scrollTrigger: {
         trigger: bridgeFour,
         start: "top 250px",
-        end: 'bottom 0',
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -166,7 +166,7 @@ function bridgesOneAnim() {
       scrollTrigger: {
         trigger: bridgeOne,
         start: "top 0",
-        end: "bottom 0",
+        end: "110% 0",
         pin: true,
         scrub: true,
         onEnter: () => {
@@ -239,7 +239,7 @@ function bridgesThreeAnim() {
       scrollTrigger: {
         trigger: bridgeThree,
         start: "top 50%",
-        end: 'bottom 0',
+        end: '110% 0',
         scrub: true,
         pin: true,
         onEnterBack: () => {
@@ -279,12 +279,8 @@ function bridgesThreeAnim() {
       delay: 1.8,
       autoAlpha: 0,
       x: -1000
-    }).to(bridgeThreeTitle.querySelector('.title-text'), {
+    }).to(bridgeThreeTitle, {
       delay: 2,
-      autoAlpha: 0,
-      y: -400
-    }).to(bridgeThreeTitleBefore, {
-      delay: 2.2,
       autoAlpha: 0,
       y: -400
     });
@@ -316,7 +312,7 @@ function bridgesTwoAnim() {
       scrollTrigger: {
         trigger: bridgeTwo,
         start: "top 250px",
-        end: 'center 0',
+        end: 'bottom 0',
         scrub: true,
         pin: true,
         onEnterBack: () => {
@@ -595,7 +591,7 @@ function partnersAnim() {
       scrollTrigger: {
         trigger: partners,
         start: "top 0",
-        end: 'bottom 0',
+        end: '110% 0',
         pin: true,
         scrub: true
       },
@@ -712,7 +708,7 @@ function preloaderAnim() {
         }
       });
     }
-  }, 90);
+  }, 40);
 }
 
 ;
@@ -790,7 +786,7 @@ function projectsFirstAnim() {
       scrollTrigger: {
         trigger: mainProjectsFirst,
         start: "top 0",
-        end: '25% 0',
+        end: '100% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -839,7 +835,7 @@ function projectsSecondAnim() {
       scrollTrigger: {
         trigger: mainProjectsSecond,
         start: "top 0",
-        end: 'bottom 0',
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -956,7 +952,7 @@ function servicesAnim() {
       scrollTrigger: {
         trigger: mainServicesFirst,
         start: "top 0",
-        end: 'bottom 0',
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -1174,8 +1170,8 @@ function servicesOneAnim() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 350px",
-        end: 'top ',
+        start: "-30% 0",
+        end: '40% center',
         scrub: true
       }
     }).from(mainServicesOneContent1Img, {
@@ -1184,8 +1180,8 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 350px",
-        end: 'top -100',
+        start: "-30% 0",
+        end: '40% center',
         scrub: true
       }
     }).from(mainServicesOneContent1Text, {
@@ -1194,8 +1190,8 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 350px",
-        end: 'top 0',
+        start: "-30% 0",
+        end: '40% center',
         scrub: true
       }
     }).from(mainServicesOneContent2TitleText, {
@@ -1204,9 +1200,11 @@ function servicesOneAnim() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 100px",
-        end: "bottom 200",
-        scrub: true
+        start: "bottom 30%",
+        end: "bottom 0",
+        scrub: true,
+        markers: true,
+        id: 'services one'
       }
     }).from(mainServicesOneContent2Img, {
       delay: 0.6,
@@ -1214,8 +1212,8 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 120px",
-        end: "bottom 220",
+        start: "bottom 30%",
+        end: "bottom 0",
         scrub: true
       }
     }).from(mainServicesOneContent2Text, {
@@ -1224,8 +1222,8 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 140px",
-        end: "bottom 240",
+        start: "bottom 30%",
+        end: "bottom 0",
         scrub: true
       }
     });

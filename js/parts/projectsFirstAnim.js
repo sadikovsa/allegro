@@ -13,7 +13,7 @@ export default function projectsFirstAnim() {
                 scrollTrigger: {
                     trigger: mainProjectsFirst,
                     start: "top 0",
-                    end: '25% 0',
+                    end: '100% 0',
                     scrub: true,
                     pin: true,
                     onLeave: () => {

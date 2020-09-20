@@ -28,8 +28,8 @@ export default function servicesOneAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 350px",
-                    end: 'top ',
+                    start: "-30% 0",
+                    end: '40% center',
                     scrub: true,
                 },
             })
@@ -39,8 +39,8 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 350px",
-                    end: 'top -100',
+                    start: "-30% 0",
+                    end: '40% center',
                     scrub: true,
                 },
             })
@@ -50,8 +50,8 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 350px",
-                    end: 'top 0',
+                    start: "-30% 0",
+                    end: '40% center',
                     scrub: true,
                 },
             })
@@ -62,9 +62,11 @@ export default function servicesOneAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 100px",
-                    end: "bottom 200",
+                    start: "bottom 30%",
+                    end: "bottom 0",
                     scrub: true,
+                    markers: true,
+                    id: 'services one',
                 },
             })
             .from(mainServicesOneContent2Img, {
@@ -73,8 +75,8 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 120px",
-                    end: "bottom 220",
+                    start: "bottom 30%",
+                    end: "bottom 0",
                     scrub: true,
                 },
             })
@@ -84,8 +86,8 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 140px",
-                    end: "bottom 240",
+                    start: "bottom 30%",
+                    end: "bottom 0",
                     scrub: true,
                 },
             })

@@ -13,7 +13,7 @@ export default function servicesAnim() {
                 scrollTrigger: {
                     trigger: mainServicesFirst,
                     start: "top 0",
-                    end: 'bottom 0',
+                    end: '110% 0',
                     scrub: true,
                     pin: true,
                     onLeave: () => {}

@@ -14,7 +14,7 @@ export default function bridgesTwoAnim() {
                 scrollTrigger: {
                     trigger: bridgeTwo,
                     start: "top 250px",
-                    end: 'center 0',
+                    end: 'bottom 0',
                     scrub: true,
                     pin: true,
                     onEnterBack: () => {

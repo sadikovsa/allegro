@@ -14,7 +14,7 @@ export default function bridgesOneAnim() {
                 scrollTrigger: {
                     trigger: bridgeOne,
                     start: "top 0",
-                    end: "bottom 0",
+                    end: "110% 0",
                     pin: true,
                     scrub: true,
                     onEnter: () => {

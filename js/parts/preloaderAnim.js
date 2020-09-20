@@ -74,6 +74,6 @@ export default function preloaderAnim() {
             })
 
         }
-    }, 90)
+    }, 40)
 
 };
