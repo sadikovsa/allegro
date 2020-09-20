@@ -4,8 +4,8 @@ export default function featuresAnim() {
     let mainFeaturesTitle = mainFeatures.querySelector('.title');
     let mainFeaturesList = mainFeatures.querySelector('.features-list');
     let mainFeaturesListItem = mainFeaturesList.querySelectorAll('li');
-    let wave = document.querySelector('#wave1');
     return new Promise((resolve) => {
+        
         const tl = gsap.timeline({
                 delay: 2,
                 duration: 2,
