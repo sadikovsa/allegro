@@ -35,9 +35,17 @@ var _servicesFourAnim = _interopRequireDefault(require("./parts/servicesFourAnim
 
 var _partnersAnim = _interopRequireDefault(require("./parts/partnersAnim.js"));
 
-var _newsAnim = _interopRequireDefault(require("./parts/newsAnim.js"));
+var _mainNewsAnim = _interopRequireDefault(require("./parts/mainNewsAnim.js"));
 
 var _projectOneAnim = _interopRequireDefault(require("./parts/projectOneAnim.js"));
+
+var _contactsAnim = _interopRequireDefault(require("./parts/contactsAnim.js"));
+
+var _newsAnim = _interopRequireDefault(require("./parts/newsAnim.js"));
+
+var _newsItemAnim = _interopRequireDefault(require("./parts/newsItemAnim.js"));
+
+var _servicesItemAnim = _interopRequireDefault(require("./parts/servicesItemAnim.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62,17 +70,52 @@ document.addEventListener("DOMContentLoaded", function (event) {
     (0, _servicesThreeAnim.default)();
     (0, _servicesFourAnim.default)();
     (0, _partnersAnim.default)();
-    (0, _newsAnim.default)();
+    (0, _mainNewsAnim.default)();
     (0, _pageTransition.default)();
     (0, _scrollToBlock.default)();
   } else if (url === 'projects_item') {
     (0, _projectOneAnim.default)();
+  } else if (url === 'contacts') {
+    (0, _contactsAnim.default)();
+  } else if (url === 'news') {
+    (0, _newsAnim.default)();
+  } else if (url === 'news_item') {
+    (0, _newsItemAnim.default)();
+  } else if (url === 'services') {
+    (0, _servicesItemAnim.default)();
   }
 
   (0, _preloaderAnim.default)();
+  window.addEventListener("DOMMouseScroll", handleScroll);
+  window.addEventListener("mousewheel", handleScroll);
+
+  function wheelDistance(e) {
+    if (!e) {
+      e = window.event;
+    }
+
+    var w = e.wheelDelta,
+        d = e.detail;
+
+    if (d) {
+      return -d / 3; // Firefox; 
+    } // IE, Safari, Chrome & other browsers 
+
+
+    return w / 120;
+  }
+
+  function handleScroll(e) {
+    var delta = wheelDistance(e);
+    var time = 300;
+    var distance = 50;
+    $('html, body').stop().animate({
+      scrollTop: $(window).scrollTop() - distance * delta
+    }, time);
+  }
 });
 
-},{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/featuresAnim.js":6,"./parts/mainSectionAnim.js":7,"./parts/newsAnim.js":8,"./parts/pageTransition.js":9,"./parts/partnersAnim.js":10,"./parts/preloaderAnim.js":11,"./parts/projectOneAnim.js":12,"./parts/projectsFirstAnim.js":13,"./parts/projectsSecondAnim.js":14,"./parts/scrollToBlock.js":15,"./parts/servicesAnim.js":16,"./parts/servicesFourAnim.js":17,"./parts/servicesOneAnim.js":18,"./parts/servicesThreeAnim.js":19,"./parts/servicesTwoAnim.js":20}],2:[function(require,module,exports){
+},{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/contactsAnim.js":6,"./parts/featuresAnim.js":7,"./parts/mainNewsAnim.js":8,"./parts/mainSectionAnim.js":9,"./parts/newsAnim.js":10,"./parts/newsItemAnim.js":11,"./parts/pageTransition.js":12,"./parts/partnersAnim.js":13,"./parts/preloaderAnim.js":14,"./parts/projectOneAnim.js":15,"./parts/projectsFirstAnim.js":16,"./parts/projectsSecondAnim.js":17,"./parts/scrollToBlock.js":18,"./parts/servicesAnim.js":19,"./parts/servicesFourAnim.js":20,"./parts/servicesItemAnim.js":21,"./parts/servicesOneAnim.js":22,"./parts/servicesThreeAnim.js":23,"./parts/servicesTwoAnim.js":24}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -367,6 +410,70 @@ function bridgesTwoAnim() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = contactsAnim;
+
+function contactsAnim() {
+  let contacts = document.querySelector('.contacts');
+  let contactsTitle = contacts.querySelector('.title');
+  let contactsInfo = document.querySelector('.contacts-info');
+  let contactsTitle1 = contactsInfo.querySelectorAll('.title')[0];
+  let contactsList1 = contactsInfo.querySelectorAll('.contacts-info__list')[0];
+  let contactsTitle2 = contactsInfo.querySelectorAll('.title')[1];
+  let contactsList2 = contactsInfo.querySelectorAll('.contacts-info__list')[1];
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      duration: 2
+    }).to(contacts, {
+      autoAlpha: 1
+    }).from(contactsTitle, {
+      delay: 1.2,
+      autoAlpha: 0,
+      x: -200
+    });
+    const t2 = gsap.timeline({
+      delay: 2,
+      duration: 2,
+      scrollTrigger: {
+        trigger: contactsInfo,
+        start: "top 0",
+        end: '110% 0',
+        scrub: true,
+        pin: true,
+        onLeave: () => {}
+      },
+      onComplete: () => {
+        resolve();
+      }
+    }).to(contactsInfo, {
+      autoAlpha: 1
+    }).from(contactsTitle1, {
+      delay: 2,
+      autoAlpha: 0,
+      x: -200
+    }).from(contactsList1, {
+      delay: 2,
+      autoAlpha: 0,
+      y: 400
+    }).from(contactsTitle2, {
+      delay: 2,
+      autoAlpha: 0,
+      x: -200
+    }).from(contactsList2, {
+      delay: 2,
+      autoAlpha: 0,
+      y: 400
+    });
+  });
+}
+
+;
+
+},{}],7:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = featuresAnim;
 
 function featuresAnim() {
@@ -414,7 +521,55 @@ function featuresAnim() {
 
 ;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = newsAnim;
+
+function newsAnim() {
+  let mainNews = document.querySelector('.main-news');
+  let mainNewsWrapper = document.querySelector('.main-news__wrapper');
+  let mainNewsTitle = mainNews.querySelector('.title');
+  mainNewsTitle.querySelector('.title-text').innerHTML = mainNewsTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
+  let mainNewsTitleText = mainNewsTitle.querySelectorAll('.letter');
+  let mainNewsList = mainNews.querySelector('.main-news__wrapper');
+  let mainNewsListItem = mainNewsList.querySelectorAll('.main-news__item');
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      delay: 2,
+      duration: 2,
+      scrollTrigger: {
+        trigger: mainNews,
+        start: "top 0",
+        end: 'bottom +=1500',
+        scrub: true,
+        pin: true,
+        onLeave: () => {}
+      },
+      onComplete: () => {
+        resolve();
+      }
+    }).to(mainNews, {
+      autoAlpha: 1
+    }).from(mainNewsTitleText, {
+      delay: 0.3,
+      stagger: 0.1,
+      autoAlpha: 0
+    }).from(mainNewsListItem, {
+      delay: 0.8,
+      y: 400,
+      autoAlpha: 0,
+      stagger: 0.5
+    });
+  });
+}
+
+;
+
+},{}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -494,7 +649,7 @@ function mainSectionAnim() {
 
 ;
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -503,46 +658,81 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = newsAnim;
 
 function newsAnim() {
-  let mainNews = document.querySelector('.main-news');
-  let mainNewsWrapper = document.querySelector('.main-news__wrapper');
-  let mainNewsTitle = mainNews.querySelector('.title');
-  mainNewsTitle.querySelector('.title-text').innerHTML = mainNewsTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
-  let mainNewsTitleText = mainNewsTitle.querySelectorAll('.letter');
-  let mainNewsList = mainNews.querySelector('.main-news__wrapper');
-  let mainNewsListItem = mainNewsList.querySelectorAll('.main-news__item');
+  let news = document.querySelector('.news');
+  let newsWrapper = news.querySelector('.news-wrapper');
+  let newsItems = newsWrapper.querySelectorAll('.news-item');
   return new Promise(resolve => {
     const tl = gsap.timeline({
-      delay: 2,
       duration: 2,
-      scrollTrigger: {
-        trigger: mainNews,
-        start: "top 0",
-        end: 'bottom +=1500',
-        scrub: true,
-        pin: true,
-        onLeave: () => {}
-      },
       onComplete: () => {
         resolve();
       }
-    }).to(mainNews, {
-      autoAlpha: 1
-    }).from(mainNewsTitleText, {
-      delay: 0.3,
-      stagger: 0.1,
-      autoAlpha: 0
-    }).from(mainNewsListItem, {
-      delay: 0.8,
-      y: 400,
-      autoAlpha: 0,
-      stagger: 0.5
+    });
+    newsItems.forEach(item => {
+      gsap.from(item, {
+        delay: 1.2,
+        autoAlpha: 0,
+        y: 300,
+        scrollTrigger: {
+          trigger: news,
+          start: "-95px 0",
+          end: "-50px 0",
+          scrub: true
+        }
+      });
     });
   });
 }
 
 ;
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = newsItemAnim;
+
+function newsItemAnim() {
+  let news = document.querySelector('.news-one');
+  let newsWrapper = news.querySelector('.news-one__content');
+  let newsImg = news.querySelectorAll('img')[0];
+  let newsTitle = news.querySelector('.news-one__title');
+  let newsText = news.querySelector('p');
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      duration: 2,
+      onComplete: () => {
+        resolve();
+      }
+    }).from(newsTitle, {
+      delay: 1.2,
+      autoAlpha: 0,
+      x: -300,
+      scrollTrigger: {
+        trigger: newsImg,
+        start: "50% 0",
+        end: "bottom 0",
+        scrub: true
+      }
+    }).from(newsText, {
+      delay: 1.2,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: newsImg,
+        start: "50% 0",
+        end: "bottom 0",
+        scrub: true
+      }
+    });
+  });
+}
+
+;
+
+},{}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -569,7 +759,7 @@ function pageTransition() {
 
 ;
 
-},{}],10:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -624,7 +814,7 @@ function partnersAnim() {
 
 ;
 
-},{}],11:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -677,43 +867,80 @@ function preloaderAnim() {
     maxIntegerLen: 1
   });
   o.render();
-  o.update(99);
-  let timer = setInterval(() => {
-    if (t > 0) {
-      t--;
-      preloaderOverlay.style.transform = 'translateY(' + t + '%)';
-    } else {
-      clearInterval(timer);
-      window.scrollTo(0, 0);
-      html.style.overflow = 'inherit';
-      gsap.to(preloaderImg, {
-        duration: 1,
-        css: {
-          top: headerLogo.offsetTop,
-          left: headerLogo.offsetLeft,
-          maxWidth: '200px',
-          scale: 1,
-          translateY: 0,
-          opacity: 0
-        },
-        onStart: function () {
-          gsap.to(preloader, {
-            delay: 0.3,
-            autoAlpha: 0
+  let timer = setTimeout(() => {
+    o.update(32);
+    preloaderOverlay.style.transform = 'translateY(' + 68 + '%)';
+    setTimeout(() => {
+      o.update(60);
+      preloaderOverlay.style.transform = 'translateY(' + 40 + '%)';
+      setTimeout(() => {
+        o.update(99);
+        preloaderOverlay.style.transform = 'translateY(' + 0 + '%)';
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          html.style.overflow = 'inherit';
+          gsap.to(preloaderImg, {
+            duration: 1,
+            css: {
+              top: headerLogo.offsetTop,
+              left: headerLogo.offsetLeft,
+              maxWidth: '200px',
+              scale: 1,
+              translateY: 0,
+              opacity: 0
+            },
+            onStart: function () {
+              gsap.to(preloader, {
+                delay: 0.3,
+                autoAlpha: 0
+              });
+              gsap.to(headerLogo, {
+                delay: 0.5,
+                autoAlpha: 1
+              });
+            }
           });
-          gsap.to(headerLogo, {
-            delay: 0.5,
-            autoAlpha: 1
-          });
-        }
-      });
-    }
-  }, 40);
+          clearInterval(timer);
+        }, 1500);
+      }, 1500);
+    }, 1500);
+  }, 1500); //    let timer = setInterval(() => {
+  //        if (t > 0) {
+  //            t--;
+  //            preloaderOverlay.style.transform = 'translateY(' + t + '%)';
+  //        } else {
+  //            clearInterval(timer);
+  //            window.scrollTo(0, 0);
+  //            html.style.overflow = 'inherit';
+  //            gsap.to(preloaderImg, {
+  //                duration: 1,
+  //                css: {
+  //                    top: headerLogo.offsetTop,
+  //                    left: headerLogo.offsetLeft,
+  //                    maxWidth: '200px',
+  //                    scale: 1,
+  //                    translateY: 0,
+  //                    opacity: 0
+  //                },
+  //                onStart: function () {
+  //                    gsap.to(preloader, {
+  //                        delay: 0.3,
+  //                        autoAlpha: 0
+  //                    })
+  //                    gsap.to(headerLogo, {
+  //                        delay: 0.5,
+  //                        autoAlpha: 1
+  //                    })
+  //                }
+  //            })
+  //
+  //        }
+  //    }, 40)
 }
 
 ;
 
-},{}],12:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -722,6 +949,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = projectOneAnim;
 
 function projectOneAnim() {
+  let projectOne = document.querySelector('.projects-one');
+  let projectOneImg = projectOne.querySelector('img');
+  let projectOneTitle = projectOne.querySelector('.title-small');
+  let projectOneText = projectOne.querySelector('.text-big');
   let projectGallary = document.querySelector('.projects-gallary');
   let projectGallaryItems = projectGallary.querySelectorAll('.projects-gallary__item');
   let projectGallaryPrev = projectGallary.querySelector('.projects-gallary__control.prev');
@@ -761,11 +992,43 @@ function projectOneAnim() {
     }
   });
   projectGallarySlider();
+  return new Promise(resolve => {
+    const t1 = gsap.timeline({
+      duration: 2,
+
+      onStart() {},
+
+      onComplete() {
+        resolve();
+      }
+
+    }).from(projectOneTitle, {
+      delay: 1.4,
+      autoAlpha: 0,
+      x: -200,
+      scrollTrigger: {
+        trigger: projectOneImg,
+        start: "50% 0",
+        end: 'bottom 0',
+        scrub: true
+      }
+    }).from(projectOneText, {
+      delay: 2,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: projectOneImg,
+        start: "50% 0",
+        end: 'bottom 0',
+        scrub: true
+      }
+    });
+  });
 }
 
 ;
 
-},{}],13:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -813,7 +1076,7 @@ function projectsFirstAnim() {
 
 ;
 
-},{}],14:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -879,7 +1142,7 @@ function projectsSecondAnim() {
 
 ;
 
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -930,7 +1193,7 @@ function scrollToBLock() {
 
 ;
 
-},{"./pageTransition.js":9}],16:[function(require,module,exports){
+},{"./pageTransition.js":12}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -998,7 +1261,7 @@ function servicesAnim() {
 
 ;
 
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1131,7 +1394,75 @@ function servicesFourAnim() {
 
 ;
 
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = servicesItemAnim;
+
+function servicesItemAnim() {
+  let services = document.querySelector('.services');
+  let servicesImg = services.querySelectorAll('img')[0];
+  let servicesTitle1 = services.querySelectorAll('.services-title')[0];
+  let servicesText1 = services.querySelectorAll('.text-big')[0];
+  let servicesTitle2 = services.querySelectorAll('.services-title')[1];
+  let servicesList = services.querySelectorAll('.services-features li');
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      duration: 2,
+      onComplete: () => {
+        resolve();
+      }
+    }).from(servicesTitle1, {
+      delay: 1.2,
+      autoAlpha: 0,
+      x: -300,
+      scrollTrigger: {
+        trigger: servicesImg,
+        start: "50% 0",
+        end: "bottom 0",
+        scrub: true
+      }
+    }).from(servicesText1, {
+      delay: 1.2,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: servicesImg,
+        start: "50% 0",
+        end: "bottom 0",
+        scrub: true
+      }
+    }).from(servicesTitle2, {
+      delay: 1.2,
+      autoAlpha: 0,
+      x: -300,
+      scrollTrigger: {
+        trigger: servicesImg,
+        start: "bottom 0",
+        end: "120% 0",
+        scrub: true
+      }
+    }).from(servicesList, {
+      delay: 0.3,
+      autoAlpha: 0,
+      y: 300,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: servicesImg,
+        start: "bottom 0",
+        end: "120% 0",
+        scrub: true
+      }
+    });
+  });
+}
+
+;
+
+},{}],22:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1202,9 +1533,7 @@ function servicesOneAnim() {
         trigger: mainServicesOneContent1,
         start: "bottom 30%",
         end: "bottom 0",
-        scrub: true,
-        markers: true,
-        id: 'services one'
+        scrub: true
       }
     }).from(mainServicesOneContent2Img, {
       delay: 0.6,
@@ -1232,7 +1561,7 @@ function servicesOneAnim() {
 
 ;
 
-},{}],19:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1331,7 +1660,7 @@ function servicesThreeAnim() {
 
 ;
 
-},{}],20:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
