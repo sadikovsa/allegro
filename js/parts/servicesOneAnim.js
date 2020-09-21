@@ -65,8 +65,6 @@ export default function servicesOneAnim() {
                     start: "bottom 30%",
                     end: "bottom 0",
                     scrub: true,
-                    markers: true,
-                    id: 'services one',
                 },
             })
             .from(mainServicesOneContent2Img, {

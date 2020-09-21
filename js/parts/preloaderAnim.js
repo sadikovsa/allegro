@@ -38,42 +38,83 @@ export default function preloaderAnim() {
         maxIntegerLen: 1,
     });
     o.render();
-    o.update(99);
 
 
 
-
-    let timer = setInterval(() => {
-        if (t > 0) {
-            t--;
-            preloaderOverlay.style.transform = 'translateY(' + t + '%)';
-        } else {
-            clearInterval(timer);
-            window.scrollTo(0, 0);
-            html.style.overflow = 'inherit';
-            gsap.to(preloaderImg, {
-                duration: 1,
-                css: {
-                    top: headerLogo.offsetTop,
-                    left: headerLogo.offsetLeft,
-                    maxWidth: '200px',
-                    scale: 1,
-                    translateY: 0,
-                    opacity: 0
-                },
-                onStart: function () {
-                    gsap.to(preloader, {
-                        delay: 0.3,
-                        autoAlpha: 0
+    let timer = setTimeout(() => {
+        o.update(32);
+        preloaderOverlay.style.transform = 'translateY(' + 68 + '%)';
+        setTimeout(() => {
+            o.update(60);
+            preloaderOverlay.style.transform = 'translateY(' + 40 + '%)';
+            setTimeout(() => {
+                o.update(99);
+                preloaderOverlay.style.transform = 'translateY(' + 0 + '%)';
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                    html.style.overflow = 'inherit';
+                    gsap.to(preloaderImg, {
+                        duration: 1,
+                        css: {
+                            top: headerLogo.offsetTop,
+                            left: headerLogo.offsetLeft,
+                            maxWidth: '200px',
+                            scale: 1,
+                            translateY: 0,
+                            opacity: 0
+                        },
+                        onStart: function () {
+                            gsap.to(preloader, {
+                                delay: 0.3,
+                                autoAlpha: 0
+                            })
+                            gsap.to(headerLogo, {
+                                delay: 0.5,
+                                autoAlpha: 1
+                            })
+                        }
                     })
-                    gsap.to(headerLogo, {
-                        delay: 0.5,
-                        autoAlpha: 1
-                    })
-                }
-            })
+                    clearInterval(timer);
+                }, 1500)
 
-        }
-    }, 40)
+            }, 1500)
+        }, 1500)
+    }, 1500)
+
+
+
+
+    //    let timer = setInterval(() => {
+    //        if (t > 0) {
+    //            t--;
+    //            preloaderOverlay.style.transform = 'translateY(' + t + '%)';
+    //        } else {
+    //            clearInterval(timer);
+    //            window.scrollTo(0, 0);
+    //            html.style.overflow = 'inherit';
+    //            gsap.to(preloaderImg, {
+    //                duration: 1,
+    //                css: {
+    //                    top: headerLogo.offsetTop,
+    //                    left: headerLogo.offsetLeft,
+    //                    maxWidth: '200px',
+    //                    scale: 1,
+    //                    translateY: 0,
+    //                    opacity: 0
+    //                },
+    //                onStart: function () {
+    //                    gsap.to(preloader, {
+    //                        delay: 0.3,
+    //                        autoAlpha: 0
+    //                    })
+    //                    gsap.to(headerLogo, {
+    //                        delay: 0.5,
+    //                        autoAlpha: 1
+    //                    })
+    //                }
+    //            })
+    //
+    //        }
+    //    }, 40)
 
 };
