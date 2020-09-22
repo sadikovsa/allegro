@@ -1,5 +1,4 @@
 import preloaderAnim from './parts/preloaderAnim.js';
-import pageTransition from './parts/pageTransition.js';
 import scrollToBlock from './parts/scrollToBlock.js';
 import mainSectionAnim from './parts/mainSectionAnim.js';
 import bridgesOneAnim from './parts/bridgesOneAnim.js';
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         servicesFourAnim();
         partnersAnim();
         mainNewsAnim();
-        pageTransition();
         scrollToBlock();
     } else if (url === 'projects_item') {
         projectOneAnim();
@@ -81,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function handleScroll(e) {
         var delta = wheelDistance(e);
-        var time = 300;
-        var distance = 50;
+        var time = 1000;
+        var distance = 100;
 
         $('html, body').stop().animate({
             scrollTop: $(window).scrollTop() -

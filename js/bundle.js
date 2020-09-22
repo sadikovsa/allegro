@@ -3,8 +3,6 @@
 
 var _preloaderAnim = _interopRequireDefault(require("./parts/preloaderAnim.js"));
 
-var _pageTransition = _interopRequireDefault(require("./parts/pageTransition.js"));
-
 var _scrollToBlock = _interopRequireDefault(require("./parts/scrollToBlock.js"));
 
 var _mainSectionAnim = _interopRequireDefault(require("./parts/mainSectionAnim.js"));
@@ -71,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     (0, _servicesFourAnim.default)();
     (0, _partnersAnim.default)();
     (0, _mainNewsAnim.default)();
-    (0, _pageTransition.default)();
     (0, _scrollToBlock.default)();
   } else if (url === 'projects_item') {
     (0, _projectOneAnim.default)();
@@ -107,15 +104,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function handleScroll(e) {
     var delta = wheelDistance(e);
-    var time = 300;
-    var distance = 50;
+    var time = 1000;
+    var distance = 100;
     $('html, body').stop().animate({
       scrollTop: $(window).scrollTop() - distance * delta
     }, time);
   }
 });
 
-},{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/contactsAnim.js":6,"./parts/featuresAnim.js":7,"./parts/mainNewsAnim.js":8,"./parts/mainSectionAnim.js":9,"./parts/newsAnim.js":10,"./parts/newsItemAnim.js":11,"./parts/pageTransition.js":12,"./parts/partnersAnim.js":13,"./parts/preloaderAnim.js":14,"./parts/projectOneAnim.js":15,"./parts/projectsFirstAnim.js":16,"./parts/projectsSecondAnim.js":17,"./parts/scrollToBlock.js":18,"./parts/servicesAnim.js":19,"./parts/servicesFourAnim.js":20,"./parts/servicesItemAnim.js":21,"./parts/servicesOneAnim.js":22,"./parts/servicesThreeAnim.js":23,"./parts/servicesTwoAnim.js":24}],2:[function(require,module,exports){
+},{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/contactsAnim.js":6,"./parts/featuresAnim.js":7,"./parts/mainNewsAnim.js":8,"./parts/mainSectionAnim.js":9,"./parts/newsAnim.js":10,"./parts/newsItemAnim.js":11,"./parts/partnersAnim.js":13,"./parts/preloaderAnim.js":14,"./parts/projectOneAnim.js":15,"./parts/projectsFirstAnim.js":16,"./parts/projectsSecondAnim.js":17,"./parts/scrollToBlock.js":18,"./parts/servicesAnim.js":19,"./parts/servicesFourAnim.js":20,"./parts/servicesItemAnim.js":21,"./parts/servicesOneAnim.js":22,"./parts/servicesThreeAnim.js":23,"./parts/servicesTwoAnim.js":24}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
