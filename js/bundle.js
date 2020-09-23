@@ -53,63 +53,85 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let url = window.location.pathname.split('/');
   url = url[url.length - 1].split(".html")[0];
 
-  if (url === '' || url === 'index') {
-    (0, _mainSectionAnim.default)();
-    (0, _bridgesOneAnim.default)();
-    (0, _bridgesTwoAnim.default)();
-    (0, _bridgesThreeAnim.default)();
-    (0, _bridgesFourAnim.default)();
-    (0, _featuresAnim.default)();
-    (0, _projectsFirstAnim.default)();
-    (0, _projectsSecondAnim.default)();
-    (0, _servicesAnim.default)();
-    (0, _servicesOneAnim.default)();
-    (0, _servicesTwoAnim.default)();
-    (0, _servicesThreeAnim.default)();
-    (0, _servicesFourAnim.default)();
-    (0, _partnersAnim.default)();
-    (0, _mainNewsAnim.default)();
-    (0, _scrollToBlock.default)();
-  } else if (url === 'projects_item') {
-    (0, _projectOneAnim.default)();
-  } else if (url === 'contacts') {
-    (0, _contactsAnim.default)();
-  } else if (url === 'news') {
-    (0, _newsAnim.default)();
-  } else if (url === 'news_item') {
-    (0, _newsItemAnim.default)();
-  } else if (url === 'services') {
-    (0, _servicesItemAnim.default)();
+  if (window.innerWidth > 1199) {
+    if (url === '' || url === 'index') {
+      (0, _mainSectionAnim.default)();
+      (0, _bridgesOneAnim.default)();
+      (0, _bridgesTwoAnim.default)();
+      (0, _bridgesThreeAnim.default)();
+      (0, _bridgesFourAnim.default)();
+      (0, _featuresAnim.default)();
+      (0, _projectsFirstAnim.default)();
+      (0, _projectsSecondAnim.default)();
+      (0, _servicesAnim.default)();
+      (0, _servicesOneAnim.default)();
+      (0, _servicesTwoAnim.default)();
+      (0, _servicesThreeAnim.default)();
+      (0, _servicesFourAnim.default)();
+      (0, _partnersAnim.default)();
+      (0, _mainNewsAnim.default)();
+      (0, _scrollToBlock.default)();
+    } else if (url === 'projects_item') {
+      (0, _projectOneAnim.default)();
+    } else if (url === 'contacts') {
+      (0, _contactsAnim.default)();
+    } else if (url === 'news') {
+      (0, _newsAnim.default)();
+    } else if (url === 'news_item') {
+      (0, _newsItemAnim.default)();
+    } else if (url === 'services') {
+      (0, _servicesItemAnim.default)();
+    }
+
+    window.addEventListener("DOMMouseScroll", handleScroll);
+    window.addEventListener("mousewheel", handleScroll);
+
+    function wheelDistance(e) {
+      if (!e) {
+        e = window.event;
+      }
+
+      var w = e.wheelDelta,
+          d = e.detail;
+
+      if (d) {
+        return -d / 3; // Firefox; 
+      } // IE, Safari, Chrome & other browsers 
+
+
+      return w / 120;
+    }
+
+    function handleScroll(e) {
+      var delta = wheelDistance(e);
+      var time = 1000;
+      var distance = 100;
+      $('html, body').stop().animate({
+        scrollTop: $(window).scrollTop() - distance * delta
+      }, time);
+    }
+  } else {
+    if (url === 'projects_item') {
+      (0, _projectOneAnim.default)();
+    } // burger
+
+
+    let burger = document.querySelector('#burgerBtn');
+    let mobileContent = document.querySelector('.header-nav');
+    burger.addEventListener('change', function () {
+      mobileContent.classList.toggle('is-open');
+    });
+    document.addEventListener('click', function (e) {
+      let target = e.target;
+
+      if (!target.closest('.burger') && !target.closest('.header-nav')) {
+        burger.checked = false;
+        mobileContent.classList.remove('is-open');
+      }
+    });
   }
 
   (0, _preloaderAnim.default)();
-  window.addEventListener("DOMMouseScroll", handleScroll);
-  window.addEventListener("mousewheel", handleScroll);
-
-  function wheelDistance(e) {
-    if (!e) {
-      e = window.event;
-    }
-
-    var w = e.wheelDelta,
-        d = e.detail;
-
-    if (d) {
-      return -d / 3; // Firefox; 
-    } // IE, Safari, Chrome & other browsers 
-
-
-    return w / 120;
-  }
-
-  function handleScroll(e) {
-    var delta = wheelDistance(e);
-    var time = 1000;
-    var distance = 100;
-    $('html, body').stop().animate({
-      scrollTop: $(window).scrollTop() - distance * delta
-    }, time);
-  }
 });
 
 },{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/contactsAnim.js":6,"./parts/featuresAnim.js":7,"./parts/mainNewsAnim.js":8,"./parts/mainSectionAnim.js":9,"./parts/newsAnim.js":10,"./parts/newsItemAnim.js":11,"./parts/partnersAnim.js":13,"./parts/preloaderAnim.js":14,"./parts/projectOneAnim.js":15,"./parts/projectsFirstAnim.js":16,"./parts/projectsSecondAnim.js":17,"./parts/scrollToBlock.js":18,"./parts/servicesAnim.js":19,"./parts/servicesFourAnim.js":20,"./parts/servicesItemAnim.js":21,"./parts/servicesOneAnim.js":22,"./parts/servicesThreeAnim.js":23,"./parts/servicesTwoAnim.js":24}],2:[function(require,module,exports){
@@ -827,15 +849,40 @@ function preloaderAnim() {
   let preloaderCounter = document.querySelector('.preloader-counter .counter');
   let html = document.querySelector('html');
   html.style.overflow = 'hidden';
-  gsap.set(preloaderImg, {
-    css: {
-      translateY: '50%',
-      scale: 4,
-      top: '50%',
-      left: '30%',
-      opacity: 1
-    }
-  });
+
+  if (window.innerWidth > 1199) {
+    gsap.set(preloaderImg, {
+      css: {
+        translateY: '50%',
+        scale: 4,
+        top: '50%',
+        left: '30%',
+        opacity: 1
+      }
+    });
+  } else if (window.innerWidth > 767 && window.innerWidth < 1200) {
+    gsap.set(preloaderImg, {
+      css: {
+        translateY: '50%',
+        scale: 3,
+        top: '50%',
+        left: '30%',
+        opacity: 1
+      }
+    });
+  } else {
+    gsap.set(preloaderImg, {
+      css: {
+        translateY: '-50%',
+        translateX: '-50%',
+        scale: 1,
+        top: '50%',
+        left: '50%',
+        opacity: 1
+      }
+    });
+  }
+
   gsap.set(headerLogo, {
     autoAlpha: 0
   });
@@ -979,7 +1026,6 @@ function projectOneAnim() {
   });
   projectGallaryNext.addEventListener('click', function (e) {
     e.preventDefault();
-    console.log(activeSlide);
 
     if (activeSlide < projectGallaryItems.length - 1) {
       activeSlide++;
@@ -989,38 +1035,41 @@ function projectOneAnim() {
     }
   });
   projectGallarySlider();
-  return new Promise(resolve => {
-    const t1 = gsap.timeline({
-      duration: 2,
 
-      onStart() {},
+  if (window.innerWidth > 1199) {
+    return new Promise(resolve => {
+      const t1 = gsap.timeline({
+        duration: 2,
 
-      onComplete() {
-        resolve();
-      }
+        onStart() {},
 
-    }).from(projectOneTitle, {
-      delay: 1.4,
-      autoAlpha: 0,
-      x: -200,
-      scrollTrigger: {
-        trigger: projectOneImg,
-        start: "50% 0",
-        end: 'bottom 0',
-        scrub: true
-      }
-    }).from(projectOneText, {
-      delay: 2,
-      autoAlpha: 0,
-      y: 400,
-      scrollTrigger: {
-        trigger: projectOneImg,
-        start: "50% 0",
-        end: 'bottom 0',
-        scrub: true
-      }
+        onComplete() {
+          resolve();
+        }
+
+      }).from(projectOneTitle, {
+        delay: 1.4,
+        autoAlpha: 0,
+        x: -200,
+        scrollTrigger: {
+          trigger: projectOneImg,
+          start: "50% 0",
+          end: 'bottom 0',
+          scrub: true
+        }
+      }).from(projectOneText, {
+        delay: 2,
+        autoAlpha: 0,
+        y: 400,
+        scrollTrigger: {
+          trigger: projectOneImg,
+          start: "50% 0",
+          end: 'bottom 0',
+          scrub: true
+        }
+      });
     });
-  });
+  }
 }
 
 ;

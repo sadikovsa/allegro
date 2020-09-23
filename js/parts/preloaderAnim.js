@@ -6,15 +6,39 @@ export default function preloaderAnim() {
     let preloaderCounter = document.querySelector('.preloader-counter .counter');
     let html = document.querySelector('html');
     html.style.overflow = 'hidden';
-    gsap.set(preloaderImg, {
-        css: {
-            translateY: '50%',
-            scale: 4,
-            top: '50%',
-            left: '30%',
-            opacity: 1
-        }
-    })
+    if (window.innerWidth > 1199) {
+        gsap.set(preloaderImg, {
+            css: {
+                translateY: '50%',
+                scale: 4,
+                top: '50%',
+                left: '30%',
+                opacity: 1
+            }
+        })
+    } else if (window.innerWidth > 767 && window.innerWidth < 1200) {
+        gsap.set(preloaderImg, {
+            css: {
+                translateY: '50%',
+                scale: 3,
+                top: '50%',
+                left: '30%',
+                opacity: 1
+            }
+        })
+    }else {
+        gsap.set(preloaderImg, {
+            css: {
+                translateY: '-50%',
+                translateX: '-50%',
+                scale: 1,
+                top: '50%',
+                left: '50%',
+                opacity: 1
+            }
+        })
+    }
+
     gsap.set(headerLogo, {
         autoAlpha: 0
     })

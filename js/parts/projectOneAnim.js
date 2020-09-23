@@ -34,8 +34,6 @@ export default function projectOneAnim() {
     });
     projectGallaryNext.addEventListener('click', function (e) {
         e.preventDefault();
-
-        console.log(activeSlide)
         if (activeSlide < projectGallaryItems.length - 1) {
             activeSlide++;
             projectGallarySlider(activeSlide);
@@ -46,37 +44,38 @@ export default function projectOneAnim() {
     projectGallarySlider();
 
 
+    if (window.innerWidth > 1199) {
+        return new Promise((resolve) => {
+            const t1 = gsap.timeline({
+                    duration: 2,
+                    onStart() {},
+                    onComplete() {
+                        resolve();
+                    },
+                })
+                .from(projectOneTitle, {
+                    delay: 1.4,
+                    autoAlpha: 0,
+                    x: -200,
+                    scrollTrigger: {
+                        trigger: projectOneImg,
+                        start: "50% 0",
+                        end: 'bottom 0',
+                        scrub: true,
+                    },
+                })
+                .from(projectOneText, {
+                    delay: 2,
+                    autoAlpha: 0,
+                    y: 400,
+                    scrollTrigger: {
+                        trigger: projectOneImg,
+                        start: "50% 0",
+                        end: 'bottom 0',
+                        scrub: true,
+                    },
+                })
+        })
+    }
 
-    return new Promise((resolve) => {
-        const t1 = gsap.timeline({
-                duration: 2,
-                onStart() {},
-                onComplete() {
-                    resolve();
-                },
-            })
-            .from(projectOneTitle, {
-                delay: 1.4,
-                autoAlpha: 0,
-                x: -200,
-                scrollTrigger: {
-                    trigger: projectOneImg,
-                    start: "50% 0",
-                    end: 'bottom 0',
-                    scrub: true,
-                },
-            })
-            .from(projectOneText, {
-                delay: 2,
-                autoAlpha: 0,
-                y: 400,
-                scrollTrigger: {
-                    trigger: projectOneImg,
-                    start: "50% 0",
-                    end: 'bottom 0',
-                    scrub: true,
-                },
-            })
-
-    })
 };

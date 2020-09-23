@@ -12,21 +12,35 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body data-barba="wrapper">
+<body>
     <div class="wrapper">
         <header class="header">
             <div class="container">
                 <div class="header-content">
+                    <p class="header-text">
+                        Инжиниринговая
+                        компания
+                        Узбекистан
+                    </p>
                     <a href="index.html" class="header-logo">
                         <img src="img/logo.svg" alt="Allegro Logo">
                     </a>
                     <nav class="header-nav">
+                        <a href="index.html" class="header-logo__mobile">
+                            <img src="img/logo.svg" alt="Allegro Logo">
+                        </a>
                         <ul>
                             <li><a href="about.html">О нас</a></li>
                             <li><a href="projects.html">Проекты</a></li>
                             <li><a href="news.html">Новости</a></li>
                             <li><a href="contacts.html">Контакты</a></li>
                         </ul>
+                        <ul class="header-lang__mobile">
+                            <li><a href="#" class="active">Ru</a></li>
+                            <li><a href="#">En</a></li>
+                            <li><a href="#">Uz</a></li>
+                        </ul>
+                        <a href="#" class="header-phone">Заказать звонок</a>
                     </nav>
                     <div class="header-right">
                         <a href="#" class="header-phone">Заказать звонок</a>
@@ -35,13 +49,25 @@
                             <ul class="header-lang__list">
                                 <li><a href="#">Ru</a></li>
                                 <li><a href="#">En</a></li>
+                                <li><a href="#">Uz</a></li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="burger">
+                        <input type="checkbox" id="burgerBtn" class="burger-checkbox">
+                        <label for="burgerBtn">
+                            <div class="hamburger">
+                                <span class="bar bar1"></span>
+                                <span class="bar bar2"></span>
+                                <span class="bar bar3"></span>
+                                <span class="bar bar4"></span>
+                            </div>
+                        </label>
                     </div>
                 </div>
             </div>
         </header>
-        <main class="main" data-barba="container" data-barba-namespace="contacts">
+        <main class="main">
             <section class="breadcrums">
                 <div class="container">
                     <ul class="breadcrum blue">
