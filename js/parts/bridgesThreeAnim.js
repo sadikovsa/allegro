@@ -13,8 +13,8 @@ export default function bridgesThreeAnim() {
                 duration: 2,
                 scrollTrigger: {
                     trigger: bridgeThree,
-                    start: "top 350px",
-                    end: () => innerHeight * 14,
+                    start: "top 50%",
+                    end: '110% 0',
                     scrub: true,
                     pin: true,
                     onEnterBack: () => {

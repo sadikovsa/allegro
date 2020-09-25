@@ -12,8 +12,8 @@ export default function projectsFirstAnim() {
                 duration: 2,
                 scrollTrigger: {
                     trigger: mainProjectsFirst,
-                    start: "top top",
-                    end: () => innerHeight * 30,
+                    start: "top 0",
+                    end: '100% 0',
                     scrub: true,
                     pin: true,
                     onLeave: () => {

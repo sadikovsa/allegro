@@ -48,6 +48,8 @@ var _servicesItemAnim = _interopRequireDefault(require("./parts/servicesItemAnim
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  'use strict';
+
   let url = window.location.pathname.split('/');
   url = url[url.length - 1].split(".html")[0];
 
@@ -79,9 +81,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       (0, _newsItemAnim.default)();
     } else if (url === 'services') {
       (0, _servicesItemAnim.default)();
-    } //        window.addEventListener("DOMMouseScroll", handleScroll);
-    //        window.addEventListener("mousewheel", handleScroll);
+    }
 
+    window.addEventListener("DOMMouseScroll", handleScroll);
+    window.addEventListener("mousewheel", handleScroll);
 
     function wheelDistance(e) {
       if (!e) {
@@ -126,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         mobileContent.classList.remove('is-open');
       }
     });
-    new WOW().init();
   }
 
   (0, _preloaderAnim.default)();
@@ -155,7 +157,7 @@ function bridgesFourAnim() {
       scrollTrigger: {
         trigger: bridgeFour,
         start: "top 250px",
-        end: () => innerHeight * 20,
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -225,8 +227,8 @@ function bridgesOneAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: bridgeOne,
-        start: "top top",
-        end: () => innerHeight * 5,
+        start: "top 0",
+        end: "110% 0",
         pin: true,
         scrub: true,
         onEnter: () => {
@@ -251,15 +253,15 @@ function bridgesOneAnim() {
       y: 0,
       autoAlpha: 1
     }).from(bridgeOneTitleBefore, {
-      delay: 2,
+      delay: 1.4,
       autoAlpha: 0,
       top: "100%"
     }).from(bridgeOneTitleText, {
-      delay: 3,
+      delay: 1.6,
       autoAlpha: 0,
-      stagger: 0.2
+      stagger: 0.1
     }).from(bridgeOneImg, {
-      delay: 5,
+      delay: 4,
       autoAlpha: 0,
       x: 2000
     }).to(bridgeOneImg, {
@@ -298,8 +300,8 @@ function bridgesThreeAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: bridgeThree,
-        start: "top 350px",
-        end: () => innerHeight * 14,
+        start: "top 50%",
+        end: '110% 0',
         scrub: true,
         pin: true,
         onEnterBack: () => {
@@ -372,7 +374,7 @@ function bridgesTwoAnim() {
       scrollTrigger: {
         trigger: bridgeTwo,
         start: "top 250px",
-        end: () => innerHeight * 10,
+        end: 'bottom 0',
         scrub: true,
         pin: true,
         onEnterBack: () => {
@@ -504,8 +506,8 @@ function featuresAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: mainFeatures,
-        start: "top top",
-        end: () => innerHeight * 25,
+        start: "top 0",
+        end: 'bottom 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -626,8 +628,8 @@ function mainSectionAnim() {
       duration: 4,
       scrollTrigger: {
         trigger: mainSection,
-        start: "top 95px",
-        end: '110% 0',
+        start: "-95px top",
+        end: "bottom center",
         scrub: true,
         pin: true
       },
@@ -797,8 +799,8 @@ function partnersAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: partners,
-        start: "top top",
-        end: () => innerHeight * 55,
+        start: "top 0",
+        end: '110% 0',
         pin: true,
         scrub: true
       },
@@ -1092,8 +1094,8 @@ function projectsFirstAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: mainProjectsFirst,
-        start: "top top",
-        end: () => innerHeight * 30,
+        start: "top 0",
+        end: '100% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -1141,8 +1143,8 @@ function projectsSecondAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: mainProjectsSecond,
-        start: "top top",
-        end: () => innerHeight * 35,
+        start: "top 0",
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -1258,8 +1260,8 @@ function servicesAnim() {
       duration: 2,
       scrollTrigger: {
         trigger: mainServicesFirst,
-        start: "top top",
-        end: () => innerHeight * 40,
+        start: "top 0",
+        end: '110% 0',
         scrub: true,
         pin: true,
         onLeave: () => {}
@@ -1281,6 +1283,9 @@ function servicesAnim() {
       delay: 1.8,
       y: 200,
       autoAlpha: 0
+    }).from(mainServicesFirstTitleOuter, {
+      delay: 2,
+      autoAlpha: 0
     }).to(mainServicesFirstTitle, {
       delay: 2.4,
       autoAlpha: 0,
@@ -1292,6 +1297,9 @@ function servicesAnim() {
     }).to(mainServicesFirstLine2, {
       delay: 3,
       y: 200,
+      autoAlpha: 0
+    }).to(mainServicesFirstTitleOuter, {
+      delay: 4,
       autoAlpha: 0
     });
   });
@@ -1533,12 +1541,13 @@ function servicesOneAnim() {
         resolve();
       }
 
-    }).from(mainServicesOneContent1Title, {
-      x: -200,
+    }).from(mainServicesOneContent1TitleText, {
+      delay: 0.3,
       autoAlpha: 0,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "-30% 0",
         end: '40% center',
         scrub: true
       }
@@ -1548,7 +1557,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "-30% 0",
         end: '40% center',
         scrub: true
       }
@@ -1558,13 +1567,14 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "-30% 0",
         end: '40% center',
         scrub: true
       }
-    }).from(mainServicesOneContent2Title, {
-      x: -200,
+    }).from(mainServicesOneContent2TitleText, {
+      delay: 0.3,
       autoAlpha: 0,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
         start: "bottom 30%",

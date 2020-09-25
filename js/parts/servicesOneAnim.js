@@ -22,12 +22,13 @@ export default function servicesOneAnim() {
                     resolve();
                 },
             })
-            .from(mainServicesOneContent1Title, {
-                x: -200,
+            .from(mainServicesOneContent1TitleText, {
+                delay: 0.3,
                 autoAlpha: 0,
+                stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "-30% 0",
                     end: '40% center',
                     scrub: true,
                 },
@@ -38,7 +39,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "-30% 0",
                     end: '40% center',
                     scrub: true,
                 },
@@ -49,15 +50,16 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "-30% 0",
                     end: '40% center',
                     scrub: true,
                 },
             })
 
-            .from(mainServicesOneContent2Title, {
-                x: -200,
+            .from(mainServicesOneContent2TitleText, {
+                delay: 0.3,
                 autoAlpha: 0,
+                stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
                     start: "bottom 30%",
