@@ -27,7 +27,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "top 200px",
                     end: '40% center',
                     scrub: true,
                 },
@@ -38,7 +38,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "top 200px",
                     end: '40% center',
                     scrub: true,
                 },
@@ -49,7 +49,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "top 100px",
+                    start: "top 200px",
                     end: '40% center',
                     scrub: true,
                 },
@@ -60,7 +60,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 30%",
+                    start: "bottom 35%",
                     end: "bottom 0",
                     scrub: true,
                 },
@@ -71,7 +71,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 30%",
+                    start: "bottom 35%",
                     end: "bottom 0",
                     scrub: true,
                 },
@@ -82,7 +82,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 30%",
+                    start: "bottom 35%",
                     end: "bottom 0",
                     scrub: true,
                 },

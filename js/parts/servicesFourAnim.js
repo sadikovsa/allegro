@@ -68,7 +68,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 150px",
+                    start: "top 200px",
                     end: 'bottom right',
                     scrub: true,
 
@@ -80,7 +80,7 @@ export default function servicesFourAnim() {
                 y: 400,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 150px",
+                    start: "top 200px",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -91,7 +91,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 120px",
+                    start: "top 200px",
                     end: 'bottom right',
                     scrub: true,
                 },
@@ -102,7 +102,7 @@ export default function servicesFourAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 150px",
+                    start: "top 200px",
                     end: 'bottom right',
                     scrub: true,
                 },
@@ -113,7 +113,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 150px",
+                    start: "top 200px",
                     end: 'bottom bottom',
                     scrub: true,
 
@@ -125,7 +125,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 120px",
+                    start: "top 200px",
                     end: 'bottom right',
                     scrub: true,
                 },

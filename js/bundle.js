@@ -1372,7 +1372,7 @@ function servicesFourAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesFourContent2,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1382,7 +1382,7 @@ function servicesFourAnim() {
       y: 400,
       scrollTrigger: {
         trigger: mainServicesFourContent2,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom bottom',
         scrub: true
       }
@@ -1392,7 +1392,7 @@ function servicesFourAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesFourContent2,
-        start: "top 120px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1402,7 +1402,7 @@ function servicesFourAnim() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesFourContent3,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1412,7 +1412,7 @@ function servicesFourAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesFourContent3,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom bottom',
         scrub: true
       }
@@ -1422,7 +1422,7 @@ function servicesFourAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesFourContent3,
-        start: "top 120px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1538,7 +1538,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "top 200px",
         end: '40% center',
         scrub: true
       }
@@ -1548,7 +1548,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "top 200px",
         end: '40% center',
         scrub: true
       }
@@ -1558,7 +1558,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "top 100px",
+        start: "top 200px",
         end: '40% center',
         scrub: true
       }
@@ -1567,7 +1567,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 30%",
+        start: "bottom 35%",
         end: "bottom 0",
         scrub: true
       }
@@ -1577,7 +1577,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 30%",
+        start: "bottom 35%",
         end: "bottom 0",
         scrub: true
       }
@@ -1587,7 +1587,7 @@ function servicesOneAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesOneContent1,
-        start: "bottom 30%",
+        start: "bottom 35%",
         end: "bottom 0",
         scrub: true
       }
@@ -1666,7 +1666,7 @@ function servicesThreeAnim() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesThreeContent2,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom bottom',
         scrub: true
       }
@@ -1676,7 +1676,7 @@ function servicesThreeAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesThreeContent2,
-        start: "top 150px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1686,7 +1686,7 @@ function servicesThreeAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesThreeContent2,
-        start: "top 120px",
+        start: "top 200px",
         end: 'bottom right',
         scrub: true
       }
@@ -1765,7 +1765,7 @@ function servicesTwoAnim() {
       stagger: 0.1,
       scrollTrigger: {
         trigger: mainServicesTwoContent2,
-        start: "top 150px",
+        start: "top 180px",
         end: 'bottom bottom',
         scrub: true
       }
@@ -1775,7 +1775,7 @@ function servicesTwoAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesTwoContent2,
-        start: "top 150px",
+        start: "top 180px",
         end: 'bottom right',
         scrub: true
       }
@@ -1785,7 +1785,7 @@ function servicesTwoAnim() {
       autoAlpha: 0,
       scrollTrigger: {
         trigger: mainServicesTwoContent2,
-        start: "top 130px",
+        start: "top 150px",
         end: 'bottom right',
         scrub: true
       }
