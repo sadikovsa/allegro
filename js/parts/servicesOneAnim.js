@@ -60,7 +60,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 35%",
+                    start: "bottom 50%",
                     end: "bottom 0",
                     scrub: true,
                 },
@@ -71,7 +71,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 35%",
+                    start: "bottom 50%",
                     end: "bottom 0",
                     scrub: true,
                 },
@@ -82,7 +82,7 @@ export default function servicesOneAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesOneContent1,
-                    start: "bottom 35%",
+                    start: "bottom 50%",
                     end: "bottom 0",
                     scrub: true,
                 },

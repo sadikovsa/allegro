@@ -38,7 +38,7 @@ export default function servicesTwoAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesTwoContent1,
-                    start: "top 420px",
+                    start: "top 450px",
                     end: 'bottom bottom',
                     scrub: true,
 
@@ -50,7 +50,7 @@ export default function servicesTwoAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesTwoContent1,
-                    start: "top 400px",
+                    start: "top 450px",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -62,7 +62,7 @@ export default function servicesTwoAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesTwoContent2,
-                    start: "top 180px",
+                    start: "top 50%",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -73,7 +73,7 @@ export default function servicesTwoAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesTwoContent2,
-                    start: "top 180px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
 
@@ -85,7 +85,7 @@ export default function servicesTwoAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesTwoContent2,
-                    start: "top 150px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
                 },

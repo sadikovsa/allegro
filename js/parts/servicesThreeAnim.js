@@ -52,7 +52,7 @@ export default function servicesThreeAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesThreeContent1,
-                    start: "top 320px",
+                    start: "top 350px",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -63,7 +63,7 @@ export default function servicesThreeAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesThreeContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -74,7 +74,7 @@ export default function servicesThreeAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesThreeContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
 
@@ -86,7 +86,7 @@ export default function servicesThreeAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesThreeContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
                 },

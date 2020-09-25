@@ -56,7 +56,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent1,
-                    start: "top 320px",
+                    start: "top 350px",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -68,7 +68,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
 
@@ -80,7 +80,7 @@ export default function servicesFourAnim() {
                 y: 400,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom bottom',
                     scrub: true,
                 },
@@ -91,7 +91,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent2,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
                 },
@@ -102,7 +102,7 @@ export default function servicesFourAnim() {
                 stagger: 0.1,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
                 },
@@ -113,7 +113,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom bottom',
                     scrub: true,
 
@@ -125,7 +125,7 @@ export default function servicesFourAnim() {
                 autoAlpha: 0,
                 scrollTrigger: {
                     trigger: mainServicesFourContent3,
-                    start: "top 200px",
+                    start: "top 50%",
                     end: 'bottom right',
                     scrub: true,
                 },
