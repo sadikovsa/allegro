@@ -31,8 +31,8 @@ export default function mainSectionAnim() {
                 duration: 4,
                 scrollTrigger: {
                     trigger: mainSection,
-                    start: "-95px top",
-                    end: "bottom center",
+                    start: "top 95px",
+                    end: '110% 0',
                     scrub: true,
                     pin: true,
                 },
