@@ -11,8 +11,8 @@ export default function featuresAnim() {
                 duration: 2,
                 scrollTrigger: {
                     trigger: mainFeatures,
-                    start: "top 0",
-                    end: 'bottom 0',
+                    start: "top top",
+                    end: () => innerHeight * 25,
                     scrub: true,
                     pin: true,
                     onLeave: () => {

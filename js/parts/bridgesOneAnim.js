@@ -13,8 +13,8 @@ export default function bridgesOneAnim() {
                 duration: 2,
                 scrollTrigger: {
                     trigger: bridgeOne,
-                    start: "top 0",
-                    end: "110% 0",
+                    start: "top top",
+                    end: () => innerHeight * 5,
                     pin: true,
                     scrub: true,
                     onEnter: () => {
@@ -41,17 +41,17 @@ export default function bridgesOneAnim() {
                 autoAlpha: 1,
             })
             .from(bridgeOneTitleBefore, {
-                delay: 1.4,
+                delay: 2,
                 autoAlpha: 0,
                 top: "100%",
             })
             .from(bridgeOneTitleText, {
-                delay: 1.6,
+                delay: 3,
                 autoAlpha: 0,
-                stagger: 0.1,
+                stagger: 0.2,
             })
             .from(bridgeOneImg, {
-                delay: 4,
+                delay: 5,
                 autoAlpha: 0,
                 x: 2000,
             })

@@ -12,8 +12,8 @@ export default function servicesAnim() {
                 duration: 2,
                 scrollTrigger: {
                     trigger: mainServicesFirst,
-                    start: "top 0",
-                    end: '110% 0',
+                    start: "top top",
+                    end: () => innerHeight * 40,
                     scrub: true,
                     pin: true,
                     onLeave: () => {}
@@ -40,10 +40,6 @@ export default function servicesAnim() {
                 y: 200,
                 autoAlpha: 0,
             })
-            .from(mainServicesFirstTitleOuter, {
-                delay: 2,
-                autoAlpha: 0,
-            })
             .to(mainServicesFirstTitle, {
                 delay: 2.4,
                 autoAlpha: 0,
@@ -57,10 +53,6 @@ export default function servicesAnim() {
             .to(mainServicesFirstLine2, {
                 delay: 3,
                 y: 200,
-                autoAlpha: 0,
-            })
-            .to(mainServicesFirstTitleOuter, {
-                delay: 4,
                 autoAlpha: 0,
             })
     })

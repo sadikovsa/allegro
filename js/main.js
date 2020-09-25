@@ -24,7 +24,6 @@ import servicesItemAnim from './parts/servicesItemAnim.js';
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    'use strict';
     let url = window.location.pathname.split('/');
     url = url[url.length - 1].split(".html")[0];
 
@@ -58,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             servicesItemAnim();
         }
 
-        window.addEventListener("DOMMouseScroll", handleScroll);
-        window.addEventListener("mousewheel", handleScroll);
+//        window.addEventListener("DOMMouseScroll", handleScroll);
+//        window.addEventListener("mousewheel", handleScroll);
 
         function wheelDistance(e) {
             if (!e) {

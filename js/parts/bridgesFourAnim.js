@@ -13,7 +13,7 @@ export default function bridgesFourAnim() {
                 scrollTrigger: {
                     trigger: bridgeFour,
                     start: "top 250px",
-                    end: '110% 0',
+                    end: () => innerHeight * 20,
                     scrub: true,
                     pin: true,
                     onLeave: () => {
