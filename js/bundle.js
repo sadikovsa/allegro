@@ -45,6 +45,12 @@ var _newsItemAnim = _interopRequireDefault(require("./parts/newsItemAnim.js"));
 
 var _servicesItemAnim = _interopRequireDefault(require("./parts/servicesItemAnim.js"));
 
+var _aboutAnim = _interopRequireDefault(require("./parts/aboutAnim.js"));
+
+var _aboutLicence = _interopRequireDefault(require("./parts/aboutLicence.js"));
+
+var _projectsAnim = _interopRequireDefault(require("./parts/projectsAnim.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -79,6 +85,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       (0, _newsItemAnim.default)();
     } else if (url === 'services') {
       (0, _servicesItemAnim.default)();
+    } else if (url === 'about') {
+      (0, _aboutAnim.default)();
+      (0, _aboutLicence.default)();
+    } else if (url === 'projects') {
+      (0, _projectsAnim.default)();
     } //        window.addEventListener("DOMMouseScroll", handleScroll);
     //        window.addEventListener("mousewheel", handleScroll);
 
@@ -132,7 +143,100 @@ document.addEventListener("DOMContentLoaded", function (event) {
   (0, _preloaderAnim.default)();
 });
 
-},{"./parts/bridgesFourAnim.js":2,"./parts/bridgesOneAnim.js":3,"./parts/bridgesThreeAnim.js":4,"./parts/bridgesTwoAnim.js":5,"./parts/contactsAnim.js":6,"./parts/featuresAnim.js":7,"./parts/mainNewsAnim.js":8,"./parts/mainSectionAnim.js":9,"./parts/newsAnim.js":10,"./parts/newsItemAnim.js":11,"./parts/partnersAnim.js":13,"./parts/preloaderAnim.js":14,"./parts/projectOneAnim.js":15,"./parts/projectsFirstAnim.js":16,"./parts/projectsSecondAnim.js":17,"./parts/scrollToBlock.js":18,"./parts/servicesAnim.js":19,"./parts/servicesFourAnim.js":20,"./parts/servicesItemAnim.js":21,"./parts/servicesOneAnim.js":22,"./parts/servicesThreeAnim.js":23,"./parts/servicesTwoAnim.js":24}],2:[function(require,module,exports){
+},{"./parts/aboutAnim.js":2,"./parts/aboutLicence.js":3,"./parts/bridgesFourAnim.js":4,"./parts/bridgesOneAnim.js":5,"./parts/bridgesThreeAnim.js":6,"./parts/bridgesTwoAnim.js":7,"./parts/contactsAnim.js":8,"./parts/featuresAnim.js":9,"./parts/mainNewsAnim.js":10,"./parts/mainSectionAnim.js":11,"./parts/newsAnim.js":12,"./parts/newsItemAnim.js":13,"./parts/partnersAnim.js":15,"./parts/preloaderAnim.js":16,"./parts/projectOneAnim.js":17,"./parts/projectsAnim.js":18,"./parts/projectsFirstAnim.js":19,"./parts/projectsSecondAnim.js":20,"./parts/scrollToBlock.js":21,"./parts/servicesAnim.js":22,"./parts/servicesFourAnim.js":23,"./parts/servicesItemAnim.js":24,"./parts/servicesOneAnim.js":25,"./parts/servicesThreeAnim.js":26,"./parts/servicesTwoAnim.js":27}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = aboutAnim;
+
+function aboutAnim() {
+  let aboutMission = document.querySelector('.about-mission');
+  let aboutMissionTitle = aboutMission.querySelector('.title');
+  let aboutMissionText = aboutMission.querySelector('.text');
+  aboutMissionTitle.querySelector('.title-text').innerHTML = aboutMissionTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
+  let aboutMissionTitleText = aboutMissionTitle.querySelectorAll('.letter');
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      duration: 2,
+      scrollTrigger: {
+        trigger: aboutMission,
+        start: "top top",
+        end: () => innerHeight * 4,
+        pin: true,
+        scrub: true
+      },
+      onComplete: () => {
+        resolve();
+      }
+    }).to(aboutMission, {
+      y: 0,
+      autoAlpha: 1
+    }).from(aboutMissionTitleText, {
+      delay: 3,
+      autoAlpha: 0,
+      stagger: 0.2
+    }).from(aboutMissionText, {
+      delay: 3,
+      autoAlpha: 0,
+      y: 400
+    });
+  });
+}
+
+;
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = aboutLicence;
+
+function aboutLicence() {
+  let aboutLicence = document.querySelector('.about-licence');
+  let aboutLicenceTitle = aboutLicence.querySelector('.title');
+  let aboutLicenceText = aboutLicence.querySelector('ol');
+  let aboutLicenceBtn = aboutLicence.querySelector('.btn');
+  aboutLicenceTitle.querySelector('.title-text').innerHTML = aboutLicenceTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
+  let aboutLicenceTitleText = aboutLicenceTitle.querySelectorAll('.letter');
+  return new Promise(resolve => {
+    const tl = gsap.timeline({
+      duration: 2,
+      scrollTrigger: {
+        trigger: aboutLicence,
+        start: "top top",
+        end: () => innerHeight * 8,
+        pin: true,
+        scrub: true
+      },
+      onComplete: () => {
+        resolve();
+      }
+    }).to(aboutLicence, {
+      y: 0,
+      autoAlpha: 1
+    }).from(aboutLicenceTitleText, {
+      delay: 3,
+      autoAlpha: 0,
+      stagger: 0.2
+    }).from(aboutLicenceText, {
+      delay: 3,
+      autoAlpha: 0,
+      y: 400
+    }).from(aboutLicenceBtn, {
+      delay: 3,
+      autoAlpha: 0,
+      y: 400
+    });
+  });
+}
+
+;
+
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -204,7 +308,7 @@ function bridgesFourAnim() {
 
 ;
 
-},{}],3:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -276,7 +380,7 @@ function bridgesOneAnim() {
 
 ;
 
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -349,7 +453,7 @@ function bridgesThreeAnim() {
 
 ;
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -421,7 +525,7 @@ function bridgesTwoAnim() {
 
 ;
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -485,7 +589,7 @@ function contactsAnim() {
 
 ;
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -538,7 +642,7 @@ function featuresAnim() {
 
 ;
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -586,7 +690,7 @@ function newsAnim() {
 
 ;
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -666,7 +770,7 @@ function mainSectionAnim() {
 
 ;
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -703,7 +807,7 @@ function newsAnim() {
 
 ;
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -749,7 +853,7 @@ function newsItemAnim() {
 
 ;
 
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -776,7 +880,7 @@ function pageTransition() {
 
 ;
 
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -831,7 +935,7 @@ function partnersAnim() {
 
 ;
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -982,7 +1086,7 @@ function preloaderAnim() {
 
 ;
 
-},{}],15:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1051,8 +1155,8 @@ function projectOneAnim() {
         x: -200,
         scrollTrigger: {
           trigger: projectOneImg,
-          start: "50% 0",
-          end: 'bottom 0',
+          start: "top top",
+          end: 'bottom top',
           scrub: true
         }
       }).from(projectOneText, {
@@ -1061,8 +1165,8 @@ function projectOneAnim() {
         y: 400,
         scrollTrigger: {
           trigger: projectOneImg,
-          start: "50% 0",
-          end: 'bottom 0',
+          start: "top top",
+          end: 'bottom top',
           scrub: true
         }
       });
@@ -1072,7 +1176,169 @@ function projectOneAnim() {
 
 ;
 
-},{}],16:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = projectsAnim;
+
+function projectsAnim() {
+  let projects = document.querySelector('.projects');
+  let projectsItemOne = projects.querySelectorAll('.projects-item')[0];
+  let projectsItemOneContent = projectsItemOne.querySelector('.projects-item__left');
+  let projectsItemOneImg = projectsItemOne.querySelector('.projects-item__right');
+  let projectsItemTwo = projects.querySelectorAll('.projects-item')[1];
+  let projectsItemTwoImg = projectsItemTwo.querySelector('.projects-item__left');
+  let projectsItemTwoContent = projectsItemTwo.querySelector('.projects-item__right');
+  let projectsItemThree = projects.querySelectorAll('.projects-item')[2];
+  let projectsItemThreeImg = projectsItemThree.querySelector('.projects-item__left');
+  let projectsItemThreeContent = projectsItemThree.querySelector('.projects-item__right');
+  let projectsInProgress = document.querySelector('.projects-inprogress');
+  let projectsInProgressTitle = projectsInProgress.querySelector('.title-big');
+  let projectsInProgressItemOne = projectsInProgress.querySelectorAll('.projects-inprogress__item')[0];
+  let projectsInProgressItemOneContent = projectsInProgressItemOne.querySelector('.projects-inprogress__left');
+  let projectsInProgressItemOneImg = projectsInProgressItemOne.querySelector('.projects-inprogress__right');
+  let projectsInProgressItemTwo = projectsInProgress.querySelectorAll('.projects-inprogress__item')[1];
+  let projectsInProgressItemTwoImg = projectsInProgressItemTwo.querySelector('.projects-inprogress__left');
+  let projectsInProgressItemTwoContent = projectsInProgressItemTwo.querySelector('.projects-inprogress__right');
+  return new Promise(resolve => {
+    const t1 = gsap.timeline({
+      duration: 2,
+
+      onStart() {},
+
+      onComplete() {
+        resolve();
+      }
+
+    }).from(projectsItemOneContent, {
+      delay: 1,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: projectsItemOne,
+        start: "top 50%",
+        end: 'top center',
+        scrub: true
+      }
+    }).from(projectsItemOneImg, {
+      delay: 2,
+      x: 400,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsItemOne,
+        start: "top 50%",
+        end: 'top center',
+        scrub: true
+      }
+    }).from(projectsItemTwoImg, {
+      delay: 1,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: projectsItemTwo,
+        start: "top 50%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsItemTwoContent, {
+      delay: 2,
+      autoAlpha: 0,
+      y: 600,
+      scrollTrigger: {
+        trigger: projectsItemTwo,
+        start: "top 40%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsItemThreeImg, {
+      delay: 1,
+      autoAlpha: 0,
+      x: -400,
+      scrollTrigger: {
+        trigger: projectsItemThree,
+        start: "top 40%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsItemThreeContent, {
+      delay: 2,
+      autoAlpha: 0,
+      y: 400,
+      scrollTrigger: {
+        trigger: projectsItemThree,
+        start: "top 40%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    });
+    const t2 = gsap.timeline({
+      duration: 2,
+
+      onStart() {},
+
+      onComplete() {
+        resolve();
+      }
+
+    }).from(projectsInProgressTitle, {
+      delay: 1,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsInProgress,
+        start: "top 50%",
+        end: 'top center',
+        scrub: true
+      }
+    }).from(projectsInProgressItemOneContent, {
+      delay: 2,
+      y: 400,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsInProgressItemOne,
+        start: "top 50%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsInProgressItemOneImg, {
+      delay: 2,
+      x: 400,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsInProgressItemOne,
+        start: "top 50%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsInProgressItemTwoImg, {
+      delay: 2,
+      y: 400,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsInProgressItemTwo,
+        start: "top 50%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    }).from(projectsInProgressItemTwoContent, {
+      delay: 2,
+      x: -400,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: projectsInProgressItemTwo,
+        start: "top 50%",
+        end: 'bottom bottom',
+        scrub: true
+      }
+    });
+  });
+}
+
+;
+
+},{}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1120,7 +1386,7 @@ function projectsFirstAnim() {
 
 ;
 
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1186,7 +1452,7 @@ function projectsSecondAnim() {
 
 ;
 
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1237,7 +1503,7 @@ function scrollToBLock() {
 
 ;
 
-},{"./pageTransition.js":12}],19:[function(require,module,exports){
+},{"./pageTransition.js":14}],22:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1299,7 +1565,7 @@ function servicesAnim() {
 
 ;
 
-},{}],20:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1432,7 +1698,7 @@ function servicesFourAnim() {
 
 ;
 
-},{}],21:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1500,7 +1766,7 @@ function servicesItemAnim() {
 
 ;
 
-},{}],22:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1597,7 +1863,7 @@ function servicesOneAnim() {
 
 ;
 
-},{}],23:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1696,7 +1962,7 @@ function servicesThreeAnim() {
 
 ;
 
-},{}],24:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

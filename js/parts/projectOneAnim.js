@@ -59,8 +59,8 @@ export default function projectOneAnim() {
                     x: -200,
                     scrollTrigger: {
                         trigger: projectOneImg,
-                        start: "50% 0",
-                        end: 'bottom 0',
+                        start: "top top",
+                        end: 'bottom top',
                         scrub: true,
                     },
                 })
@@ -70,8 +70,8 @@ export default function projectOneAnim() {
                     y: 400,
                     scrollTrigger: {
                         trigger: projectOneImg,
-                        start: "50% 0",
-                        end: 'bottom 0',
+                        start: "top top",
+                        end: 'bottom top',
                         scrub: true,
                     },
                 })

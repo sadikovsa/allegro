@@ -20,6 +20,9 @@ import contactsAnim from './parts/contactsAnim.js';
 import newsAnim from './parts/newsAnim.js';
 import newsItemAnim from './parts/newsItemAnim.js';
 import servicesItemAnim from './parts/servicesItemAnim.js';
+import aboutAnim from './parts/aboutAnim.js';
+import aboutLicence from './parts/aboutLicence.js';
+import projectsAnim from './parts/projectsAnim.js';
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -55,10 +58,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
             newsItemAnim();
         } else if (url === 'services') {
             servicesItemAnim();
+        } else if (url === 'about') {
+            aboutAnim();
+            aboutLicence();
+        }else if (url === 'projects') {
+            projectsAnim();
         }
 
-//        window.addEventListener("DOMMouseScroll", handleScroll);
-//        window.addEventListener("mousewheel", handleScroll);
+        //        window.addEventListener("DOMMouseScroll", handleScroll);
+        //        window.addEventListener("mousewheel", handleScroll);
 
         function wheelDistance(e) {
             if (!e) {
@@ -104,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 mobileContent.classList.remove('is-open');
             }
         });
-        
+
         new WOW().init();
     }
     preloaderAnim();
