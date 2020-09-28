@@ -107,8 +107,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             } else {
                 header.classList.remove('fixed');
             }
-
-            if (destination.index === 1) {
+            if (destination.index === 0) {
+                mainSectionAnim();
+            } else if (destination.index === 1) {
                 bridgesOneAnim();
             } else if (destination.index === 2) {
                 bridgesTwoAnim();

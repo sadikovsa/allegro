@@ -1,5 +1,5 @@
 export default function mainSectionAnim() {
-    
+    let mainSlider = document.querySelector('.main-section__slider');
     let mainSliderImg = mainSlider.querySelectorAll('.main-slider__img');
     let activeSlide = 0;
 
@@ -15,11 +15,12 @@ export default function mainSectionAnim() {
     }
 
     setInterval(() => {
-        if (activeSlide >= mainSliderImg.length) {
+        activeSlide++;
+        if (activeSlide >= mainSliderImg.length - 1) {
             activeSlide = 0;
         }
         mainSliderStart(activeSlide);
-        activeSlide++;
+
     }, 3000)
 
     return new Promise((resolve) => {

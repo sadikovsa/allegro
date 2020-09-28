@@ -138,7 +138,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         header.classList.remove('fixed');
       }
 
-      if (destination.index === 1) {
+      if (destination.index === 0) {
+        (0, _mainSectionAnim.default)();
+      } else if (destination.index === 1) {
         (0, _bridgesOneAnim.default)();
       } else if (destination.index === 2) {
         (0, _bridgesTwoAnim.default)();
@@ -619,6 +621,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = mainSectionAnim;
 
 function mainSectionAnim() {
+  let mainSlider = document.querySelector('.main-section__slider');
   let mainSliderImg = mainSlider.querySelectorAll('.main-slider__img');
   let activeSlide = 0;
 
@@ -633,12 +636,13 @@ function mainSectionAnim() {
   };
 
   setInterval(() => {
-    if (activeSlide >= mainSliderImg.length) {
+    activeSlide++;
+
+    if (activeSlide >= mainSliderImg.length - 1) {
       activeSlide = 0;
     }
 
     mainSliderStart(activeSlide);
-    activeSlide++;
   }, 3000);
   return new Promise(resolve => {
     const tl = gsap.timeline({
