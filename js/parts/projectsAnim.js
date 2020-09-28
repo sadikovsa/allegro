@@ -26,8 +26,7 @@ export default function projectsAnim() {
 
     return new Promise((resolve) => {
         const t1 = gsap.timeline({
-                duration: 2,
-                onStart() {},
+                duration: 0.8,
                 onComplete() {
                     resolve();
                 },

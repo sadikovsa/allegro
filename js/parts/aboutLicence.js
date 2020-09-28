@@ -10,7 +10,7 @@ export default function aboutLicence() {
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                duration: 2,
+                duration: 0.8,
                 scrollTrigger: {
                     trigger: aboutLicence,
                     start: "top top",

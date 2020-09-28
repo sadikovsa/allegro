@@ -1,10 +1,6 @@
 export default function mainSectionAnim() {
-    let button = document.querySelector('.scroll-down');
-    let mainSection = document.querySelector('.main-section');
-    let mainSectionContent = mainSection.querySelector('.main-section__content');
-    let mainSlider = document.querySelector('.main-section__slider');
+    
     let mainSliderImg = mainSlider.querySelectorAll('.main-slider__img');
-    // main screen slider
     let activeSlide = 0;
 
     const mainSliderStart = (curSlide = 0) => {
@@ -28,52 +24,11 @@ export default function mainSectionAnim() {
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                duration: 4,
-                scrollTrigger: {
-                    trigger: mainSection,
-                    start: "top 95px",
-                    end: '110% 0',
-                    scrub: true,
-                    pin: true,
-                },
-                onComplete: () => {
-                    resolve();
-                }
-            })
-            .to(mainSlider, {
-                delay: 2,
-                scale: 4,
-                rotation: -45,
-                autoAlpha: 0,
-                transformOrigin: "50% 60%",
-            })
-            .to(button, {
-                delay: 1.2,
-                scale: 1.4,
-                autoAlpha: 0,
-            })
-
-            .to(mainSectionContent, {
-                delay: 1.4,
-                autoAlpha: 0,
-            })
-            .to(mainSection, {
-                delay: 3,
-                background: '#060B21'
-            })
-
+            duration: 0.8,
+            onComplete: () => {
+                resolve();
+            }
+        })
     });
-
-    button.addEventListener('mouseenter', function () {
-        TweenMax.to(button, 0.1, {
-            scale: 1.4,
-        });
-    });
-    button.addEventListener('mouseleave', function () {
-        TweenMax.to(button, 0.1, {
-            scale: 1,
-        });
-    })
 
 };
-

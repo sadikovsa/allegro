@@ -8,7 +8,7 @@ export default function servicesItemAnim() {
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                duration: 2,
+                duration: 0.8,
                 onComplete: () => {
                     resolve();
                 }

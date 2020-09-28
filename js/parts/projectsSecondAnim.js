@@ -1,69 +1,81 @@
 export default function projectsSecondAnim() {
-    let mainProjects = document.querySelector('.main-projects');
-    let mainProjectsSecond = mainProjects.querySelector('.main-projects__info');
-    let mainProjectsSecondContent1 = mainProjectsSecond.querySelector('.main-projects__content.one');
-    let mainProjectsSecondContent2 = mainProjectsSecond.querySelector('.main-projects__content.two');
+    let mainProjectsSecond = document.querySelector('.main-projects__info');
+    let mainProjectsSecondContent = mainProjectsSecond.querySelectorAll('.main-projects__content');
     let mainProjectsSecondIpad = mainProjectsSecond.querySelector('.main-projects__ipad');
     let mainProjectsSecondIpadImgs = mainProjectsSecondIpad.querySelectorAll('img');
+    let mainProjectsSlideControls = mainProjectsSecond.querySelector('.projects-gallary__controls');
+    let slidePrev = mainProjectsSecond.querySelector('.projects-gallary__control.prev');
+    let slideNext = mainProjectsSecond.querySelector('.projects-gallary__control.next');
+    let activeSlide = 0;
+
+    const changeSlide = (actSlide = 0) => {
+        console.log(actSlide)
+        mainProjectsSecondContent.forEach((item, index) => {
+            item.classList.remove('active');
+            mainProjectsSecondIpadImgs[index].classList.remove('active');
+        })
+
+        mainProjectsSecondContent[actSlide].classList.add('active');
+        mainProjectsSecondIpadImgs[actSlide].classList.add('active');
+    }
+
+    changeSlide(activeSlide);
+
+    slidePrev.addEventListener('click', function (e) {
+        console.log('prev');
+        e.preventDefault();
+        activeSlide--;
+        if (activeSlide >= 0) {
+            changeSlide(activeSlide);
+        } else {
+            activeSlide = 0;
+        }
+    });
+
+    slideNext.addEventListener('click', function (e) {
+        console.log('next');
+        e.preventDefault();
+        activeSlide++;
+        if (activeSlide <= mainProjectsSecondContent.length - 1) {
+            changeSlide(activeSlide);
+        } else {
+            activeSlide = mainProjectsSecondContent.length - 1;
+        }
+    })
+
+    gsap.set(mainProjectsSecondContent[0], {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
+    gsap.set(mainProjectsSecondIpad, {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
+    gsap.set(mainProjectsSlideControls, {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                delay: 2,
-                duration: 2,
-                scrollTrigger: {
-                    trigger: mainProjectsSecond,
-                    start: "top top",
-                    end: () => innerHeight * 35,
-                    scrub: true,
-                    pin: true,
-                    onLeave: () => {
-
-                    }
-                },
+                duration: 0.8,
                 onComplete: () => {
                     resolve();
                 }
             })
-            .to(mainProjectsSecond, {
-                autoAlpha: 1,
-            })
-            .from(mainProjectsSecondContent1, {
-                delay: 1.4,
+            .from(mainProjectsSecondContent[0], {
                 autoAlpha: 0,
                 y: 400
             })
             .from(mainProjectsSecondIpad, {
-                delay: 2,
+                x: 1000,
+                autoAlpha: 0,
+            })
+            .from(mainProjectsSlideControls, {
                 x: 1000,
                 autoAlpha: 0,
             })
 
-
-            .to(mainProjectsSecondContent1, {
-                delay: 4,
-                autoAlpha: 0,
-                y: -400,
-            })
-            .from(mainProjectsSecondIpadImgs[1], {
-                delay: 4,
-                autoAlpha: 0,
-                zIndex: 10
-            })
-            .from(mainProjectsSecondContent2, {
-                delay: 5,
-                autoAlpha: 0,
-                y: 400
-            })
-            .to(mainProjectsSecondContent2, {
-                delay: 6,
-                autoAlpha: 0,
-                y: -400
-            })
-            .to(mainProjectsSecondIpad, {
-                delay: 7,
-                x: 1000,
-                autoAlpha: 0,
-            })
 
     })
 

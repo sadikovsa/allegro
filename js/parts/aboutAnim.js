@@ -9,7 +9,7 @@ export default function aboutAnim() {
 
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                duration: 2,
+                duration: 0.8,
                 scrollTrigger: {
                     trigger: aboutMission,
                     start: "top top",

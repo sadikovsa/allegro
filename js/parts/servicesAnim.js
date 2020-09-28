@@ -1,57 +1,38 @@
 export default function servicesAnim() {
-    let mainServices = document.querySelector('.main-services');
-    let mainServicesFirst = mainServices.querySelector('.services-first');
+    let mainServicesFirst = document.querySelector('.services-first');
     let mainServicesFirstTitle = mainServicesFirst.querySelector('.title-big');
-    let mainServicesFirstTitleOuter = mainServicesFirst.querySelector('.title-outer');
     let mainServicesFirstLine1 = mainServicesFirst.querySelector('.services-line.one');
     let mainServicesFirstLine2 = mainServicesFirst.querySelector('.services-line.two');
 
+    gsap.set(mainServicesFirstTitle, {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
+    gsap.set(mainServicesFirstLine1, {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
+    gsap.set(mainServicesFirstLine2, {
+        clearProps: 'all',
+        autoAlpha: 0
+    });
+
     return new Promise((resolve) => {
         const tl = gsap.timeline({
-                delay: 2,
-                duration: 2,
-                scrollTrigger: {
-                    trigger: mainServicesFirst,
-                    start: "top top",
-                    end: () => innerHeight * 40,
-                    scrub: true,
-                    pin: true,
-                    onLeave: () => {}
-                },
+                duration: 0.8,
                 onComplete: () => {
                     resolve();
                 }
             })
-            .to(mainServicesFirst, {
-                autoAlpha: 1,
-            })
             .from(mainServicesFirstTitle, {
-                delay: 1.2,
                 autoAlpha: 0,
                 x: -200
             })
             .from(mainServicesFirstLine1, {
-                delay: 1.6,
                 y: -200,
                 autoAlpha: 0,
             })
             .from(mainServicesFirstLine2, {
-                delay: 1.8,
-                y: 200,
-                autoAlpha: 0,
-            })
-            .to(mainServicesFirstTitle, {
-                delay: 2.4,
-                autoAlpha: 0,
-                x: -200
-            })
-            .to(mainServicesFirstLine1, {
-                delay: 2.6,
-                y: -200,
-                autoAlpha: 0,
-            })
-            .to(mainServicesFirstLine2, {
-                delay: 3,
                 y: 200,
                 autoAlpha: 0,
             })

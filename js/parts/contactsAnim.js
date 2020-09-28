@@ -24,7 +24,7 @@ export default function contactsAnim() {
             })
         const t2 = gsap.timeline({
                 delay: 2,
-                duration: 2,
+                duration: 0.8,
                 scrollTrigger: {
                     trigger: contactsInfo,
                     start: "top 0",

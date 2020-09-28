@@ -47,8 +47,7 @@ export default function projectOneAnim() {
     if (window.innerWidth > 1199) {
         return new Promise((resolve) => {
             const t1 = gsap.timeline({
-                    duration: 2,
-                    onStart() {},
+                   duration: 0.8,
                     onComplete() {
                         resolve();
                     },
