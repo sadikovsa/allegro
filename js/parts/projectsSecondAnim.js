@@ -9,7 +9,6 @@ export default function projectsSecondAnim() {
     let activeSlide = 0;
 
     const changeSlide = (actSlide = 0) => {
-        console.log(actSlide)
         mainProjectsSecondContent.forEach((item, index) => {
             item.classList.remove('active');
             mainProjectsSecondIpadImgs[index].classList.remove('active');
@@ -22,7 +21,6 @@ export default function projectsSecondAnim() {
     changeSlide(activeSlide);
 
     slidePrev.addEventListener('click', function (e) {
-        console.log('prev');
         e.preventDefault();
         activeSlide--;
         if (activeSlide >= 0) {
@@ -33,7 +31,6 @@ export default function projectsSecondAnim() {
     });
 
     slideNext.addEventListener('click', function (e) {
-        console.log('next');
         e.preventDefault();
         activeSlide++;
         if (activeSlide <= mainProjectsSecondContent.length - 1) {

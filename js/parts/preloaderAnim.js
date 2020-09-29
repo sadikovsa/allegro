@@ -16,17 +16,7 @@ export default function preloaderAnim() {
                 opacity: 1
             }
         })
-    } else if (window.innerWidth > 767 && window.innerWidth < 1200) {
-        gsap.set(preloaderImg, {
-            css: {
-                translateY: '50%',
-                scale: 3,
-                top: '50%',
-                left: '30%',
-                opacity: 1
-            }
-        })
-    }else {
+    } else {
         gsap.set(preloaderImg, {
             css: {
                 translateY: '-50%',
