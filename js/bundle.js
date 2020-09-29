@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   url = url[url.length - 1].split(".html")[0];
 
   if (url === '' || url === 'index') {
+    window.addEventListener('resize', _parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_3__["default"]);
     Object(_parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
   } else if (url === 'projects_item') {
     Object(_parts_projectOneAnim_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
@@ -1168,7 +1169,7 @@ function preloaderAnim() {
     gsap.set(preloaderImg, {
       css: {
         translateY: '50%',
-        scale: 4,
+        scale: 1.3,
         top: '50%',
         left: '30%',
         opacity: 1

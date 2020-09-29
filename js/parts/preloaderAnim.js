@@ -10,7 +10,7 @@ export default function preloaderAnim() {
         gsap.set(preloaderImg, {
             css: {
                 translateY: '50%',
-                scale: 4,
+                scale: 1.3,
                 top: '50%',
                 left: '30%',
                 opacity: 1

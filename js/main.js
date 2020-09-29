@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     url = url[url.length - 1].split(".html")[0];
 
     if (url === '' || url === 'index') {
+        window.addEventListener('resize', mainPageAnim);
         mainPageAnim();
     } else if (url === 'projects_item') {
         projectOneAnim();
