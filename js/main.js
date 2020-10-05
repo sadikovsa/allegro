@@ -13,15 +13,11 @@ import projectsAnim from './parts/projectsAnim.js';
 import mainSliders from './parts/mainSliders.js';
 
 
-
-
 document.addEventListener("DOMContentLoaded", function (event) {
     
     let url = window.location.pathname.split('/');
     url = url[url.length - 1].split(".html")[0];
-
     if (url === '' || url === 'index') {
-        window.addEventListener('resize', mainPageAnim);
         mainPageAnim();
     } else if (url === 'projects_item') {
         projectOneAnim();
@@ -45,7 +41,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
     
 
     mainSliders();
-    preloaderAnim();
-
-
 });

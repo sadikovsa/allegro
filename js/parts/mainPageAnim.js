@@ -1,4 +1,7 @@
-import mainSectionAnim from './mainSectionAnim.js';
+import {
+    mainSectionAnim,
+    mainSectionLeaveAnim
+} from './mainSectionAnim.js';
 import bridgesOneAnim from './bridgesOneAnim.js';
 import bridgesTwoAnim from './bridgesTwoAnim.js';
 import bridgesThreeAnim from './bridgesThreeAnim.js';
@@ -20,20 +23,29 @@ import partnersAnim from './partnersAnim.js';
 import mainNewsAnim from './mainNewsAnim.js';
 
 const mainPageAnim = () => {
-    
+
     const header = document.querySelector('.header');
-    
+
     if (window.innerWidth > 1199) {
+
+        let animated = false;
+
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
             lockAnchors: false,
             autoScrolling: true,
-            onLeave: function (origin, destination, direction) {
-                if (destination.index > 0) {
-                    header.classList.add('fixed');
-                } else {
-                    header.classList.remove('fixed');
+//            scrollOverflow: true,
+//            scrollOverflowReset: true,
+//            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
+            afterLoad: function (origin, destination, direction) {
+                animated = false;
+                if (destination.index === 0) {
+                    mainSectionAnim();
                 }
+            },
+            onLeave: function (origin, destination, direction) {
+
+
                 if (destination.index === 0) {
                     mainSectionAnim();
                 } else if (destination.index === 1) {

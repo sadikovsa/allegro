@@ -24,16 +24,16 @@ export default function servicesOneAnim() {
                     resolve();
                 },
             })
-            .from(mainServicesOneImg, {
-                x: -400,
-                autoAlpha: 0,
-            })
             .from(mainServicesOneTitle, {
                 y: 300,
                 autoAlpha: 0,
             })
-            .from(mainServicesOneText, {
+            .from(mainServicesOneImg, {
                 y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesOneText, {
+                y: 500,
                 autoAlpha: 0,
             })
 

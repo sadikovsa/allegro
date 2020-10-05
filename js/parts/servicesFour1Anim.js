@@ -24,15 +24,14 @@ export default function servicesFourAnim() {
                     resolve();
                 },
             })
-            .from(mainServicesFourImg, {
-                x: 400,
-                autoAlpha: 0,
-            })
             .from(mainServicesFourTitle, {
                 y: 400,
                 autoAlpha: 0,
             })
-
+            .from(mainServicesFourImg, {
+                y: 500,
+                autoAlpha: 0,
+            })
             .from(mainServicesFourText, {
                 y: 600,
                 autoAlpha: 0,

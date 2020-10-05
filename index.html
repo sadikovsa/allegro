@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <img src="img/logo.svg" alt="" class="preloader-logo">
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -70,7 +71,7 @@
         <section class="main-section section">
             <div class="container">
                 <div class="main-section__content">
-                    <h1 class="main-title"><span class="cover"></span><span>Allegro Develop Plast</span></h1>
+                    <h1 class="main-title">Allegro Develop Plast</h1>
                     <p class="text">Несмотря на то что компания «Allegro Develop Plast»
                         была сформирована в 2019 году
                         она уже успела занять лидерские позиции в Республике по
@@ -119,7 +120,7 @@
         </section>
         <section class="bridges-four section">
             <div class="container">
-                <img src="img/bridge-4.png" alt="Bridge" class="bridges-img">
+                <img src="img/bridge-4.svg" alt="Bridge" class="bridges-img">
                 <div class="bridges-content bridges-content__right">
                     <h2 class="title">Allegro Develop Plast</h2>
                     <p class="text">Компания обладает выдающимися специалистами и техническими ресурсами, также на постоянной основе сотрудничает с иностранными проектными компаниями. Наша основная цель внедрить в проекты новейшие стандарты проектирования, которые используются в развитых странах мира</p>
@@ -204,20 +205,22 @@
                         <a href="projects.html" class="btn"><span class="cover"></span><span class="btn-text">Посмотреть еще</span></a>
                     </div>
                 </div>
-                <p class="main-projects__ipad">
-                    <img src="img/ipad_1.png" alt="Img1" class="main-projects__ipadimg active">
-                    <img src="img/ipad_2.png" alt="Img2" class="main-projects__ipadimg">
-                    <span class="main-projects__cover"></span>
-                </p>
-                <div class="projects-gallary__controls">
-                    <button class="projects-gallary__control prev">
-                        <span>Предыдущая</span>
-                        <img src="img/icons/arrow-left.svg" alt="preview">
-                    </button>
-                    <button class="projects-gallary__control next">
-                        <img src="img/icons/arrow-right.svg" alt="next">
-                        <span>Следующая</span>
-                    </button>
+                <div class="main-projects__slider">
+                    <p class="main-projects__ipad">
+                        <img src="img/ipad_1.png" alt="Img1" class="main-projects__ipadimg active">
+                        <img src="img/ipad_2.png" alt="Img2" class="main-projects__ipadimg">
+                        <span class="main-projects__cover"></span>
+                    </p>
+                    <div class="projects-gallary__controls">
+                        <button class="projects-gallary__control prev">
+                            <span>Предыдущая</span>
+                            <img src="img/icons/arrow-left.svg" alt="preview">
+                        </button>
+                        <button class="projects-gallary__control next">
+                            <img src="img/icons/arrow-right.svg" alt="next">
+                            <span>Следующая</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -231,20 +234,16 @@
         </section>
         <section class="services-one section" id="servicesOne1">
             <div class="container">
-                <div class="services-one__content d-flex">
-                    <div class="services-one__left">
-                        <a href="services.html" class="services-img"><img src="img/services/services-1.jpg" alt="services"></a>
-                    </div>
-                    <div class="services-one__right">
-                        <h2 class="title"><span class="title-text">Разработка проектов и авторский надзор</span></h2>
-                        <a href="services.html">
-                            <p class="text">Авторский надзор позволяет заказчику
-                                экономить свое время и нервы, но при этом
-                                оставаться уверенным ,что реализация
-                                проекта идет по плану и согласно проектной
-                                документации.</p>
-                        </a>
-                    </div>
+                <div class="services-one__content d-flex column">
+                    <h2 class="title"><span class="title-text">Разработка проектов и авторский надзор</span></h2>
+                    <a href="services.html" class="services-img"><img src="img/services/services-1.jpg" alt="services"></a>
+                    <a href="services.html">
+                        <p class="text">Авторский надзор позволяет заказчику
+                            экономить свое время и нервы, но при этом
+                            оставаться уверенным ,что реализация
+                            проекта идет по плану и согласно проектной
+                            документации.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -258,31 +257,26 @@
                         </a>
 
                     </div>
-                    <div class="services-one__right">
-                        <a href="services.html" class="services-img"><img src="img/services/services-2.jpg" alt="services"></a>
-                    </div>
+                    <a href="services.html" class="services-img"><img src="img/services/services-2.jpg" alt="services"></a>
                 </div>
             </div>
         </section>
         <section class="services-two section" id="servicesTwo1">
             <div class="container">
                 <div class="services-two__content d-flex">
-                    <div class="services-two__left">
+                    <a href="services.html" class="services-img"><img src="img/services/services-3.jpg" alt="Services"></a>
+                    <div class="services-two__right">
                         <h2 class="title"><span class="title-text">Услуги супервайзера</span></h2>
                         <a href="services.html">
                             <p class="text">Функции супервайзера в основном ограничиваются контролем за работой персонала</p>
                         </a>
-                    </div>
-                    <div class="services-two__right">
-
-                        <a href="services.html" class="services-img"><img src="img/services/services-3.jpg" alt="Services"></a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="services-two two section" id="servicesTwo2">
             <div class="container">
-                <div class="services-two__content d-flex">
+                <div class="services-two__content d-flex column">
                     <h2 class="title"><span class="title-text">Инженерно-геодезические изыскания и геодезический контроль</span></h2>
                     <a href="services.html" class="services-img"><img src="img/services/services-4.jpg" alt="Services"></a>
                     <a href="services.html">
@@ -300,18 +294,14 @@
                             <p class="text">Это вид инженерных изысканий, обеспечивающий комплексное изучение нженерно-геологических условий района предполагаемого строительства</p>
                         </a>
                     </div>
-                    <div class="services-three__right">
-                        <a href="services.html" class="services-img"><img src="img/services/services-5.jpg" alt="Services"></a>
-                    </div>
+                    <a href="services.html" class="services-img"><img src="img/services/services-5.jpg" alt="Services"></a>
                 </div>
             </div>
         </section>
         <section class="services-three two section" id="servicesThree2">
             <div class="container">
                 <div class="services-three__content d-flex">
-                    <div class="services-three__left">
-                        <a href="services.html" class="services-img"><img src="img/services/services-6.jpg" alt="Services"></a>
-                    </div>
+                    <a href="services.html" class="services-img"><img src="img/services/services-6.jpg" alt="Services"></a>
                     <div class="services-three__right">
                         <h2 class="title"><span class="title-text">Услуги лаборатории</span></h2>
                         <a href="services.html">
@@ -324,16 +314,12 @@
 
         <section class="services-four section" id="servicesFour1">
             <div class="container">
-                <div class="services-four__content d-flex">
-                    <div class="services-four__left">
-                        <h2 class="title"><span class="title-text">Техническое обследование искусственных сооружений</span></h2>
-                        <a href="services.html">
-                            <p class="text">Целью диагностики искусственных дорожных сооружений является выявление их состояния, проверка соответствия сооружений установленным требованиям и внесение изменений в банк данных</p>
-                        </a>
-                    </div>
-                    <div class="services-four__right">
-                        <a href="services.html" class="services-img"><img src="img/services/services-7.jpg" alt="Services"></a>
-                    </div>
+                <div class="services-four__content d-flex column">
+                    <h2 class="title"><span class="title-text">Техническое обследование искусственных сооружений</span></h2>
+                    <a href="services.html" class="services-img"><img src="img/services/services-7.jpg" alt="Services"></a>
+                    <a href="services.html">
+                        <p class="text">Целью диагностики искусственных дорожных сооружений является выявление их состояния, проверка соответствия сооружений установленным требованиям и внесение изменений в банк данных</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -341,29 +327,25 @@
             <div class="container">
                 <div class="services-four__content d-flex">
                     <div class="services-four__left">
-                        <a href="services.html" class="services-img"> <img src="img/services/services-8.jpg" alt="Services"></a>
-                    </div>
-                    <div class="services-four__right">
                         <h2 class="title"><span class="title-text">Строительный финансовый и технический аудит</span></h2>
                         <a href="services.html">
                             <p class="text">Независимая экспертиза инженерно-технической и финансово-экономической составляющих строительства, направленная на получение объективной картины и выявления текущих показателей проекта</p>
                         </a>
                     </div>
+                    <a href="services.html" class="services-img"> <img src="img/services/services-8.jpg" alt="Services"></a>
                 </div>
             </div>
         </section>
         <section class="services-four three section" id="servicesFour3">
             <div class="container">
                 <div class="services-four__content d-flex">
-                    <div class="services-four__left">
+                    <a href="services.html" class="services-img"><img src="img/services/services-9.jpg" alt="Services"></a>
+                    <div class="services-four__right">
                         <h2 class="title"><span class="title-text">Инжиниринговые услуги</span></h2>
                         <a href="services.html">
                             <p class="text">Технические консультационные услуги, связанные с разработкой и подготовкой производственного процесса и обеспечением нормального хода процесса производства и реализации продукции
                             </p>
                         </a>
-                    </div>
-                    <div class="services-four__right">
-                        <a href="services.html" class="services-img"><img src="img/services/services-9.jpg" alt="Services"></a>
                     </div>
                 </div>
             </div>
@@ -426,8 +408,6 @@
 
                     </div>
                 </div>
-
-                <a href="news.html" class="btn"><span class="cover"></span><span class="btn-text">Посмотреть еще</span></a>
             </div>
         </section>
 
@@ -526,15 +506,11 @@
         <li></li>
         <li></li>
     </ul>
-    <div class="preloader">
-        <img src="img/logo.svg" alt="" class="preloader-logo">
-        <div class="preloader-overlay">
-            <div class="preloader-counter"><span class="counter">0</span>%</div>
-        </div>
-    </div>
     <script src="js/jquery.min.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="js/loader.js"></script>
     <script src="js/libs.min.js"></script>
-    <script src="./js/bundle.js"></script>
+    <script src="./js/bundle.js" defer></script>
     <script type="text/javascript">
         if (window.innerWidth > 1199) {
             (function($) {
@@ -689,24 +665,24 @@
 
 
             $('#feel-the-wave').wavify({
-                height: 10,
+                height: 200,
                 bones: 4,
-                amplitude: 400,
+                amplitude: 500,
                 color: 'rgba(240, 112, 80, 0.30)',
                 speed: .15
             });
 
             $('#feel-the-wave-two').wavify({
-                height: 10,
+                height: 200,
                 bones: 4,
-                amplitude: 300,
+                amplitude: 400,
                 color: 'rgba(240, 112, 80, 0.50)',
                 speed: .3
             });
             $('#feel-the-wave-three').wavify({
-                height: 10,
+                height: 200,
                 bones: 3,
-                amplitude: 400,
+                amplitude: 500,
                 color: '#FB874C',
                 speed: .3
             });

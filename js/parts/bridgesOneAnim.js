@@ -2,7 +2,6 @@ export default function bridgesOneAnim() {
     let bridgeOne = document.querySelector('.bridges-one');
     let bridgeOneImg = bridgeOne.querySelector('.bridges-img');
     let bridgeOneTitle = bridgeOne.querySelector('.title');
-    bridgeOneTitle.querySelector('.title-text').innerHTML = bridgeOneTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
     let bridgeOneTitleBefore = bridgeOneTitle.querySelector('.title-before');
     let bridgeOneTitleText = bridgeOneTitle.querySelector('.title-text');
     gsap.set(bridgeOneTitleBefore, {

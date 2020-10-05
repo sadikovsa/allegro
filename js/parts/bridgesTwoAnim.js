@@ -2,7 +2,6 @@ export default function bridgesTwoAnim() {
     let bridgeTwo = document.querySelector('.bridges-two');
     let bridgeTwoImg = bridgeTwo.querySelector('.bridges-img');
     let bridgeTwoTitle = bridgeTwo.querySelector('.title');
-    bridgeTwoTitle.querySelector('.title-text').innerHTML = bridgeTwoTitle.querySelector('.title-text').textContent.replace(/([^\x00-\x80]|\w|\-)/g, "<span class='letter'>$&</span>");
     let bridgeTwoTitleBefore = bridgeTwoTitle.querySelector('.title-before');
     let bridgeTwoTitleText = bridgeTwoTitle.querySelector('.title-text');
 

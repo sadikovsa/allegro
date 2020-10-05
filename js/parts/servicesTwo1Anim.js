@@ -25,7 +25,7 @@ export default function servicesTwoAnim() {
                 },
             })
             .from(mainServicesTwoImg, {
-                x: 400,
+                x: -400,
                 autoAlpha: 0,
             })
             .from(mainServicesTwoTitle, {
