@@ -8,7 +8,10 @@ import bridgesThreeAnim from './bridgesThreeAnim.js';
 import bridgesFourAnim from './bridgesFourAnim.js';
 import featuresAnim from './featuresAnim.js';
 import projectsFirstAnim from './projectsFirstAnim.js';
-import projectsSecondAnim from './projectsSecondAnim.js';
+import {
+    projectsSliderAnim,
+    projectsSecondAnim
+} from './projectsSecondAnim.js';
 import servicesAnim from './servicesAnim.js';
 import servicesOne1Anim from './servicesOne1Anim.js';
 import servicesOne2Anim from './servicesOne2Anim.js';
@@ -22,73 +25,107 @@ import servicesFour3Anim from './servicesFour3Anim.js';
 import partnersAnim from './partnersAnim.js';
 import mainNewsAnim from './mainNewsAnim.js';
 
+
 const mainPageAnim = () => {
-
-    const header = document.querySelector('.header');
-
     if (window.innerWidth > 1199) {
-
-        let animated = false;
-
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
             lockAnchors: false,
             autoScrolling: true,
-//            scrollOverflow: true,
-//            scrollOverflowReset: true,
-//            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
+            paddingTop: '80px',
+            paddingBottom: '0px',
+            scrollingSpeed: 2000,
+            //            scrollOverflow: true,
+            //            scrollOverflowReset: true,
+            //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
             afterLoad: function (origin, destination, direction) {
-                animated = false;
                 if (destination.index === 0) {
+                    mainSectionLeaveAnim.timeScale(2).reverse();
                     mainSectionAnim();
+                } else if (destination.index === 1) {
+                    bridgesOneAnim.timeScale(1).restart();
+                } else if (destination.index === 2) {
+                    bridgesTwoAnim.timeScale(1).restart();
+                } else if (destination.index === 3) {
+                    bridgesThreeAnim.timeScale(1).restart();
+                } else if (destination.index === 4) {
+                    bridgesFourAnim.timeScale(1).restart();
+                } else if (destination.index === 5) {
+                    featuresAnim.timeScale(1).restart();
+                } else if (destination.index === 6) {
+                    projectsFirstAnim.restart();
+                } else if (destination.index === 7) {
+                    projectsSecondAnim.timeScale(1).restart();
+                    projectsSliderAnim();
+                } else if (destination.index === 8) {
+                    servicesAnim.timeScale(1).restart();
+                } else if (destination.index === 9) {
+                    servicesOne1Anim.timeScale(1).restart();
+                } else if (destination.index === 10) {
+                    servicesOne2Anim.timeScale(1).restart();
+                } else if (destination.index === 11) {
+                    servicesTwo1Anim.timeScale(1).restart();
+                } else if (destination.index === 12) {
+                    servicesTwo2Anim.timeScale(1).restart();
+                } else if (destination.index === 13) {
+                    servicesThree1Anim.timeScale(1).restart();
+                } else if (destination.index === 14) {
+                    servicesThree2Anim.timeScale(1).restart();
+                } else if (destination.index === 15) {
+                    servicesFour1Anim.timeScale(1).restart();
+                } else if (destination.index === 16) {
+                    servicesFour2Anim.timeScale(1).restart();
+                } else if (destination.index === 17) {
+                    servicesFour3Anim.timeScale(1).restart();
+                } else if (destination.index === 18) {
+                    partnersAnim.timeScale(1).restart();
+                } else if (destination.index === 19) {
+                    mainNewsAnim.timeScale(1).restart();
                 }
             },
             onLeave: function (origin, destination, direction) {
-
-
-                if (destination.index === 0) {
-                    mainSectionAnim();
-                } else if (destination.index === 1) {
-                    bridgesOneAnim();
-                } else if (destination.index === 2) {
-                    bridgesTwoAnim();
-                } else if (destination.index === 3) {
-                    bridgesThreeAnim();
-                } else if (destination.index === 4) {
-                    bridgesFourAnim();
-                } else if (destination.index === 5) {
-                    featuresAnim();
-                } else if (destination.index === 6) {
-                    projectsFirstAnim();
-                } else if (destination.index === 7) {
-                    projectsSecondAnim();
-                } else if (destination.index === 8) {
-                    servicesAnim();
-                } else if (destination.index === 9) {
-                    servicesOne1Anim();
-                } else if (destination.index === 10) {
-                    servicesOne2Anim();
-                } else if (destination.index === 11) {
-                    servicesTwo1Anim();
-                } else if (destination.index === 12) {
-                    servicesTwo2Anim();
-                } else if (destination.index === 13) {
-                    servicesThree1Anim();
-                } else if (destination.index === 14) {
-                    servicesThree2Anim();
-                } else if (destination.index === 15) {
-                    servicesFour1Anim();
-                } else if (destination.index === 16) {
-                    servicesFour2Anim();
-                } else if (destination.index === 17) {
-                    servicesFour3Anim();
-                } else if (destination.index === 18) {
-                    partnersAnim();
-                } else if (destination.index === 19) {
-                    mainNewsAnim();
+                if (origin.index === 0) {
+                    mainSectionLeaveAnim.restart();
+                } else if (origin.index === 1) {
+                    bridgesOneAnim.timeScale(2).reverse();
+                } else if (origin.index === 2) {
+                    bridgesTwoAnim.timeScale(2).reverse();
+                } else if (origin.index === 3) {
+                    bridgesThreeAnim.timeScale(2).reverse();
+                } else if (origin.index === 4) {
+                    bridgesFourAnim.timeScale(2).reverse();
+                } else if (origin.index === 5) {
+                    featuresAnim.timeScale(2).reverse();
+                } else if (origin.index === 6) {
+                    projectsFirstAnim.timeScale(2).reverse();
+                } else if (origin.index === 7) {
+                    projectsSecondAnim.timeScale(2).reverse();
+                } else if (origin.index === 8) {
+                    servicesAnim.timeScale(2).reverse();
+                } else if (origin.index === 9) {
+                    servicesOne1Anim.timeScale(2).reverse();
+                } else if (origin.index === 10) {
+                    servicesOne2Anim.timeScale(2).reverse();
+                } else if (origin.index === 11) {
+                    servicesTwo1Anim.timeScale(2).reverse();
+                } else if (origin.index === 12) {
+                    servicesTwo2Anim.timeScale(2).reverse();
+                } else if (origin.index === 13) {
+                    servicesThree1Anim.timeScale(2).reverse();
+                } else if (origin.index === 14) {
+                    servicesThree2Anim.timeScale(2).reverse();
+                } else if (origin.index === 15) {
+                    servicesFour1Anim.timeScale(2).reverse();
+                } else if (origin.index === 16) {
+                    servicesFour2Anim.timeScale(2).reverse();
+                } else if (origin.index === 17) {
+                    servicesFour3Anim.timeScale(2).reverse();
+                } else if (origin.index === 18) {
+                    partnersAnim.timeScale(2).reverse();
+                } else if (origin.index === 19) {
+                    mainNewsAnim.timeScale(2).reverse();
                 }
             },
-            //        scrollOverflow: true,
         });
 
     } else {
