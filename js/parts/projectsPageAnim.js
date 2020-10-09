@@ -23,85 +23,89 @@ const projectsPageAnim = () => {
     let projectsSixImg = document.querySelector('.projects-inprogress.three .projects-img');
 
 
-    const projectsOneAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsOneContent, {
-            autoAlpha: 0,
-            y: 400,
-        })
-        .from(projectsOneImg, {
-            x: 400,
-            autoAlpha: 0,
-        });
-
-    const projectsTwoAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsTwoTitle, {
-            autoAlpha: 0,
-            y: 400,
-        })
-        .from(projectsTwoTitleImg, {
-            autoAlpha: 0,
-            y: 500,
-        })
-        .from(projectsTwoTitleBtn, {
-            autoAlpha: 0,
-            y: 600,
-        });
-    const projectsThreeAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsThreeImg, {
-            x: -400,
-            autoAlpha: 0,
-        })
-        .from(projectsThreeContent, {
-            autoAlpha: 0,
-            y: 400,
-        });
-
-    const projectsFourAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsFourTitle, {
-            autoAlpha: 0,
-        });
-
-
-    const projectsFiveAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsFiveImg, {
-            x: 400,
-            autoAlpha: 0,
-        })
-        .from(projectsFiveContent, {
-            autoAlpha: 0,
-            y: 400,
-        });
-    
-    const projectsSixAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectsSixImg, {
-            x: -400,
-            autoAlpha: 0,
-        })
-        .from(projectsSixContent, {
-            autoAlpha: 0,
-            y: 400,
-        });
-
 
     if (window.innerWidth > 1199) {
+
+        const projectsOneAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsOneContent, {
+                autoAlpha: 0,
+                y: 400,
+            })
+            .from(projectsOneImg, {
+                x: 400,
+                autoAlpha: 0,
+            });
+
+        const projectsTwoAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsTwoTitle, {
+                autoAlpha: 0,
+                y: 400,
+            })
+            .from(projectsTwoTitleImg, {
+                autoAlpha: 0,
+                y: 500,
+            })
+            .from(projectsTwoTitleBtn, {
+                autoAlpha: 0,
+                y: 600,
+            });
+        const projectsThreeAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsThreeImg, {
+                x: -400,
+                autoAlpha: 0,
+            })
+            .from(projectsThreeContent, {
+                autoAlpha: 0,
+                y: 400,
+            });
+
+        const projectsFourAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsFourTitle, {
+                autoAlpha: 0,
+            });
+
+
+        const projectsFiveAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsFiveImg, {
+                x: 400,
+                autoAlpha: 0,
+            })
+            .from(projectsFiveContent, {
+                autoAlpha: 0,
+                y: 400,
+            });
+
+        const projectsSixAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectsSixImg, {
+                x: -400,
+                autoAlpha: 0,
+            })
+            .from(projectsSixContent, {
+                autoAlpha: 0,
+                y: 400,
+            });
+
+
+
+
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

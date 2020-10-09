@@ -4,18 +4,19 @@ const newsPageAnim = () => {
     let newsItems = document.querySelectorAll('.news-item');
 
 
-    const newsAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        yoyo: true,
-        })
-        .from(newsItems, {
-            delay: 0.3,
-            autoAlpha: 0,
-            stagger: 0.1
-        })
-
     if (window.innerWidth > 1199) {
+
+        const newsAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+                yoyo: true,
+            })
+            .from(newsItems, {
+                delay: 0.3,
+                autoAlpha: 0,
+                stagger: 0.1
+            })
+
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

@@ -6,31 +6,7 @@ const projectsItemPageAnim = () => {
     let projectGallaryTitle = document.querySelector('.projects-one__gallary .title-small');
     let projectGallary = document.querySelector('.projects-one__gallary .projects-gallary');
 
-    const projectsItem = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectOneTitle, {
-            autoAlpha: 0,
-            x: -200,
-        })
-        .from(projectOneText, {
-            autoAlpha: 0,
-            y: 400,
-        })
 
-    const projectsItemSlider = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(projectGallaryTitle, {
-            autoAlpha: 0,
-            x: -200,
-        })
-        .from(projectGallary, {
-            autoAlpha: 0,
-            x: 400,
-        })
 
 
     $('.projects-gallary').slick({
@@ -44,6 +20,33 @@ const projectsItemPageAnim = () => {
     });
 
     if (window.innerWidth > 1199) {
+
+        const projectsItem = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectOneTitle, {
+                autoAlpha: 0,
+                x: -200,
+            })
+            .from(projectOneText, {
+                autoAlpha: 0,
+                y: 400,
+            })
+
+        const projectsItemSlider = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(projectGallaryTitle, {
+                autoAlpha: 0,
+                x: -200,
+            })
+            .from(projectGallary, {
+                autoAlpha: 0,
+                x: 400,
+            })
+
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

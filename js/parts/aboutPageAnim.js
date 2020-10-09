@@ -8,38 +8,36 @@ const aboutPageAnim = () => {
     let aboutLicenceText = aboutLicence.querySelector('ol');
     let aboutLicenceBtn = aboutLicence.querySelector('.btn');
 
-    const aboutMissionAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(aboutMissionTitle, {
-            autoAlpha: 0,
-        })
-        .from(aboutMissionText, {
-            autoAlpha: 0,
-            y: 400
-        })
-
-
-    const aboutLicenseAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(aboutLicenceTitle, {
-            autoAlpha: 0,
-        })
-        .from(aboutLicenceText, {
-            autoAlpha: 0,
-            y: 400
-        })
-        .from(aboutLicenceBtn, {
-            autoAlpha: 0,
-            y: 400
-        })
-
-
 
     if (window.innerWidth > 1199) {
+        const aboutMissionAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(aboutMissionTitle, {
+                autoAlpha: 0,
+            })
+            .from(aboutMissionText, {
+                autoAlpha: 0,
+                y: 400
+            })
+
+
+        const aboutLicenseAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(aboutLicenceTitle, {
+                autoAlpha: 0,
+            })
+            .from(aboutLicenceText, {
+                autoAlpha: 0,
+                y: 400
+            })
+            .from(aboutLicenceBtn, {
+                autoAlpha: 0,
+                y: 400
+            })
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

@@ -8,29 +8,29 @@ const contactsPageAnim = () => {
     let contactsList2 = document.querySelectorAll('.contacts-info__list')[1];
 
 
-    const contactsInfoAnim = gsap.timeline({
-            duration: 0.8,
-            paused:true,
-        })
-        .from(contactsTitle1, {
-            autoAlpha: 0,
-            x: -200
-        })
-        .from(contactsList1, {
-            autoAlpha: 0,
-            y: 400
-        })
-        .from(contactsTitle2, {
-            autoAlpha: 0,
-            x: -200
-        })
-        .from(contactsList2, {
-            autoAlpha: 0,
-            y: 400
-        })
-
-
     if (window.innerWidth > 1199) {
+        const contactsInfoAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(contactsTitle1, {
+                autoAlpha: 0,
+                x: -200
+            })
+            .from(contactsList1, {
+                autoAlpha: 0,
+                y: 400
+            })
+            .from(contactsTitle2, {
+                autoAlpha: 0,
+                x: -200
+            })
+            .from(contactsList2, {
+                autoAlpha: 0,
+                y: 400
+            })
+
+
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

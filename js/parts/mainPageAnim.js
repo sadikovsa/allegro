@@ -106,145 +106,6 @@ const mainPageAnim = () => {
 
 
 
-    function mainSectionAnim() {
-        const mainSliderStart = (curSlide = 0) => {
-            mainSliderImg.forEach(item => {
-                item.style.opacity = 0;
-            })
-
-            gsap.to(mainSliderImg[curSlide], {
-                autoAlpha: 1,
-                zIndex: 2
-            })
-        }
-
-        setInterval(() => {
-            activeMainSlide++;
-            if (activeMainSlide >= mainSliderImg.length - 1) {
-                activeMainSlide = 0;
-            }
-            mainSliderStart(activeMainSlide);
-
-        }, 3000)
-    };
-
-    const mainSectionLeaveAnim = gsap.timeline({
-            duration: 1,
-            paused: true,
-        })
-        .to(mainSlider, {
-            scale: 3,
-            rotation: -60,
-            transformOrigin: "50% 70%",
-            autoAlpha: 0
-        }).to(mainSectionContent, {
-            autoAlpha: 0
-        }, '-=0.5');
-
-    const bridgesOneAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(bridgeOneImg, {
-            autoAlpha: 0,
-            x: 2000,
-        }, '-=1')
-        .from(bridgeOneTitleBefore, {
-            autoAlpha: 0,
-            top: "100%",
-        }, '-=0.8')
-        .from(bridgeOneTitleText, {
-            autoAlpha: 0,
-            y: -80,
-        }, '-=0.5');
-
-    const bridgesTwoAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(bridgeTwoImg, {
-            autoAlpha: 0,
-            x: 1000,
-        })
-        .from(bridgeTwoTitleBefore, {
-            autoAlpha: 0,
-            top: "100%",
-        })
-
-        .from(bridgeTwoTitleText, {
-            autoAlpha: 0,
-            y: -80
-        });
-
-    const bridgesThreeAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(bridgeThreeImg, {
-            autoAlpha: 0,
-            y: 400,
-        })
-        .from(bridgeThreeTitleBefore, {
-            autoAlpha: 0,
-            top: "100%",
-        })
-        .from(bridgeThreeTitleText, {
-            autoAlpha: 0,
-            y: -80
-        });
-
-    const bridgesFourAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(bridgeFourImg, {
-            autoAlpha: 0,
-            y: 400
-        })
-        .from(bridgeFourTitle, {
-            autoAlpha: 0,
-            y: 500,
-        })
-        .from(bridgeFourText, {
-            autoAlpha: 0,
-            y: 600,
-        })
-        .from(bridgeFourBtn, {
-            autoAlpha: 0,
-            y: 700,
-        });
-
-    const featuresAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainFeaturesTitle, {
-            autoAlpha: 0,
-            x: -400
-        })
-        .from(mainFeaturesListItem, {
-            y: -40,
-            autoAlpha: 0,
-            stagger: 0.1,
-        });
-
-    const projectsFirstAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainProjectsFirstTitle, {
-            autoAlpha: 0,
-            x: -400
-        })
-        .from(mainProjectsFirstLine1, {
-            x: -1000,
-            autoAlpha: 0,
-        })
-        .from(mainProjectsFirstLine2, {
-            x: 1000,
-            autoAlpha: 0,
-        });
-
     const projectsSliderAnim = () => {
         let activeSlide = 0;
         const changeSlide = (actSlide = 0) => {
@@ -277,222 +138,6 @@ const mainPageAnim = () => {
             }
         })
     };
-
-    const projectsSecondAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainProjectsSecondContent[0], {
-            autoAlpha: 0,
-            y: 400
-        })
-        .from(mainProjectsSecondIpad, {
-            x: 1000,
-            autoAlpha: 0,
-        })
-        .from(mainProjectsSlideControls, {
-            x: 1000,
-            autoAlpha: 0,
-        });
-
-    const servicesAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesFirstTitle, {
-            autoAlpha: 0,
-            x: -200
-        })
-        .from(mainServicesFirstLine1, {
-            y: -200,
-            autoAlpha: 0,
-        })
-        .from(mainServicesFirstLine2, {
-            y: 200,
-            autoAlpha: 0,
-        });
-
-    const servicesOne1Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesOneTitle, {
-            y: 300,
-            autoAlpha: 0,
-        })
-        .from(mainServicesOneImg, {
-            y: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesOneText, {
-            y: 500,
-            autoAlpha: 0,
-        });
-
-    const servicesOne2Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesOne2Title, {
-            y: 300,
-            autoAlpha: 0,
-        })
-        .from(mainServicesOne2Text, {
-            y: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesOne2Img, {
-            x: 400,
-            autoAlpha: 0,
-        });
-
-    const servicesTwo1Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesTwoImg, {
-            x: -400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesTwoTitle, {
-            autoAlpha: 0,
-            y: 300,
-        })
-
-        .from(mainServicesTwoText, {
-            y: 400,
-            autoAlpha: 0,
-        });
-
-    const servicesTwo2Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesTwo2Title, {
-            autoAlpha: 0,
-            x: -400,
-        })
-        .from(mainServicesTwo2Img, {
-            y: 300,
-            autoAlpha: 0,
-        })
-        .from(mainServicesTwo2Text, {
-            y: 400,
-            autoAlpha: 0,
-        });
-
-    const servicesThree1Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesThreeImg, {
-            x: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesThreeTitle, {
-            y: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesThreeText, {
-            y: 500,
-            autoAlpha: 0,
-        });
-
-    const servicesThree2Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesThree2Img, {
-            x: -400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesThree2Title, {
-            y: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesThree2Text, {
-            y: 500,
-            autoAlpha: 0,
-        });
-
-    const servicesFour1Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesFourTitle, {
-            y: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesFourImg, {
-            y: 500,
-            autoAlpha: 0,
-        })
-        .from(mainServicesFourText, {
-            y: 600,
-            autoAlpha: 0,
-        });
-
-    const servicesFour2Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesFour2Img, {
-            x: 400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesFour2Title, {
-            y: 400,
-            autoAlpha: 0,
-        })
-
-        .from(mainServicesFour2Text, {
-            y: 600,
-            autoAlpha: 0,
-        });
-
-    const servicesFour3Anim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainServicesFour3Img, {
-            x: -400,
-            autoAlpha: 0,
-        })
-        .from(mainServicesFour3Title, {
-            y: 400,
-            autoAlpha: 0,
-        })
-
-        .from(mainServicesFour3Text, {
-            y: 600,
-            autoAlpha: 0,
-        });
-
-    const partnersAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(partnersTitle, {
-            x: -600,
-            autoAlpha: 0,
-        })
-        .from(partnersList, {
-            x: 600,
-            autoAlpha: 0,
-        });
-
-    const mainNewsAnim = gsap.timeline({
-            paused: true,
-            duration: 0.8,
-        })
-        .from(mainNewsTitle, {
-            x: -600,
-            autoAlpha: 0,
-        })
-        .from(mainNewsList, {
-            x: 600,
-            autoAlpha: 0,
-        });
 
 
     $('.partners-slider').slick({
@@ -561,10 +206,364 @@ const mainPageAnim = () => {
   ]
     });
 
-
-
-
     if (window.innerWidth > 1199) {
+        function mainSectionAnim() {
+            const mainSliderStart = (curSlide = 0) => {
+                mainSliderImg.forEach(item => {
+                    item.style.opacity = 0;
+                })
+
+                gsap.to(mainSliderImg[curSlide], {
+                    autoAlpha: 1,
+                    zIndex: 2
+                })
+            }
+
+            setInterval(() => {
+                activeMainSlide++;
+                if (activeMainSlide >= mainSliderImg.length - 1) {
+                    activeMainSlide = 0;
+                }
+                mainSliderStart(activeMainSlide);
+
+            }, 3000)
+        };
+
+        const mainSectionLeaveAnim = gsap.timeline({
+                duration: 1,
+                paused: true,
+            })
+            .to(mainSlider, {
+                scale: 3,
+                rotation: -60,
+                transformOrigin: "50% 70%",
+                autoAlpha: 0
+            }).to(mainSectionContent, {
+                autoAlpha: 0
+            }, '-=0.5');
+
+        const bridgesOneAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(bridgeOneImg, {
+                autoAlpha: 0,
+                x: 2000,
+            }, '-=1')
+            .from(bridgeOneTitleBefore, {
+                autoAlpha: 0,
+                top: "100%",
+            }, '-=0.8')
+            .from(bridgeOneTitleText, {
+                autoAlpha: 0,
+                y: -80,
+            }, '-=0.5');
+
+        const bridgesTwoAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(bridgeTwoImg, {
+                autoAlpha: 0,
+                x: 1000,
+            })
+            .from(bridgeTwoTitleBefore, {
+                autoAlpha: 0,
+                top: "100%",
+            })
+
+            .from(bridgeTwoTitleText, {
+                autoAlpha: 0,
+                y: -80
+            });
+
+        const bridgesThreeAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(bridgeThreeImg, {
+                autoAlpha: 0,
+                y: 400,
+            })
+            .from(bridgeThreeTitleBefore, {
+                autoAlpha: 0,
+                top: "100%",
+            })
+            .from(bridgeThreeTitleText, {
+                autoAlpha: 0,
+                y: -80
+            });
+
+        const bridgesFourAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(bridgeFourImg, {
+                autoAlpha: 0,
+                y: 400
+            })
+            .from(bridgeFourTitle, {
+                autoAlpha: 0,
+                y: 500,
+            })
+            .from(bridgeFourText, {
+                autoAlpha: 0,
+                y: 600,
+            })
+            .from(bridgeFourBtn, {
+                autoAlpha: 0,
+                y: 700,
+            });
+
+        const featuresAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainFeaturesTitle, {
+                autoAlpha: 0,
+                x: -400
+            })
+            .from(mainFeaturesListItem, {
+                y: -40,
+                autoAlpha: 0,
+                stagger: 0.1,
+            });
+
+        const projectsFirstAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainProjectsFirstTitle, {
+                autoAlpha: 0,
+                x: -400
+            })
+            .from(mainProjectsFirstLine1, {
+                x: -1000,
+                autoAlpha: 0,
+            })
+            .from(mainProjectsFirstLine2, {
+                x: 1000,
+                autoAlpha: 0,
+            });
+
+        const projectsSecondAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainProjectsSecondContent[0], {
+                autoAlpha: 0,
+                y: 400
+            })
+            .from(mainProjectsSecondIpad, {
+                x: 1000,
+                autoAlpha: 0,
+            })
+            .from(mainProjectsSlideControls, {
+                x: 1000,
+                autoAlpha: 0,
+            });
+
+        const servicesAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesFirstTitle, {
+                autoAlpha: 0,
+                x: -200
+            })
+            .from(mainServicesFirstLine1, {
+                y: -200,
+                autoAlpha: 0,
+            })
+            .from(mainServicesFirstLine2, {
+                y: 200,
+                autoAlpha: 0,
+            });
+
+        const servicesOne1Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesOneTitle, {
+                y: 300,
+                autoAlpha: 0,
+            })
+            .from(mainServicesOneImg, {
+                y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesOneText, {
+                y: 500,
+                autoAlpha: 0,
+            });
+
+        const servicesOne2Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesOne2Title, {
+                y: 300,
+                autoAlpha: 0,
+            })
+            .from(mainServicesOne2Text, {
+                y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesOne2Img, {
+                x: 400,
+                autoAlpha: 0,
+            });
+
+        const servicesTwo1Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesTwoImg, {
+                x: -400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesTwoTitle, {
+                autoAlpha: 0,
+                y: 300,
+            })
+
+            .from(mainServicesTwoText, {
+                y: 400,
+                autoAlpha: 0,
+            });
+
+        const servicesTwo2Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesTwo2Title, {
+                autoAlpha: 0,
+                x: -400,
+            })
+            .from(mainServicesTwo2Img, {
+                y: 300,
+                autoAlpha: 0,
+            })
+            .from(mainServicesTwo2Text, {
+                y: 400,
+                autoAlpha: 0,
+            });
+
+        const servicesThree1Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesThreeImg, {
+                x: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesThreeTitle, {
+                y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesThreeText, {
+                y: 500,
+                autoAlpha: 0,
+            });
+
+        const servicesThree2Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesThree2Img, {
+                x: -400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesThree2Title, {
+                y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesThree2Text, {
+                y: 500,
+                autoAlpha: 0,
+            });
+
+        const servicesFour1Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesFourTitle, {
+                y: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesFourImg, {
+                y: 500,
+                autoAlpha: 0,
+            })
+            .from(mainServicesFourText, {
+                y: 600,
+                autoAlpha: 0,
+            });
+
+        const servicesFour2Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesFour2Img, {
+                x: 400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesFour2Title, {
+                y: 400,
+                autoAlpha: 0,
+            })
+
+            .from(mainServicesFour2Text, {
+                y: 600,
+                autoAlpha: 0,
+            });
+
+        const servicesFour3Anim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainServicesFour3Img, {
+                x: -400,
+                autoAlpha: 0,
+            })
+            .from(mainServicesFour3Title, {
+                y: 400,
+                autoAlpha: 0,
+            })
+
+            .from(mainServicesFour3Text, {
+                y: 600,
+                autoAlpha: 0,
+            });
+
+        const partnersAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(partnersTitle, {
+                x: -600,
+                autoAlpha: 0,
+            })
+            .from(partnersList, {
+                x: 600,
+                autoAlpha: 0,
+            });
+
+        const mainNewsAnim = gsap.timeline({
+                paused: true,
+                duration: 0.8,
+            })
+            .from(mainNewsTitle, {
+                x: -600,
+                autoAlpha: 0,
+            })
+            .from(mainNewsList, {
+                x: 600,
+                autoAlpha: 0,
+            });
+
+
+
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
@@ -698,6 +697,91 @@ const mainPageAnim = () => {
             },
             offset: 'bottom-in-view'
         })
+        var features = $('.features').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.title').classList.add('fade');
+                this.element.querySelector('.features-slider__wrap').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var projectsFirst = $('.main-projects__wrap').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.title-big').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var projectsSecond = $('.main-projects__info').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.main-projects__slider').classList.add('fade');
+                this.element.querySelector('.main-projects__wrapper').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesFirst = $('.services-first').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.title-big').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        
+        var servicesOne1 = $('.services-one.one').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-one__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesOne2 = $('.services-one.two').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-one__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        
+        var servicesTwo1 = $('.services-two.one').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-two__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesTwo2 = $('.services-two.two').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-two__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        
+        var servicesThree1 = $('.services-three.one').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-three__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesThree2 = $('.services-three.two').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-three__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        
+        var servicesFour1 = $('.services-four.one').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-four__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesFour2 = $('.services-four.two').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-four__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        var servicesFour3 = $('.services-four.three').waypoint({
+            handler: function (direction) {
+                this.element.querySelector('.services-four__content').classList.add('fade');
+            },
+            offset: 'bottom-in-view'
+        })
+        
 
         projectsSliderAnim();
         $('.features-list').slick({

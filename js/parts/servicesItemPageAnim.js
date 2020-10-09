@@ -7,27 +7,27 @@ const servicesItemPageAnim = () => {
     let servicesList = document.querySelectorAll('.services.two .services-features li');
 
 
-    const servicesItemAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(servicesTitle, {
-            autoAlpha: 0,
-            x: -300,
-        })
-        .from(servicesText, {
-            autoAlpha: 0,
-            y: 400,
-        })
-        .from(servicesList, {
-            delay: 0.3,
-            autoAlpha: 0,
-            y: 300,
-            stagger: 0.3,
-        })
-
-
     if (window.innerWidth > 1199) {
+        
+        const servicesItemAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(servicesTitle, {
+                autoAlpha: 0,
+                x: -300,
+            })
+            .from(servicesText, {
+                autoAlpha: 0,
+                y: 400,
+            })
+            .from(servicesList, {
+                delay: 0.3,
+                autoAlpha: 0,
+                y: 300,
+                stagger: 0.3,
+            })
+        
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',

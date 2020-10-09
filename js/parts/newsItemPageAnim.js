@@ -6,22 +6,19 @@ const newsItemPageAnim = () => {
     let newsTitle = document.querySelector('.news-one__content .news-one__title');
     let newsText = document.querySelector('.news-one__content p');
 
-
-    const newsItemAnim = gsap.timeline({
-            duration: 0.8,
-            paused: true,
-        })
-        .from(newsTitle, {
-            autoAlpha: 0,
-            x: -300,
-        })
-        .from(newsText, {
-            autoAlpha: 0,
-            y: 400,
-        })
-
-
     if (window.innerWidth > 1199) {
+        const newsItemAnim = gsap.timeline({
+                duration: 0.8,
+                paused: true,
+            })
+            .from(newsTitle, {
+                autoAlpha: 0,
+                x: -300,
+            })
+            .from(newsText, {
+                autoAlpha: 0,
+                y: 400,
+            })
         let wrapper = document.querySelector('.main');
         new fullpage('#fullpage', {
             licenseKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
