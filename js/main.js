@@ -12,6 +12,7 @@ import servicesItemPageAnim from './parts/servicesItemPageAnim.js';
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
+
     let url = window.location.pathname.split('/');
     url = url[url.length - 1].split(".html")[0];
     console.log(url)
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else if (url === 'projects_item') {
         projectsItemPageAnim();
     } else if (url === 'contacts') {
-       contactsPageAnim();
+        contactsPageAnim();
     } else if (url === 'news') {
         newsPageAnim();
     } else if (url === 'news_item') {
@@ -32,21 +33,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else if (url === 'projects') {
         projectsPageAnim();
     }
+    if (window.innerWidth < 1199) {
 
-    // burger
-    let burger = document.querySelector('#burgerBtn');
-    let mobileContent = document.querySelector('.header-nav');
+        [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = function () {
+                img.removeAttribute('data-src');
+            };
+        });
 
-    burger.addEventListener('change', function () {
-        mobileContent.classList.toggle('is-open');
-    });
+        // burger
+        let burger = document.querySelector('#burgerBtn');
+        let mobileContent = document.querySelector('.header-nav');
 
-    document.addEventListener('click', function (e) {
-        let target = e.target;
-        if (!target.closest('.burger') && !target.closest('.header-nav')) {
-            burger.checked = false;
-            mobileContent.classList.remove('is-open');
-        }
-    });
+        burger.addEventListener('change', function () {
+            mobileContent.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function (e) {
+            let target = e.target;
+            if (!target.closest('.burger') && !target.closest('.header-nav')) {
+                burger.checked = false;
+                mobileContent.classList.remove('is-open');
+            }
+        });
+    }
+
+
 
 });

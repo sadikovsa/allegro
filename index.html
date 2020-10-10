@@ -9,10 +9,14 @@
     <link rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./img/favicon/favicon.ico" type="image/x-icon">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="css/libs.min.css">
-    <link rel="stylesheet" href="css/style.min.css">
-
-
+    <link rel="preload" href="./fonts/Mont/stylesheet.css" as="style">
+    <link rel="stylesheet" href="./css/libs.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script src="js/loader.js" defer></script>
+    <script src="js/libs.min.js" defer></script>
+    <script src="./js/bundle.js" defer></script>
 </head>
 
 <body>
@@ -30,7 +34,7 @@
                 </a>
                 <nav class="header-nav">
                     <a href="index.html" class="header-logo__mobile">
-                        <img src="img/logo.svg" alt="Allegro Logo">
+                        <img data-src="img/logo.svg" alt="Allegro Logo">
                     </a>
                     <ul>
                         <li><a href="about.html">О нас</a></li>
@@ -80,9 +84,9 @@
                 </div>
                 <div class="main-section__slider">
                     <div class="main-section__slider_images">
-                        <img src="img/services/services-1.jpg" alt="main-slider" class="main-slider__img">
-                        <img src="img/services/services-2.jpg" alt="main-slider" class="main-slider__img">
-                        <img src="img/services/services-3.jpg" alt="main-slider" class="main-slider__img">
+                        <img data-src="img/services/services-1.jpg" alt="main-slider" class="main-slider__img">
+                        <img data-src="img/services/services-2.jpg" alt="main-slider" class="main-slider__img">
+                        <img data-src="img/services/services-3.jpg" alt="main-slider" class="main-slider__img">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
                             <clipPath id="svgClip">
                                 <path id="svgPath" d="m273.50565,613.9537c177.03695,3.94841 506.38502,-255.56677 443.58141,-366.16841c-62.80361,-110.60164 -510.83566,-288.27992 -659.68517,-236.90437c-148.8495,51.37555 39.06681,599.12438 216.10376,603.07278z" />
@@ -98,7 +102,7 @@
         </section>
         <section class="bridges-one section">
             <div class="container">
-                <img src="img/bridge-1.png" alt="Bridge" class="bridges-img">
+                <img data-src="img/bridge-1.png" alt="Bridge" class="bridges-img">
                 <div class="bridges-content bridges-content__right">
                     <h2 class="title"><span class="title-before"></span><span class="title-text">Грамотный подход<br /> к кажому проекту</span></h2>
                 </div>
@@ -109,12 +113,12 @@
                 <div class="bridges-content bridges-content__left">
                     <h2 class="title"><span class="title-before"></span><span class="title-text">Лидеры в<br /> своей отрасли</span></h2>
                 </div>
-                <img src="img/bridge-2.png" alt="Bridge" class="bridges-img">
+                <img data-src="img/bridge-2.png" alt="Bridge" class="bridges-img">
             </div>
         </section>
         <section class="bridges-three section">
             <div class="container">
-                <img src="img/bridge-3.png" alt="Bridge" class="bridges-img">
+                <img data-src="img/bridge-3.png" alt="Bridge" class="bridges-img">
                 <div class="bridges-content bridges-content__right">
                     <h2 class="title"><span class="title-before"></span><span class="title-text">Проектируем<br />
                             лучшие решения</span></h2>
@@ -123,7 +127,7 @@
         </section>
         <section class="bridges-four section">
             <div class="container">
-                <img src="img/bridge-4.svg" alt="Bridge" class="bridges-img">
+                <img data-src="img/bridge-4.png" alt="Bridge" class="bridges-img">
                 <div class="bridges-content bridges-content__right">
                     <h2 class="title">Allegro Develop Plast</h2>
                     <p class="text">Компания обладает выдающимися специалистами и техническими ресурсами, также на постоянной основе сотрудничает с иностранными проектными компаниями. Наша основная цель внедрить в проекты новейшие стандарты проектирования, которые используются в развитых странах мира</p>
@@ -150,37 +154,37 @@
                     <ul class="features-list d-flex">
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/agreement.svg" alt="img">
+                                <img data-src="img/icons/agreement.svg" alt="img">
                             </p>
                             <p class="features-list__text">Профессионализм</p>
                         </li>
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/idea.svg" alt="img">
+                                <img data-src="img/icons/idea.svg" alt="img">
                             </p>
                             <p class="features-list__text">Командная работа</p>
                         </li>
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/goal.svg" alt="img">
+                                <img data-src="img/icons/goal.svg" alt="img">
                             </p>
                             <p class="features-list__text">Лидерство</p>
                         </li>
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/bar-chart.svg" alt="img">
+                                <img data-src="img/icons/bar-chart.svg" alt="img">
                             </p>
                             <p class="features-list__text">Развитие</p>
                         </li>
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/medal.svg" alt="img">
+                                <img data-src="img/icons/medal.svg" alt="img">
                             </p>
                             <p class="features-list__text">Скорость и качество</p>
                         </li>
                         <li>
                             <p class="features-list__icon">
-                                <img src="img/icons/quality.svg" alt="img">
+                                <img data-src="img/icons/quality.svg" alt="img">
                             </p>
                             <p class="features-list__text">Ответственность</p>
                         </li>
@@ -191,9 +195,9 @@
         </section>
         <section class="main-projects__wrap section">
             <div class="container">
-                <img src="img/project-line-1.svg" alt="line" class="projects-line first">
+                <img data-src="img/project-line-1.svg" alt="line" class="projects-line first">
                 <h2 class="title-big">Про<span>екты</span></h2>
-                <img src="img/project-line-2.svg" alt="line" class="projects-line second">
+                <img data-src="img/project-line-2.svg" alt="line" class="projects-line second">
             </div>
         </section>
         <section class="main-projects__info section">
@@ -210,17 +214,17 @@
                 </div>
                 <div class="main-projects__slider">
                     <p class="main-projects__ipad">
-                        <img src="img/ipad_1.png" alt="Img1" class="main-projects__ipadimg active">
-                        <img src="img/ipad_2.png" alt="Img2" class="main-projects__ipadimg">
+                        <img data-src="img/ipad_1.png" alt="Img1" class="main-projects__ipadimg active">
+                        <img data-src="img/ipad_2.png" alt="Img2" class="main-projects__ipadimg">
                         <span class="main-projects__cover"></span>
                     </p>
                     <div class="projects-gallary__controls">
                         <button class="projects-gallary__control prev">
                             <span>Предыдущая</span>
-                            <img src="img/icons/arrow-left.svg" alt="preview">
+                            <img data-src="img/icons/arrow-left.svg" alt="preview">
                         </button>
                         <button class="projects-gallary__control next">
-                            <img src="img/icons/arrow-right.svg" alt="next">
+                            <img data-src="img/icons/arrow-right.svg" alt="next">
                             <span>Следующая</span>
                         </button>
                     </div>
@@ -230,16 +234,16 @@
         </section>
         <section class="services-first section" id="servicesFirst">
             <div class="container">
-                <img src="img/services-line-1.svg" alt="services" class="services-line one">
+                <img data-src="img/services-line-1.svg" alt="services" class="services-line one">
                 <h2 class="title-big">Услуги</h2>
-                <img src="img/services-line-2.svg" alt="services" class="services-line two">
+                <img data-src="img/services-line-2.svg" alt="services" class="services-line two">
             </div>
         </section>
         <section class="services-one one section" id="servicesOne1">
             <div class="container">
                 <div class="services-one__content d-flex column">
                     <h2 class="title"><span class="title-text">Разработка проектов и авторский надзор</span></h2>
-                    <a href="services.html" class="services-img"><img src="img/services/services-1.jpg" alt="services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-1.jpg" alt="services"></a>
                     <a href="services.html">
                         <p class="text">Авторский надзор позволяет заказчику
                             экономить свое время и нервы, но при этом
@@ -260,14 +264,14 @@
                         </a>
 
                     </div>
-                    <a href="services.html" class="services-img"><img src="img/services/services-2.jpg" alt="services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-2.jpg" alt="services"></a>
                 </div>
             </div>
         </section>
         <section class="services-two one section" id="servicesTwo1">
             <div class="container">
                 <div class="services-two__content d-flex">
-                    <a href="services.html" class="services-img"><img src="img/services/services-3.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-3.jpg" alt="Services"></a>
                     <div class="services-two__right">
                         <h2 class="title"><span class="title-text">Услуги супервайзера</span></h2>
                         <a href="services.html">
@@ -281,7 +285,7 @@
             <div class="container">
                 <div class="services-two__content d-flex column">
                     <h2 class="title"><span class="title-text">Инженерно-геодезические изыскания и геодезический контроль</span></h2>
-                    <a href="services.html" class="services-img"><img src="img/services/services-4.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-4.jpg" alt="Services"></a>
                     <a href="services.html">
                         <p class="text">Комплекс работ, направленный на получение информации о рельефе и ситуации местности; служит основой для проектирования</p>
                     </a>
@@ -297,14 +301,14 @@
                             <p class="text">Это вид инженерных изысканий, обеспечивающий комплексное изучение нженерно-геологических условий района предполагаемого строительства</p>
                         </a>
                     </div>
-                    <a href="services.html" class="services-img"><img src="img/services/services-5.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-5.jpg" alt="Services"></a>
                 </div>
             </div>
         </section>
         <section class="services-three two section" id="servicesThree2">
             <div class="container">
                 <div class="services-three__content d-flex">
-                    <a href="services.html" class="services-img"><img src="img/services/services-6.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-6.jpg" alt="Services"></a>
                     <div class="services-three__right">
                         <h2 class="title"><span class="title-text">Услуги лаборатории</span></h2>
                         <a href="services.html">
@@ -319,7 +323,7 @@
             <div class="container">
                 <div class="services-four__content d-flex column">
                     <h2 class="title"><span class="title-text">Техническое обследование искусственных сооружений</span></h2>
-                    <a href="services.html" class="services-img"><img src="img/services/services-7.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-7.jpg" alt="Services"></a>
                     <a href="services.html">
                         <p class="text">Целью диагностики искусственных дорожных сооружений является выявление их состояния, проверка соответствия сооружений установленным требованиям и внесение изменений в банк данных</p>
                     </a>
@@ -335,14 +339,14 @@
                             <p class="text">Независимая экспертиза инженерно-технической и финансово-экономической составляющих строительства, направленная на получение объективной картины и выявления текущих показателей проекта</p>
                         </a>
                     </div>
-                    <a href="services.html" class="services-img"> <img src="img/services/services-8.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"> <img data-src="img/services/services-8.jpg" alt="Services"></a>
                 </div>
             </div>
         </section>
         <section class="services-four three section" id="servicesFour3">
             <div class="container">
                 <div class="services-four__content d-flex">
-                    <a href="services.html" class="services-img"><img src="img/services/services-9.jpg" alt="Services"></a>
+                    <a href="services.html" class="services-img"><img data-src="img/services/services-9.jpg" alt="Services"></a>
                     <div class="services-four__right">
                         <h2 class="title"><span class="title-text">Инжиниринговые услуги</span></h2>
                         <a href="services.html">
@@ -358,12 +362,12 @@
                 <h2 class="title">Наши<br> партнёры</h2>
                 <div class="partners-slider__wrapper">
                     <div class="partners-slider">
-                        <p><img src="img/partners/partners-1.png" alt="partners"></p>
-                        <p><img src="img/partners/partners-2.png" alt="partners"></p>
-                        <p><img src="img/partners/partners-3.png" alt="partners"></p>
-                        <p><img src="img/partners/partners-1.png" alt="partners"></p>
-                        <p><img src="img/partners/partners-2.png" alt="partners"></p>
-                        <p><img src="img/partners/partners-3.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-1.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-2.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-3.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-1.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-2.png" alt="partners"></p>
+                        <p><img data-src="img/partners/partners-3.png" alt="partners"></p>
                     </div>
                     <div class="partners-slider__controls"></div>
                 </div>
@@ -376,7 +380,7 @@
                     <div class="main-news__slider">
                         <article class="main-news__item">
                             <p class="main-news__img">
-                                <img src="img/news/news-1.jpg" alt="news">
+                                <img data-src="img/news/news-1.jpg" alt="news">
                             </p>
                             <time datetime="18.04.2020">18.04.2020</time>
                             <p class="main-news__title">Хорошие новости пришли в начале ноября 2018 года из города Майкоп. Там неизвестная девушка оплатила долг340...</p>
@@ -384,7 +388,7 @@
                         </article>
                         <article class="main-news__item">
                             <p class="main-news__img">
-                                <img src="img/news/news-2.jpg" alt="news">
+                                <img data-src="img/news/news-2.jpg" alt="news">
                             </p>
                             <time datetime="18.04.2020">18.04.2020</time>
                             <p class="main-news__title">Хорошие новости пришли в начале ноября 2018 года из города Майкоп. Там неизвестная девушка оплатила долг340...</p>
@@ -392,7 +396,7 @@
                         </article>
                         <article class="main-news__item">
                             <p class="main-news__img">
-                                <img src="img/news/news-3.jpg" alt="news">
+                                <img data-src="img/news/news-3.jpg" alt="news">
                             </p>
                             <time datetime="18.04.2020">18.04.2020</time>
                             <p class="main-news__title">Хорошие новости пришли в начале ноября 2018 года из города Майкоп. Там неизвестная девушка оплатила долг340...</p>
@@ -400,7 +404,7 @@
                         </article>
                         <article class="main-news__item">
                             <p class="main-news__img">
-                                <img src="img/news/news-4.jpg" alt="news">
+                                <img data-src="img/news/news-4.jpg" alt="news">
                             </p>
                             <time datetime="18.04.2020">18.04.2020</time>
                             <p class="main-news__title">Хорошие новости пришли в начале ноября 2018 года из города Майкоп. Там неизвестная девушка оплатила долг340...</p>
@@ -511,189 +515,6 @@
         <li></li>
         <li></li>
     </ul>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/pace.min.js"></script>
-    <script src="js/loader.js"></script>
-    <script src="js/libs.min.js"></script>
-    <script src="./js/bundle.js" defer></script>
-    
-    <script type="text/javascript">
-        if (window.innerWidth > 1199) {
-            (function($) {
-                $.fn.wavify = function(options) {
-
-                    //  Options
-                    //
-                    var settings = $.extend({
-                        container: options.container ? options.container : 'body',
-                        // Height of wave
-                        height: 100,
-                        // Amplitude of wave
-                        amplitude: 50,
-                        // Animation speed
-                        speed: .15,
-                        // Total number of articulation in wave
-                        bones: 3,
-                        // Color
-                        color: 'rgba(255,255,255, 0.20)'
-                    }, options);
-
-                    var wave = this,
-                        width = $(settings.container).width(),
-                        height = $(settings.container).height(),
-                        points = [],
-                        lastUpdate,
-                        totalTime = 0;
-
-                    //  Set color
-                    //
-                    TweenLite.set(wave, {
-                        attr: {
-                            fill: settings.color
-                        }
-                    });
-
-
-                    function drawPoints(factor) {
-                        var points = [];
-
-                        for (var i = 0; i <= settings.bones; i++) {
-                            var x = i / settings.bones * width;
-                            var sinSeed = (factor + (i + i % settings.bones)) * settings.speed * 100;
-                            var sinHeight = Math.sin(sinSeed / 100) * settings.amplitude;
-                            var yPos = Math.sin(sinSeed / 100) * sinHeight + settings.height;
-                            points.push({
-                                x: x,
-                                y: yPos
-                            });
-                        }
-
-                        return points;
-                    }
-
-                    function drawPath(points) {
-                        var SVGString = 'M ' + points[0].x + ' ' + points[0].y;
-
-                        var cp0 = {
-                            x: (points[1].x - points[0].x) / 2,
-                            y: (points[1].y - points[0].y) + points[0].y + (points[1].y - points[0].y)
-                        };
-
-                        SVGString += ' C ' + cp0.x + ' ' + cp0.y + ' ' + cp0.x + ' ' + cp0.y + ' ' + points[1].x + ' ' + points[1].y;
-
-                        var prevCp = cp0;
-                        var inverted = -1;
-
-                        for (var i = 1; i < points.length - 1; i++) {
-                            var cpLength = Math.sqrt(prevCp.x * prevCp.x + prevCp.y * prevCp.y);
-                            var cp1 = {
-                                x: (points[i].x - prevCp.x) + points[i].x,
-                                y: (points[i].y - prevCp.y) + points[i].y
-                            };
-
-                            SVGString += ' C ' + cp1.x + ' ' + cp1.y + ' ' + cp1.x + ' ' + cp1.y + ' ' + points[i + 1].x + ' ' + points[i + 1].y;
-                            prevCp = cp1;
-                            inverted = -inverted;
-                        }
-
-                        SVGString += ' L ' + width + ' ' + height;
-                        SVGString += ' L 0 ' + height + ' Z';
-                        return SVGString;
-                    }
-
-                    //  Draw function
-                    //
-                    //
-                    function draw() {
-                        var now = window.Date.now();
-
-                        if (lastUpdate) {
-                            var elapsed = (now - lastUpdate) / 1000;
-                            lastUpdate = now;
-
-                            totalTime += elapsed;
-
-                            var factor = totalTime * Math.PI;
-                            TweenMax.to(wave, settings.speed, {
-                                attr: {
-                                    d: drawPath(drawPoints(factor))
-                                },
-                                ease: Power1.easeInOut
-                            });
-
-                        } else {
-                            lastUpdate = now;
-                        }
-
-                        requestAnimationFrame(draw);
-                    }
-
-                    //  Pure js debounce function to optimize resize method
-                    //
-                    //
-                    function debounce(func, wait, immediate) {
-                        var timeout;
-                        return function() {
-                            var context = this,
-                                args = arguments;
-                            clearTimeout(timeout);
-                            timeout = setTimeout(function() {
-                                timeout = null;
-                                if (!immediate) func.apply(context, args);
-                            }, wait);
-                            if (immediate && !timeout) func.apply(context, args);
-                        };
-                    }
-
-                    //  Redraw for resize with debounce
-                    //
-                    var redraw = debounce(function() {
-                        wave.attr('d', '');
-                        points = [];
-                        totalTime = 0;
-                        width = $(settings.container).width();
-                        height = $(settings.container).height();
-                        lastUpdate = false;
-                        setTimeout(function() {
-                            draw();
-                        }, 50);
-                    }, 250);
-                    $(window).on('resize', redraw);
-
-
-                    //  Execute
-                    //
-                    return draw();
-
-                };
-
-            }(jQuery));
-
-
-            $('#feel-the-wave').wavify({
-                height: 200,
-                bones: 4,
-                amplitude: 500,
-                color: 'rgba(240, 112, 80, 0.30)',
-                speed: .15
-            });
-
-            $('#feel-the-wave-two').wavify({
-                height: 200,
-                bones: 4,
-                amplitude: 400,
-                color: 'rgba(240, 112, 80, 0.50)',
-                speed: .3
-            });
-            $('#feel-the-wave-three').wavify({
-                height: 200,
-                bones: 3,
-                amplitude: 500,
-                color: '#FB874C',
-                speed: .3
-            });
-        }
-    </script>
 
 </body>
 

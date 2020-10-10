@@ -229,19 +229,19 @@ const mainPageAnim = () => {
             }, 3000)
         };
 
-//
-//        const mainSectionLeaveAnim = gsap.timeline({
-//                duration: 1,
-//                paused: true,
-//            })
-//            .to(mainSlider, {
-//                scale: 3,
-//                rotation: -60,
-//                transformOrigin: "50% 70%",
-//                autoAlpha: 0
-//            }).to(mainSectionContent, {
-//                autoAlpha: 0
-//            }, '-=0.5');
+        //
+        //        const mainSectionLeaveAnim = gsap.timeline({
+        //                duration: 1,
+        //                paused: true,
+        //            })
+        //            .to(mainSlider, {
+        //                scale: 3,
+        //                rotation: -60,
+        //                transformOrigin: "50% 70%",
+        //                autoAlpha: 0
+        //            }).to(mainSectionContent, {
+        //                autoAlpha: 0
+        //            }, '-=0.5');
 
         const controller = new ScrollMagic.Controller();
 
@@ -249,7 +249,7 @@ const mainPageAnim = () => {
             TweenMax.to('.main-section__slider', 1, {
                 scale: 5,
                 rotation: -80,
-                
+
                 autoAlpha: 0,
                 ease: Linear.easeNone,
             }),
@@ -275,7 +275,6 @@ const mainPageAnim = () => {
                 duration: 0.8,
             })
             .from(bridgeOneImg, {
-                autoAlpha: 0,
                 x: 2000,
             })
             .from(bridgeOneTitleBefore, {
@@ -292,7 +291,6 @@ const mainPageAnim = () => {
                 duration: 0.8,
             })
             .from(bridgeTwoImg, {
-                autoAlpha: 0,
                 x: 1000,
             })
             .from(bridgeTwoTitleBefore, {
@@ -310,8 +308,7 @@ const mainPageAnim = () => {
                 duration: 0.8,
             })
             .from(bridgeThreeImg, {
-                autoAlpha: 0,
-                y: 400,
+                y: "100%",
             })
             .from(bridgeThreeTitleBefore, {
                 autoAlpha: 0,
@@ -327,8 +324,7 @@ const mainPageAnim = () => {
                 duration: 0.8,
             })
             .from(bridgeFourImg, {
-                autoAlpha: 0,
-                y: 400
+                y: "100%"
             })
             .from(bridgeFourTitle, {
                 autoAlpha: 0,
@@ -366,12 +362,10 @@ const mainPageAnim = () => {
                 x: -400
             })
             .from(mainProjectsFirstLine1, {
-                x: -1000,
-                autoAlpha: 0,
+                x: "-100%",
             })
             .from(mainProjectsFirstLine2, {
-                x: 1000,
-                autoAlpha: 0,
+                x: "100%",
             });
 
         const projectsSecondAnim = gsap.timeline({
@@ -400,12 +394,10 @@ const mainPageAnim = () => {
                 x: -200
             })
             .from(mainServicesFirstLine1, {
-                y: -200,
-                autoAlpha: 0,
+                y: -500,
             })
             .from(mainServicesFirstLine2, {
-                y: 200,
-                autoAlpha: 0,
+                y: 500,
             });
 
         const servicesOne1Anim = gsap.timeline({
@@ -601,6 +593,7 @@ const mainPageAnim = () => {
             paddingBottom: '0px',
             scrollingSpeed: 1500,
             fitToSectionDelay: 500,
+            lazyLoading: true,
             //            scrollOverflow: true,
             //            scrollOverflowReset: true,
             //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
@@ -692,6 +685,183 @@ const mainPageAnim = () => {
                 }
             },
         });
+
+
+        if (window.innerWidth > 1199) {
+            (function ($) {
+                $.fn.wavify = function (options) {
+
+                    //  Options
+                    //
+                    var settings = $.extend({
+                        container: options.container ? options.container : 'body',
+                        // Height of wave
+                        height: 100,
+                        // Amplitude of wave
+                        amplitude: 50,
+                        // Animation speed
+                        speed: .15,
+                        // Total number of articulation in wave
+                        bones: 3,
+                        // Color
+                        color: 'rgba(255,255,255, 0.20)'
+                    }, options);
+
+                    var wave = this,
+                        width = $(settings.container).width(),
+                        height = $(settings.container).height(),
+                        points = [],
+                        lastUpdate,
+                        totalTime = 0;
+
+                    //  Set color
+                    //
+                    TweenLite.set(wave, {
+                        attr: {
+                            fill: settings.color
+                        }
+                    });
+
+
+                    function drawPoints(factor) {
+                        var points = [];
+
+                        for (var i = 0; i <= settings.bones; i++) {
+                            var x = i / settings.bones * width;
+                            var sinSeed = (factor + (i + i % settings.bones)) * settings.speed * 100;
+                            var sinHeight = Math.sin(sinSeed / 100) * settings.amplitude;
+                            var yPos = Math.sin(sinSeed / 100) * sinHeight + settings.height;
+                            points.push({
+                                x: x,
+                                y: yPos
+                            });
+                        }
+
+                        return points;
+                    }
+
+                    function drawPath(points) {
+                        var SVGString = 'M ' + points[0].x + ' ' + points[0].y;
+
+                        var cp0 = {
+                            x: (points[1].x - points[0].x) / 2,
+                            y: (points[1].y - points[0].y) + points[0].y + (points[1].y - points[0].y)
+                        };
+
+                        SVGString += ' C ' + cp0.x + ' ' + cp0.y + ' ' + cp0.x + ' ' + cp0.y + ' ' + points[1].x + ' ' + points[1].y;
+
+                        var prevCp = cp0;
+                        var inverted = -1;
+
+                        for (var i = 1; i < points.length - 1; i++) {
+                            var cpLength = Math.sqrt(prevCp.x * prevCp.x + prevCp.y * prevCp.y);
+                            var cp1 = {
+                                x: (points[i].x - prevCp.x) + points[i].x,
+                                y: (points[i].y - prevCp.y) + points[i].y
+                            };
+
+                            SVGString += ' C ' + cp1.x + ' ' + cp1.y + ' ' + cp1.x + ' ' + cp1.y + ' ' + points[i + 1].x + ' ' + points[i + 1].y;
+                            prevCp = cp1;
+                            inverted = -inverted;
+                        }
+
+                        SVGString += ' L ' + width + ' ' + height;
+                        SVGString += ' L 0 ' + height + ' Z';
+                        return SVGString;
+                    }
+
+                    //  Draw function
+                    //
+                    //
+                    function draw() {
+                        var now = window.Date.now();
+
+                        if (lastUpdate) {
+                            var elapsed = (now - lastUpdate) / 1000;
+                            lastUpdate = now;
+
+                            totalTime += elapsed;
+
+                            var factor = totalTime * Math.PI;
+                            TweenMax.to(wave, settings.speed, {
+                                attr: {
+                                    d: drawPath(drawPoints(factor))
+                                },
+                                ease: Power1.easeInOut
+                            });
+
+                        } else {
+                            lastUpdate = now;
+                        }
+
+                        requestAnimationFrame(draw);
+                    }
+
+                    //  Pure js debounce function to optimize resize method
+                    //
+                    //
+                    function debounce(func, wait, immediate) {
+                        var timeout;
+                        return function () {
+                            var context = this,
+                                args = arguments;
+                            clearTimeout(timeout);
+                            timeout = setTimeout(function () {
+                                timeout = null;
+                                if (!immediate) func.apply(context, args);
+                            }, wait);
+                            if (immediate && !timeout) func.apply(context, args);
+                        };
+                    }
+
+                    //  Redraw for resize with debounce
+                    //
+                    var redraw = debounce(function () {
+                        wave.attr('d', '');
+                        points = [];
+                        totalTime = 0;
+                        width = $(settings.container).width();
+                        height = $(settings.container).height();
+                        lastUpdate = false;
+                        setTimeout(function () {
+                            draw();
+                        }, 50);
+                    }, 250);
+                    $(window).on('resize', redraw);
+
+
+                    //  Execute
+                    //
+                    return draw();
+
+                };
+
+            }(jQuery));
+
+
+            $('#feel-the-wave').wavify({
+                height: 200,
+                bones: 4,
+                amplitude: 500,
+                color: 'rgba(240, 112, 80, 0.30)',
+                speed: .15
+            });
+
+            $('#feel-the-wave-two').wavify({
+                height: 200,
+                bones: 4,
+                amplitude: 400,
+                color: 'rgba(240, 112, 80, 0.50)',
+                speed: .3
+            });
+            $('#feel-the-wave-three').wavify({
+                height: 200,
+                bones: 3,
+                amplitude: 500,
+                color: '#FB874C',
+                speed: .3
+            });
+        }
 
     } else {
         var bridges1 = $('.bridges-one').waypoint({

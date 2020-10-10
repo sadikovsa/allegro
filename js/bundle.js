@@ -95,19 +95,22 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
-/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.split */ "./node_modules/core-js/modules/es.string.split.js");
-/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _parts_preloaderAnim_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/preloaderAnim.js */ "./app/js/parts/preloaderAnim.js");
-/* harmony import */ var _parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/mainPageAnim.js */ "./app/js/parts/mainPageAnim.js");
-/* harmony import */ var _parts_projectsPageAnim_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/projectsPageAnim.js */ "./app/js/parts/projectsPageAnim.js");
-/* harmony import */ var _parts_aboutPageAnim_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parts/aboutPageAnim.js */ "./app/js/parts/aboutPageAnim.js");
-/* harmony import */ var _parts_contactsPageAnim_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./parts/contactsPageAnim.js */ "./app/js/parts/contactsPageAnim.js");
-/* harmony import */ var _parts_newsPageAnim_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts/newsPageAnim.js */ "./app/js/parts/newsPageAnim.js");
-/* harmony import */ var _parts_newsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./parts/newsItemPageAnim.js */ "./app/js/parts/newsItemPageAnim.js");
-/* harmony import */ var _parts_projectsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./parts/projectsItemPageAnim.js */ "./app/js/parts/projectsItemPageAnim.js");
-/* harmony import */ var _parts_servicesItemPageAnim_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./parts/servicesItemPageAnim.js */ "./app/js/parts/servicesItemPageAnim.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.string.split */ "./node_modules/core-js/modules/es.string.split.js");
+/* harmony import */ var core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_split__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _parts_preloaderAnim_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/preloaderAnim.js */ "./app/js/parts/preloaderAnim.js");
+/* harmony import */ var _parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/mainPageAnim.js */ "./app/js/parts/mainPageAnim.js");
+/* harmony import */ var _parts_projectsPageAnim_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parts/projectsPageAnim.js */ "./app/js/parts/projectsPageAnim.js");
+/* harmony import */ var _parts_aboutPageAnim_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./parts/aboutPageAnim.js */ "./app/js/parts/aboutPageAnim.js");
+/* harmony import */ var _parts_contactsPageAnim_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts/contactsPageAnim.js */ "./app/js/parts/contactsPageAnim.js");
+/* harmony import */ var _parts_newsPageAnim_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./parts/newsPageAnim.js */ "./app/js/parts/newsPageAnim.js");
+/* harmony import */ var _parts_newsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./parts/newsItemPageAnim.js */ "./app/js/parts/newsItemPageAnim.js");
+/* harmony import */ var _parts_projectsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./parts/projectsItemPageAnim.js */ "./app/js/parts/projectsItemPageAnim.js");
+/* harmony import */ var _parts_servicesItemPageAnim_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./parts/servicesItemPageAnim.js */ "./app/js/parts/servicesItemPageAnim.js");
+
 
 
 
@@ -125,37 +128,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
   console.log(url);
 
   if (url === '' || url === 'index') {
-    Object(_parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
+    Object(_parts_mainPageAnim_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
   } else if (url === 'projects_item') {
-    Object(_parts_projectsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
+    Object(_parts_projectsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
   } else if (url === 'contacts') {
-    Object(_parts_contactsPageAnim_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    Object(_parts_contactsPageAnim_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
   } else if (url === 'news') {
-    Object(_parts_newsPageAnim_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    Object(_parts_newsPageAnim_js__WEBPACK_IMPORTED_MODULE_8__["default"])();
   } else if (url === 'news_item') {
-    Object(_parts_newsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    Object(_parts_newsItemPageAnim_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
   } else if (url === 'services' || url === 'services_item') {
-    Object(_parts_servicesItemPageAnim_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    Object(_parts_servicesItemPageAnim_js__WEBPACK_IMPORTED_MODULE_11__["default"])();
   } else if (url === 'about') {
-    Object(_parts_aboutPageAnim_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    Object(_parts_aboutPageAnim_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
   } else if (url === 'projects') {
-    Object(_parts_projectsPageAnim_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  } // burger
+    Object(_parts_projectsPageAnim_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  }
 
+  if (window.innerWidth < 1199) {
+    [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+      img.setAttribute('src', img.getAttribute('data-src'));
 
-  var burger = document.querySelector('#burgerBtn');
-  var mobileContent = document.querySelector('.header-nav');
-  burger.addEventListener('change', function () {
-    mobileContent.classList.toggle('is-open');
-  });
-  document.addEventListener('click', function (e) {
-    var target = e.target;
+      img.onload = function () {
+        img.removeAttribute('data-src');
+      };
+    }); // burger
 
-    if (!target.closest('.burger') && !target.closest('.header-nav')) {
-      burger.checked = false;
-      mobileContent.classList.remove('is-open');
-    }
-  });
+    var burger = document.querySelector('#burgerBtn');
+    var mobileContent = document.querySelector('.header-nav');
+    burger.addEventListener('change', function () {
+      mobileContent.classList.toggle('is-open');
+    });
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+
+      if (!target.closest('.burger') && !target.closest('.header-nav')) {
+        burger.checked = false;
+        mobileContent.classList.remove('is-open');
+      }
+    });
+  }
 });
 
 /***/ }),
@@ -563,7 +575,6 @@ var mainPageAnim = function mainPageAnim() {
       paused: true,
       duration: 0.8
     }).from(bridgeOneImg, {
-      autoAlpha: 0,
       x: 2000
     }).from(bridgeOneTitleBefore, {
       autoAlpha: 0,
@@ -576,7 +587,6 @@ var mainPageAnim = function mainPageAnim() {
       paused: true,
       duration: 0.8
     }).from(bridgeTwoImg, {
-      autoAlpha: 0,
       x: 1000
     }).from(bridgeTwoTitleBefore, {
       autoAlpha: 0,
@@ -589,8 +599,7 @@ var mainPageAnim = function mainPageAnim() {
       paused: true,
       duration: 0.8
     }).from(bridgeThreeImg, {
-      autoAlpha: 0,
-      y: 400
+      y: "100%"
     }).from(bridgeThreeTitleBefore, {
       autoAlpha: 0,
       top: "100%"
@@ -602,8 +611,7 @@ var mainPageAnim = function mainPageAnim() {
       paused: true,
       duration: 0.8
     }).from(bridgeFourImg, {
-      autoAlpha: 0,
-      y: 400
+      y: "100%"
     }).from(bridgeFourTitle, {
       autoAlpha: 0,
       y: 500
@@ -632,11 +640,9 @@ var mainPageAnim = function mainPageAnim() {
       autoAlpha: 0,
       x: -400
     }).from(mainProjectsFirstLine1, {
-      x: -1000,
-      autoAlpha: 0
+      x: "-100%"
     }).from(mainProjectsFirstLine2, {
-      x: 1000,
-      autoAlpha: 0
+      x: "100%"
     });
     var projectsSecondAnim = gsap.timeline({
       paused: true,
@@ -658,11 +664,9 @@ var mainPageAnim = function mainPageAnim() {
       autoAlpha: 0,
       x: -200
     }).from(mainServicesFirstLine1, {
-      y: -200,
-      autoAlpha: 0
+      y: -500
     }).from(mainServicesFirstLine2, {
-      y: 200,
-      autoAlpha: 0
+      y: 500
     });
     var servicesOne1Anim = gsap.timeline({
       paused: true,
@@ -810,6 +814,7 @@ var mainPageAnim = function mainPageAnim() {
       paddingBottom: '0px',
       scrollingSpeed: 1500,
       fitToSectionDelay: 500,
+      lazyLoading: true,
       //            scrollOverflow: true,
       //            scrollOverflowReset: true,
       //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
@@ -899,6 +904,165 @@ var mainPageAnim = function mainPageAnim() {
         }
       }
     });
+
+    if (window.innerWidth > 1199) {
+      (function ($) {
+        $.fn.wavify = function (options) {
+          //  Options
+          //
+          var settings = $.extend({
+            container: options.container ? options.container : 'body',
+            // Height of wave
+            height: 100,
+            // Amplitude of wave
+            amplitude: 50,
+            // Animation speed
+            speed: .15,
+            // Total number of articulation in wave
+            bones: 3,
+            // Color
+            color: 'rgba(255,255,255, 0.20)'
+          }, options);
+          var wave = this,
+              width = $(settings.container).width(),
+              height = $(settings.container).height(),
+              points = [],
+              lastUpdate,
+              totalTime = 0; //  Set color
+          //
+
+          TweenLite.set(wave, {
+            attr: {
+              fill: settings.color
+            }
+          });
+
+          function drawPoints(factor) {
+            var points = [];
+
+            for (var i = 0; i <= settings.bones; i++) {
+              var x = i / settings.bones * width;
+              var sinSeed = (factor + (i + i % settings.bones)) * settings.speed * 100;
+              var sinHeight = Math.sin(sinSeed / 100) * settings.amplitude;
+              var yPos = Math.sin(sinSeed / 100) * sinHeight + settings.height;
+              points.push({
+                x: x,
+                y: yPos
+              });
+            }
+
+            return points;
+          }
+
+          function drawPath(points) {
+            var SVGString = 'M ' + points[0].x + ' ' + points[0].y;
+            var cp0 = {
+              x: (points[1].x - points[0].x) / 2,
+              y: points[1].y - points[0].y + points[0].y + (points[1].y - points[0].y)
+            };
+            SVGString += ' C ' + cp0.x + ' ' + cp0.y + ' ' + cp0.x + ' ' + cp0.y + ' ' + points[1].x + ' ' + points[1].y;
+            var prevCp = cp0;
+            var inverted = -1;
+
+            for (var i = 1; i < points.length - 1; i++) {
+              var cpLength = Math.sqrt(prevCp.x * prevCp.x + prevCp.y * prevCp.y);
+              var cp1 = {
+                x: points[i].x - prevCp.x + points[i].x,
+                y: points[i].y - prevCp.y + points[i].y
+              };
+              SVGString += ' C ' + cp1.x + ' ' + cp1.y + ' ' + cp1.x + ' ' + cp1.y + ' ' + points[i + 1].x + ' ' + points[i + 1].y;
+              prevCp = cp1;
+              inverted = -inverted;
+            }
+
+            SVGString += ' L ' + width + ' ' + height;
+            SVGString += ' L 0 ' + height + ' Z';
+            return SVGString;
+          } //  Draw function
+          //
+          //
+
+
+          function draw() {
+            var now = window.Date.now();
+
+            if (lastUpdate) {
+              var elapsed = (now - lastUpdate) / 1000;
+              lastUpdate = now;
+              totalTime += elapsed;
+              var factor = totalTime * Math.PI;
+              TweenMax.to(wave, settings.speed, {
+                attr: {
+                  d: drawPath(drawPoints(factor))
+                },
+                ease: Power1.easeInOut
+              });
+            } else {
+              lastUpdate = now;
+            }
+
+            requestAnimationFrame(draw);
+          } //  Pure js debounce function to optimize resize method
+          //
+          //
+
+
+          function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+              var context = this,
+                  args = arguments;
+              clearTimeout(timeout);
+              timeout = setTimeout(function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+              }, wait);
+              if (immediate && !timeout) func.apply(context, args);
+            };
+          } //  Redraw for resize with debounce
+          //
+
+
+          var redraw = debounce(function () {
+            wave.attr('d', '');
+            points = [];
+            totalTime = 0;
+            width = $(settings.container).width();
+            height = $(settings.container).height();
+            lastUpdate = false;
+            setTimeout(function () {
+              draw();
+            }, 50);
+          }, 250);
+          $(window).on('resize', redraw); //  Execute
+          //
+
+          return draw();
+        };
+      })(jQuery);
+
+      $('#feel-the-wave').wavify({
+        height: 200,
+        bones: 4,
+        amplitude: 500,
+        color: 'rgba(240, 112, 80, 0.30)',
+        speed: .15
+      });
+      $('#feel-the-wave-two').wavify({
+        height: 200,
+        bones: 4,
+        amplitude: 400,
+        color: 'rgba(240, 112, 80, 0.50)',
+        speed: .3
+      });
+      $('#feel-the-wave-three').wavify({
+        height: 200,
+        bones: 3,
+        amplitude: 500,
+        color: '#FB874C',
+        speed: .3
+      });
+    }
   } else {
     var bridges1 = $('.bridges-one').waypoint({
       handler: function handler(direction) {
