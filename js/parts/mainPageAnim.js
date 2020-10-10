@@ -277,15 +277,15 @@ const mainPageAnim = () => {
             .from(bridgeOneImg, {
                 autoAlpha: 0,
                 x: 2000,
-            }, '-=1')
+            })
             .from(bridgeOneTitleBefore, {
                 autoAlpha: 0,
                 top: "100%",
-            }, '-=0.8')
+            })
             .from(bridgeOneTitleText, {
                 autoAlpha: 0,
                 y: -80,
-            }, '-=0.5');
+            });
 
         const bridgesTwoAnim = gsap.timeline({
                 paused: true,
@@ -606,11 +606,9 @@ const mainPageAnim = () => {
             //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
             afterLoad: function (origin, destination, direction) {
                 if (destination.index === 0) {
-                    fullpage_api.setScrollingSpeed(1500);
                     mainSectionAnim();
                 } else if (destination.index === 1) {
-                    fullpage_api.setScrollingSpeed(1500);
-                    bridgesOneAnim.timeScale(1.5).restart();
+                    bridgesOneAnim.timeScale(1).restart();
                 } else if (destination.index === 2) {
                     bridgesTwoAnim.timeScale(1).restart();
                 } else if (destination.index === 3) {
