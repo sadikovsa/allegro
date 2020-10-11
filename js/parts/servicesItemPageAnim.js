@@ -1,10 +1,10 @@
 const servicesItemPageAnim = () => {
 
-    let services = document.querySelector('.services');
-    let servicesImg = document.querySelectorAll('.services.one')[0];
-    let servicesTitle = document.querySelectorAll('.services.two .services-title')[0];
-    let servicesText = document.querySelectorAll('.services.two .text-big')[0];
-    let servicesList = document.querySelectorAll('.services.two .services-features li');
+    let services = document.querySelector('.service');
+    let servicesImg = document.querySelectorAll('.service.one')[0];
+    let servicesTitle = document.querySelectorAll('.service.two .service-title')[0];
+    let servicesText = document.querySelectorAll('.service.two .text-big')[0];
+    let servicesList = document.querySelectorAll('.service.two .service-features li');
 
 
     if (window.innerWidth > 1199) {

@@ -51,50 +51,50 @@ const mainPageAnim = () => {
     const mainServicesFirstLine1 = document.querySelector('.services-first .services-line.one');
     const mainServicesFirstLine2 = document.querySelector('.services-first .services-line.two');
 
-    const mainServicesOne = document.querySelector('.services-one.one');
-    const mainServicesOneTitle = document.querySelector('.services-one.one .title');
-    const mainServicesOneImg = document.querySelector('.services-one.one .services-img');
-    const mainServicesOneText = document.querySelector('.services-one.one .text');
+    const mainServicesOne = document.querySelectorAll('.services.darkblue')[0];
+    const mainServicesOneTitle = mainServicesOne.querySelector('.title');
+    const mainServicesOneImg = mainServicesOne.querySelector('.services-img');
+    const mainServicesOneText = mainServicesOne.querySelector('.text');
 
-    const mainServicesOne2 = document.querySelector('.services-one.two');
-    const mainServicesOne2Title = document.querySelector('.services-one.two .title');
-    const mainServicesOne2Img = document.querySelector('.services-one.two .services-img');
-    const mainServicesOne2Text = document.querySelector('.services-one.two .text');
+    const mainServicesOne2 = document.querySelectorAll('.services.darkblue')[1];
+    const mainServicesOne2Title = mainServicesOne2.querySelector('.title');
+    const mainServicesOne2Img = mainServicesOne2.querySelector('.services-img');
+    const mainServicesOne2Text = mainServicesOne2.querySelector('.text');
 
-    const mainServicesTwo = document.querySelectorAll('.services-two.one');
-    const mainServicesTwoTitle = document.querySelector('.services-two.one .title');
-    const mainServicesTwoImg = document.querySelector('.services-two.one .services-img');
-    const mainServicesTwoText = document.querySelector('.services-two.one .text');
+    const mainServicesTwo = document.querySelectorAll('.services.orange')[0];
+    const mainServicesTwoTitle = mainServicesTwo.querySelector('.title');
+    const mainServicesTwoImg = mainServicesTwo.querySelector('.services-img');
+    const mainServicesTwoText = mainServicesTwo.querySelector('.text');
 
-    const mainServicesTwo2 = document.querySelector('.services-two.two');
-    const mainServicesTwo2Title = document.querySelector('.services-two.two .title');
-    const mainServicesTwo2Img = document.querySelector('.services-two.two .services-img');
-    const mainServicesTwo2Text = document.querySelector('.services-two.two .text');
+    const mainServicesTwo2 = document.querySelectorAll('.services.orange')[1];
+    const mainServicesTwo2Title = mainServicesTwo2.querySelector('.title');
+    const mainServicesTwo2Img = mainServicesTwo2.querySelector('.services-img');
+    const mainServicesTwo2Text = mainServicesTwo2.querySelector('.text');
 
-    const mainServicesThree = document.querySelector('.services-three.one');
-    const mainServicesThreeTitle = document.querySelector('.services-three.one .title');
-    const mainServicesThreeImg = document.querySelector('.services-three.one .services-img');
-    const mainServicesThreeText = document.querySelector('.services-three.one .text');
+    const mainServicesThree = document.querySelectorAll('.services.green')[0];
+    const mainServicesThreeTitle = mainServicesThree.querySelector('.title');
+    const mainServicesThreeImg = mainServicesThree.querySelector('.services-img');
+    const mainServicesThreeText = mainServicesThree.querySelector('.text');
 
-    const mainServicesThree2 = document.querySelector('.services-three.two');
-    const mainServicesThree2Title = document.querySelector('.services-three.two .title');
-    const mainServicesThree2Img = document.querySelector('.services-three.two .services-img');
-    const mainServicesThree2Text = document.querySelector('.services-three.two .text');
+    const mainServicesThree2 = document.querySelectorAll('.services.green')[1];
+    const mainServicesThree2Title = mainServicesThree2.querySelector('.title');
+    const mainServicesThree2Img = mainServicesThree2.querySelector('.services-img');
+    const mainServicesThree2Text = mainServicesThree2.querySelector('.text');
 
-    const mainServicesFour = document.querySelector('.services-four.one');
-    const mainServicesFourTitle = document.querySelector('.services-four.one .title');
-    const mainServicesFourImg = document.querySelector('.services-four.one .services-img');
-    const mainServicesFourText = document.querySelector('.services-four.one .text');
+    const mainServicesFour = document.querySelectorAll('.services.lightpink')[0];
+    const mainServicesFourTitle = mainServicesFour.querySelector('.title');
+    const mainServicesFourImg = mainServicesFour.querySelector('.services-img');
+    const mainServicesFourText = mainServicesFour.querySelector('.text');
 
-    const mainServicesFour2 = document.querySelector('.services-four.two');
-    const mainServicesFour2Title = document.querySelector('.services-four.two .title');
-    const mainServicesFour2Img = document.querySelector('.services-four.two .services-img');
-    const mainServicesFour2Text = document.querySelector('.services-four.two .text');
+    const mainServicesFour2 = document.querySelectorAll('.services.lightpink')[1];
+    const mainServicesFour2Title = mainServicesFour2.querySelector('.title');
+    const mainServicesFour2Img = mainServicesFour2.querySelector('.services-img');
+    const mainServicesFour2Text = mainServicesFour2.querySelector('.text');
 
-    const mainServicesFour3 = document.querySelector('.services-four.three');
-    const mainServicesFour3Title = document.querySelector('.services-four.three .title');
-    const mainServicesFour3Img = document.querySelector('.services-four.three .services-img');
-    const mainServicesFour3Text = document.querySelector('.services-four.three .text');
+    const mainServicesFour3 = document.querySelectorAll('.services.lightpink')[2];
+    const mainServicesFour3Title = mainServicesFour3.querySelector('.title');
+    const mainServicesFour3Img = mainServicesFour3.querySelector('.services-img');
+    const mainServicesFour3Text = mainServicesFour3.querySelector('.text');
 
     const partners = document.querySelector('.partners');
     const partnersTitle = document.querySelector('.partners .title');
@@ -598,89 +598,100 @@ const mainPageAnim = () => {
             //            scrollOverflowReset: true,
             //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
             afterLoad: function (origin, destination, direction) {
-                if (destination.index === 0) {
+                let currSectionClass = destination.item.classList;
+                 const servicesSectionBlue = document.querySelectorAll('.services.darkblue');
+                 const servicesSectionOrange = document.querySelectorAll('.services.orange');
+                 const servicesSectionGreen = document.querySelectorAll('.services.green');
+                 const servicesSectionPink = document.querySelectorAll('.services.lightpink');
+                if (currSectionClass.contains('main-section')) {
                     mainSectionAnim();
-                } else if (destination.index === 1) {
+                } else if (currSectionClass.contains('bridges-one')) {
                     bridgesOneAnim.timeScale(1).restart();
-                } else if (destination.index === 2) {
+                } else if (currSectionClass.contains('bridges-two')) {
                     bridgesTwoAnim.timeScale(1).restart();
-                } else if (destination.index === 3) {
+                } else if (currSectionClass.contains('bridges-three')) {
                     bridgesThreeAnim.timeScale(1).restart();
-                } else if (destination.index === 4) {
+                } else if (currSectionClass.contains('bridges-four')) {
                     bridgesFourAnim.timeScale(1).restart();
-                } else if (destination.index === 5) {
+                } else if (currSectionClass.contains('features')) {
                     featuresAnim.timeScale(1).restart();
-                } else if (destination.index === 6) {
+                } else if (currSectionClass.contains('main-projects__wrap')) {
                     projectsFirstAnim.restart();
-                } else if (destination.index === 7) {
+                } else if (currSectionClass.contains('main-projects__info')) {
                     projectsSecondAnim.timeScale(1).restart();
                     projectsSliderAnim();
-                } else if (destination.index === 8) {
+                } else if (currSectionClass.contains('services-first')) {
                     servicesAnim.timeScale(1).restart();
-                } else if (destination.index === 9) {
+                } else if (destination.item == servicesSectionBlue[0]) {
                     servicesOne1Anim.timeScale(1).restart();
-                } else if (destination.index === 10) {
+                } else if (destination.item == servicesSectionBlue[1]) {
                     servicesOne2Anim.timeScale(1).restart();
-                } else if (destination.index === 11) {
+                } else if (destination.item == servicesSectionOrange[0]) {
                     servicesTwo1Anim.timeScale(1).restart();
-                } else if (destination.index === 12) {
+                } else if (destination.item == servicesSectionOrange[1]) {
                     servicesTwo2Anim.timeScale(1).restart();
-                } else if (destination.index === 13) {
+                } else if (destination.item == servicesSectionGreen[0]) {
                     servicesThree1Anim.timeScale(1).restart();
-                } else if (destination.index === 14) {
+                } else if (destination.item == servicesSectionGreen[1]) {
                     servicesThree2Anim.timeScale(1).restart();
-                } else if (destination.index === 15) {
+                } else if (destination.item == servicesSectionPink[0]) {
                     servicesFour1Anim.timeScale(1).restart();
-                } else if (destination.index === 16) {
+                } else if (destination.item == servicesSectionPink[1]) {
                     servicesFour2Anim.timeScale(1).restart();
-                } else if (destination.index === 17) {
+                } else if (destination.item == servicesSectionPink[2]) {
                     servicesFour3Anim.timeScale(1).restart();
-                } else if (destination.index === 18) {
+                } else if (currSectionClass.contains('partners')) {
                     partnersAnim.timeScale(1).restart();
-                } else if (destination.index === 19) {
+                } else if (currSectionClass.contains('main-news')) {
                     mainNewsAnim.timeScale(1).restart();
                 }
             },
             onLeave: function (origin, destination, direction) {
+                let currSectionClass = origin.item.classList;
+                const servicesSectionBlue = document.querySelectorAll('.services.darkblue');
+                 const servicesSectionOrange = document.querySelectorAll('.services.orange');
+                 const servicesSectionGreen = document.querySelectorAll('.services.green');
+                 const servicesSectionPink = document.querySelectorAll('.services.lightpink');
+                
                 if (origin.index === 0) {
 
-                } else if (origin.index === 1) {
+                } else if (currSectionClass.contains('bridges-one')) {
                     bridgesOneAnim.timeScale(2).reverse();
-                } else if (origin.index === 2) {
+                } else if (currSectionClass.contains('bridges-two')) {
                     bridgesTwoAnim.timeScale(2).reverse();
-                } else if (origin.index === 3) {
+                } else if (currSectionClass.contains('bridges-three')) {
                     bridgesThreeAnim.timeScale(2).reverse();
-                } else if (origin.index === 4) {
+                } else if (currSectionClass.contains('bridges-four')) {
                     bridgesFourAnim.timeScale(2).reverse();
-                } else if (origin.index === 5) {
+                } else if (currSectionClass.contains('features')) {
                     featuresAnim.timeScale(2).reverse();
-                } else if (origin.index === 6) {
+                } else if (currSectionClass.contains('main-projects__wrap')) {
                     projectsFirstAnim.timeScale(2).reverse();
-                } else if (origin.index === 7) {
+                } else if (currSectionClass.contains('main-projects__info')) {
                     projectsSecondAnim.timeScale(2).reverse();
-                } else if (origin.index === 8) {
+                } else if (currSectionClass.contains('services-first')) {
                     servicesAnim.timeScale(2).reverse();
-                } else if (origin.index === 9) {
+                } else if (origin.item == servicesSectionBlue[0]) {
                     servicesOne1Anim.timeScale(2).reverse();
-                } else if (origin.index === 10) {
+                } else if (origin.item == servicesSectionBlue[1]) {
                     servicesOne2Anim.timeScale(2).reverse();
-                } else if (origin.index === 11) {
+                } else if (origin.item == servicesSectionOrange[0]) {
                     servicesTwo1Anim.timeScale(2).reverse();
-                } else if (origin.index === 12) {
+                } else if (origin.item == servicesSectionOrange[1]) {
                     servicesTwo2Anim.timeScale(2).reverse();
-                } else if (origin.index === 13) {
+                } else if (origin.item == servicesSectionGreen[0]) {
                     servicesThree1Anim.timeScale(2).reverse();
-                } else if (origin.index === 14) {
+                } else if (origin.item == servicesSectionGreen[1]) {
                     servicesThree2Anim.timeScale(2).reverse();
-                } else if (origin.index === 15) {
+                } else if (origin.item == servicesSectionPink[0]) {
                     servicesFour1Anim.timeScale(2).reverse();
-                } else if (origin.index === 16) {
+                } else if (origin.item == servicesSectionPink[1]) {
                     servicesFour2Anim.timeScale(2).reverse();
-                } else if (origin.index === 17) {
+                } else if (origin.item == servicesSectionPink[2]) {
                     servicesFour3Anim.timeScale(2).reverse();
-                } else if (origin.index === 18) {
+                } else if (currSectionClass.contains('partners')) {
                     partnersAnim.timeScale(2).reverse();
-                } else if (origin.index === 19) {
+                } else if (currSectionClass.contains('main-news')) {
                     mainNewsAnim.timeScale(2).reverse();
                 }
             },
@@ -919,65 +930,14 @@ const mainPageAnim = () => {
             offset: 'bottom-in-view'
         })
 
-        var servicesOne1 = $('.services-one.one').waypoint({
+        var services = $('.services').waypoint({
             handler: function (direction) {
-                this.element.querySelector('.services-one__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-        var servicesOne2 = $('.services-one.two').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-one__content').classList.add('fade');
+                this.element.querySelector('.services-content').classList.add('fade');
             },
             offset: 'bottom-in-view'
         })
 
-        var servicesTwo1 = $('.services-two.one').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-two__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-        var servicesTwo2 = $('.services-two.two').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-two__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-
-        var servicesThree1 = $('.services-three.one').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-three__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-        var servicesThree2 = $('.services-three.two').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-three__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-
-        var servicesFour1 = $('.services-four.one').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-four__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-        var servicesFour2 = $('.services-four.two').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-four__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-        var servicesFour3 = $('.services-four.three').waypoint({
-            handler: function (direction) {
-                this.element.querySelector('.services-four__content').classList.add('fade');
-            },
-            offset: 'bottom-in-view'
-        })
-
-
+       
         projectsSliderAnim();
         $('.features-list').slick({
             infinite: false,

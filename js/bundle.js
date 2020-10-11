@@ -380,42 +380,42 @@ var mainPageAnim = function mainPageAnim() {
   var mainServicesFirstTitle = document.querySelector('.services-first .title-big');
   var mainServicesFirstLine1 = document.querySelector('.services-first .services-line.one');
   var mainServicesFirstLine2 = document.querySelector('.services-first .services-line.two');
-  var mainServicesOne = document.querySelector('.services-one.one');
-  var mainServicesOneTitle = document.querySelector('.services-one.one .title');
-  var mainServicesOneImg = document.querySelector('.services-one.one .services-img');
-  var mainServicesOneText = document.querySelector('.services-one.one .text');
-  var mainServicesOne2 = document.querySelector('.services-one.two');
-  var mainServicesOne2Title = document.querySelector('.services-one.two .title');
-  var mainServicesOne2Img = document.querySelector('.services-one.two .services-img');
-  var mainServicesOne2Text = document.querySelector('.services-one.two .text');
-  var mainServicesTwo = document.querySelectorAll('.services-two.one');
-  var mainServicesTwoTitle = document.querySelector('.services-two.one .title');
-  var mainServicesTwoImg = document.querySelector('.services-two.one .services-img');
-  var mainServicesTwoText = document.querySelector('.services-two.one .text');
-  var mainServicesTwo2 = document.querySelector('.services-two.two');
-  var mainServicesTwo2Title = document.querySelector('.services-two.two .title');
-  var mainServicesTwo2Img = document.querySelector('.services-two.two .services-img');
-  var mainServicesTwo2Text = document.querySelector('.services-two.two .text');
-  var mainServicesThree = document.querySelector('.services-three.one');
-  var mainServicesThreeTitle = document.querySelector('.services-three.one .title');
-  var mainServicesThreeImg = document.querySelector('.services-three.one .services-img');
-  var mainServicesThreeText = document.querySelector('.services-three.one .text');
-  var mainServicesThree2 = document.querySelector('.services-three.two');
-  var mainServicesThree2Title = document.querySelector('.services-three.two .title');
-  var mainServicesThree2Img = document.querySelector('.services-three.two .services-img');
-  var mainServicesThree2Text = document.querySelector('.services-three.two .text');
-  var mainServicesFour = document.querySelector('.services-four.one');
-  var mainServicesFourTitle = document.querySelector('.services-four.one .title');
-  var mainServicesFourImg = document.querySelector('.services-four.one .services-img');
-  var mainServicesFourText = document.querySelector('.services-four.one .text');
-  var mainServicesFour2 = document.querySelector('.services-four.two');
-  var mainServicesFour2Title = document.querySelector('.services-four.two .title');
-  var mainServicesFour2Img = document.querySelector('.services-four.two .services-img');
-  var mainServicesFour2Text = document.querySelector('.services-four.two .text');
-  var mainServicesFour3 = document.querySelector('.services-four.three');
-  var mainServicesFour3Title = document.querySelector('.services-four.three .title');
-  var mainServicesFour3Img = document.querySelector('.services-four.three .services-img');
-  var mainServicesFour3Text = document.querySelector('.services-four.three .text');
+  var mainServicesOne = document.querySelectorAll('.services.darkblue')[0];
+  var mainServicesOneTitle = mainServicesOne.querySelector('.title');
+  var mainServicesOneImg = mainServicesOne.querySelector('.services-img');
+  var mainServicesOneText = mainServicesOne.querySelector('.text');
+  var mainServicesOne2 = document.querySelectorAll('.services.darkblue')[1];
+  var mainServicesOne2Title = mainServicesOne2.querySelector('.title');
+  var mainServicesOne2Img = mainServicesOne2.querySelector('.services-img');
+  var mainServicesOne2Text = mainServicesOne2.querySelector('.text');
+  var mainServicesTwo = document.querySelectorAll('.services.orange')[0];
+  var mainServicesTwoTitle = mainServicesTwo.querySelector('.title');
+  var mainServicesTwoImg = mainServicesTwo.querySelector('.services-img');
+  var mainServicesTwoText = mainServicesTwo.querySelector('.text');
+  var mainServicesTwo2 = document.querySelectorAll('.services.orange')[1];
+  var mainServicesTwo2Title = mainServicesTwo2.querySelector('.title');
+  var mainServicesTwo2Img = mainServicesTwo2.querySelector('.services-img');
+  var mainServicesTwo2Text = mainServicesTwo2.querySelector('.text');
+  var mainServicesThree = document.querySelectorAll('.services.green')[0];
+  var mainServicesThreeTitle = mainServicesThree.querySelector('.title');
+  var mainServicesThreeImg = mainServicesThree.querySelector('.services-img');
+  var mainServicesThreeText = mainServicesThree.querySelector('.text');
+  var mainServicesThree2 = document.querySelectorAll('.services.green')[1];
+  var mainServicesThree2Title = mainServicesThree2.querySelector('.title');
+  var mainServicesThree2Img = mainServicesThree2.querySelector('.services-img');
+  var mainServicesThree2Text = mainServicesThree2.querySelector('.text');
+  var mainServicesFour = document.querySelectorAll('.services.lightpink')[0];
+  var mainServicesFourTitle = mainServicesFour.querySelector('.title');
+  var mainServicesFourImg = mainServicesFour.querySelector('.services-img');
+  var mainServicesFourText = mainServicesFour.querySelector('.text');
+  var mainServicesFour2 = document.querySelectorAll('.services.lightpink')[1];
+  var mainServicesFour2Title = mainServicesFour2.querySelector('.title');
+  var mainServicesFour2Img = mainServicesFour2.querySelector('.services-img');
+  var mainServicesFour2Text = mainServicesFour2.querySelector('.text');
+  var mainServicesFour3 = document.querySelectorAll('.services.lightpink')[2];
+  var mainServicesFour3Title = mainServicesFour3.querySelector('.title');
+  var mainServicesFour3Img = mainServicesFour3.querySelector('.services-img');
+  var mainServicesFour3Text = mainServicesFour3.querySelector('.text');
   var partners = document.querySelector('.partners');
   var partnersTitle = document.querySelector('.partners .title');
   var partnersList = document.querySelector('.partners .partners-slider__wrapper');
@@ -819,87 +819,99 @@ var mainPageAnim = function mainPageAnim() {
       //            scrollOverflowReset: true,
       //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
       afterLoad: function afterLoad(origin, destination, direction) {
-        if (destination.index === 0) {
+        var currSectionClass = destination.item.classList;
+        var servicesSectionBlue = document.querySelectorAll('.services.darkblue');
+        var servicesSectionOrange = document.querySelectorAll('.services.orange');
+        var servicesSectionGreen = document.querySelectorAll('.services.green');
+        var servicesSectionPink = document.querySelectorAll('.services.lightpink');
+
+        if (currSectionClass.contains('main-section')) {
           mainSectionAnim();
-        } else if (destination.index === 1) {
+        } else if (currSectionClass.contains('bridges-one')) {
           bridgesOneAnim.timeScale(1).restart();
-        } else if (destination.index === 2) {
+        } else if (currSectionClass.contains('bridges-two')) {
           bridgesTwoAnim.timeScale(1).restart();
-        } else if (destination.index === 3) {
+        } else if (currSectionClass.contains('bridges-three')) {
           bridgesThreeAnim.timeScale(1).restart();
-        } else if (destination.index === 4) {
+        } else if (currSectionClass.contains('bridges-four')) {
           bridgesFourAnim.timeScale(1).restart();
-        } else if (destination.index === 5) {
+        } else if (currSectionClass.contains('features')) {
           featuresAnim.timeScale(1).restart();
-        } else if (destination.index === 6) {
+        } else if (currSectionClass.contains('main-projects__wrap')) {
           projectsFirstAnim.restart();
-        } else if (destination.index === 7) {
+        } else if (currSectionClass.contains('main-projects__info')) {
           projectsSecondAnim.timeScale(1).restart();
           projectsSliderAnim();
-        } else if (destination.index === 8) {
+        } else if (currSectionClass.contains('services-first')) {
           servicesAnim.timeScale(1).restart();
-        } else if (destination.index === 9) {
+        } else if (destination.item == servicesSectionBlue[0]) {
           servicesOne1Anim.timeScale(1).restart();
-        } else if (destination.index === 10) {
+        } else if (destination.item == servicesSectionBlue[1]) {
           servicesOne2Anim.timeScale(1).restart();
-        } else if (destination.index === 11) {
+        } else if (destination.item == servicesSectionOrange[0]) {
           servicesTwo1Anim.timeScale(1).restart();
-        } else if (destination.index === 12) {
+        } else if (destination.item == servicesSectionOrange[1]) {
           servicesTwo2Anim.timeScale(1).restart();
-        } else if (destination.index === 13) {
+        } else if (destination.item == servicesSectionGreen[0]) {
           servicesThree1Anim.timeScale(1).restart();
-        } else if (destination.index === 14) {
+        } else if (destination.item == servicesSectionGreen[1]) {
           servicesThree2Anim.timeScale(1).restart();
-        } else if (destination.index === 15) {
+        } else if (destination.item == servicesSectionPink[0]) {
           servicesFour1Anim.timeScale(1).restart();
-        } else if (destination.index === 16) {
+        } else if (destination.item == servicesSectionPink[1]) {
           servicesFour2Anim.timeScale(1).restart();
-        } else if (destination.index === 17) {
+        } else if (destination.item == servicesSectionPink[2]) {
           servicesFour3Anim.timeScale(1).restart();
-        } else if (destination.index === 18) {
+        } else if (currSectionClass.contains('partners')) {
           partnersAnim.timeScale(1).restart();
-        } else if (destination.index === 19) {
+        } else if (currSectionClass.contains('main-news')) {
           mainNewsAnim.timeScale(1).restart();
         }
       },
       onLeave: function onLeave(origin, destination, direction) {
-        if (origin.index === 0) {} else if (origin.index === 1) {
+        var currSectionClass = origin.item.classList;
+        var servicesSectionBlue = document.querySelectorAll('.services.darkblue');
+        var servicesSectionOrange = document.querySelectorAll('.services.orange');
+        var servicesSectionGreen = document.querySelectorAll('.services.green');
+        var servicesSectionPink = document.querySelectorAll('.services.lightpink');
+
+        if (origin.index === 0) {} else if (currSectionClass.contains('bridges-one')) {
           bridgesOneAnim.timeScale(2).reverse();
-        } else if (origin.index === 2) {
+        } else if (currSectionClass.contains('bridges-two')) {
           bridgesTwoAnim.timeScale(2).reverse();
-        } else if (origin.index === 3) {
+        } else if (currSectionClass.contains('bridges-three')) {
           bridgesThreeAnim.timeScale(2).reverse();
-        } else if (origin.index === 4) {
+        } else if (currSectionClass.contains('bridges-four')) {
           bridgesFourAnim.timeScale(2).reverse();
-        } else if (origin.index === 5) {
+        } else if (currSectionClass.contains('features')) {
           featuresAnim.timeScale(2).reverse();
-        } else if (origin.index === 6) {
+        } else if (currSectionClass.contains('main-projects__wrap')) {
           projectsFirstAnim.timeScale(2).reverse();
-        } else if (origin.index === 7) {
+        } else if (currSectionClass.contains('main-projects__info')) {
           projectsSecondAnim.timeScale(2).reverse();
-        } else if (origin.index === 8) {
+        } else if (currSectionClass.contains('services-first')) {
           servicesAnim.timeScale(2).reverse();
-        } else if (origin.index === 9) {
+        } else if (origin.item == servicesSectionBlue[0]) {
           servicesOne1Anim.timeScale(2).reverse();
-        } else if (origin.index === 10) {
+        } else if (origin.item == servicesSectionBlue[1]) {
           servicesOne2Anim.timeScale(2).reverse();
-        } else if (origin.index === 11) {
+        } else if (origin.item == servicesSectionOrange[0]) {
           servicesTwo1Anim.timeScale(2).reverse();
-        } else if (origin.index === 12) {
+        } else if (origin.item == servicesSectionOrange[1]) {
           servicesTwo2Anim.timeScale(2).reverse();
-        } else if (origin.index === 13) {
+        } else if (origin.item == servicesSectionGreen[0]) {
           servicesThree1Anim.timeScale(2).reverse();
-        } else if (origin.index === 14) {
+        } else if (origin.item == servicesSectionGreen[1]) {
           servicesThree2Anim.timeScale(2).reverse();
-        } else if (origin.index === 15) {
+        } else if (origin.item == servicesSectionPink[0]) {
           servicesFour1Anim.timeScale(2).reverse();
-        } else if (origin.index === 16) {
+        } else if (origin.item == servicesSectionPink[1]) {
           servicesFour2Anim.timeScale(2).reverse();
-        } else if (origin.index === 17) {
+        } else if (origin.item == servicesSectionPink[2]) {
           servicesFour3Anim.timeScale(2).reverse();
-        } else if (origin.index === 18) {
+        } else if (currSectionClass.contains('partners')) {
           partnersAnim.timeScale(2).reverse();
-        } else if (origin.index === 19) {
+        } else if (currSectionClass.contains('main-news')) {
           mainNewsAnim.timeScale(2).reverse();
         }
       }
@@ -1118,57 +1130,9 @@ var mainPageAnim = function mainPageAnim() {
       },
       offset: 'bottom-in-view'
     });
-    var servicesOne1 = $('.services-one.one').waypoint({
+    var services = $('.services').waypoint({
       handler: function handler(direction) {
-        this.element.querySelector('.services-one__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesOne2 = $('.services-one.two').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-one__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesTwo1 = $('.services-two.one').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-two__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesTwo2 = $('.services-two.two').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-two__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesThree1 = $('.services-three.one').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-three__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesThree2 = $('.services-three.two').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-three__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesFour1 = $('.services-four.one').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-four__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesFour2 = $('.services-four.two').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-four__content').classList.add('fade');
-      },
-      offset: 'bottom-in-view'
-    });
-    var servicesFour3 = $('.services-four.three').waypoint({
-      handler: function handler(direction) {
-        this.element.querySelector('.services-four__content').classList.add('fade');
+        this.element.querySelector('.services-content').classList.add('fade');
       },
       offset: 'bottom-in-view'
     });
@@ -1254,9 +1218,9 @@ var newsItemPageAnim = function newsItemPageAnim() {
       paddingBottom: '0px',
       scrollingSpeed: 1000,
       fitToSectionDelay: 500,
-      //            scrollOverflow: true,
-      //            scrollOverflowReset: true,
-      //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
+      scrollOverflow: true,
+      scrollOverflowReset: true,
+      scrollOverflowResetKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
       afterLoad: function afterLoad(origin, destination, direction) {
         if (destination.index == 0) {} else if (destination.index == 1) {
           newsItemAnim.timeScale(1).restart();
@@ -1317,12 +1281,12 @@ var newsPageAnim = function newsPageAnim() {
       //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
       afterLoad: function afterLoad(origin, destination, direction) {
         if (destination.index === 0) {
-          newsAnim.timeScale(1).restart();
+          newsAnim.timeScale(0.8).restart();
         } else if (destination.index === 1) {}
       },
       onLeave: function onLeave(origin, destination, direction) {
         if (origin.index === 0) {
-          newsAnim.timeScale(1).reverse();
+          newsAnim.timeScale(0.8).reverse();
         } else if (origin.index === 1) {}
       }
     });
@@ -1633,11 +1597,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var servicesItemPageAnim = function servicesItemPageAnim() {
-  var services = document.querySelector('.services');
-  var servicesImg = document.querySelectorAll('.services.one')[0];
-  var servicesTitle = document.querySelectorAll('.services.two .services-title')[0];
-  var servicesText = document.querySelectorAll('.services.two .text-big')[0];
-  var servicesList = document.querySelectorAll('.services.two .services-features li');
+  var services = document.querySelector('.service');
+  var servicesImg = document.querySelectorAll('.service.one')[0];
+  var servicesTitle = document.querySelectorAll('.service.two .service-title')[0];
+  var servicesText = document.querySelectorAll('.service.two .text-big')[0];
+  var servicesList = document.querySelectorAll('.service.two .service-features li');
 
   if (window.innerWidth > 1199) {
     var servicesItemAnim = gsap.timeline({

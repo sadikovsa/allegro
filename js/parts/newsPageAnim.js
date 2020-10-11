@@ -31,14 +31,14 @@ const newsPageAnim = () => {
             //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
             afterLoad: function (origin, destination, direction) {
                 if (destination.index === 0) {
-                    newsAnim.timeScale(1).restart();
+                    newsAnim.timeScale(0.8).restart();
                 } else if (destination.index === 1) {
 
                 }
             },
             onLeave: function (origin, destination, direction) {
                 if (origin.index === 0) {
-                    newsAnim.timeScale(1).reverse();
+                    newsAnim.timeScale(0.8).reverse();
                 } else if (origin.index === 1) {
 
                 }

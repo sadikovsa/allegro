@@ -28,9 +28,9 @@ const newsItemPageAnim = () => {
             paddingBottom: '0px',
             scrollingSpeed: 1000,
             fitToSectionDelay: 500,
-            //            scrollOverflow: true,
-            //            scrollOverflowReset: true,
-            //            scrollOverflowResetKey: 'YWx2YXJvdHJpZ28uY29tXzlRaGMyTnliMnhzVDNabGNtWnNiM2RTWlhObGRBPT14Ykk=',
+            scrollOverflow: true,
+            scrollOverflowReset: true,
+            scrollOverflowResetKey: 'XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX',
             afterLoad: function (origin, destination, direction) {
                 if (destination.index == 0) {
 
